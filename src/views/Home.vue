@@ -1,7 +1,13 @@
 <template>
-<!---->
+  <div>
+    <FullScreenLanding next-section-id="treatments" />
+    <Treatments />
+    <Contacts />
+    </div>
 </template>
 
 <script setup>
-//
+import Treatments from '../components/Treatments.vue';
+import FullScreenLanding from '../components/FullScreenLanding.vue'
+import Contacts from '../components/Contacts.vue';
 </script>
