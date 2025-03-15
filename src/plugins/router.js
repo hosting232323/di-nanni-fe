@@ -14,6 +14,11 @@ const routes = [
         path: '/agenda',
         name: 'Agenda',
         component: () => import('@/views/Agenda.vue')
+      },
+      {
+        path: '/agopuntura',
+        name: 'Agopuntura',
+        component: () => import('@/views/Agopuntura.vue')
       }
     ]
   }
