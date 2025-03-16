@@ -1,5 +1,4 @@
 <template>
-  <!-- Mobile AppBar -->
   <v-app-bar v-if="isMobile" elevation="0" class="custom-appbar">
     <v-container class="d-flex align-center justify-space-between">
       <v-btn icon @click="drawer = !drawer">
@@ -11,7 +10,6 @@
     </v-container>
   </v-app-bar>
 
-  <!-- Desktop AppBar -->
   <v-app-bar v-else elevation="0" class="custom-appbar">
     <v-container class="d-flex align-center">
       <v-spacer></v-spacer>
@@ -47,7 +45,6 @@
     </v-container>
   </v-app-bar>
 
-  <!-- Mobile Navigation Drawer -->
   <v-navigation-drawer
     v-if="isMobile"
     v-model="drawer"
