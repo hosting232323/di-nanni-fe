@@ -1,6 +1,6 @@
 <template>
   <v-container>
-    <v-row v-if="!isMobile">
+    <v-row v-if="!isMobile" style="margin-right: 250px;">
       <v-col cols="8">
         <AgendaItem :post="posts[0]" :height="600" />
       </v-col>
@@ -9,12 +9,12 @@
         <AgendaItem :post="posts[2]" :height="200" />
       </v-col>
     </v-row>
-    <v-row v-if="!isMobile">
+    <v-row v-if="!isMobile" style="margin-right: 250px;">
       <v-col cols="4" v-for="post in posts.slice(3)">
         <AgendaItem :post="post" :height="200" />
       </v-col>
     </v-row>
-    <v-row v-else>
+    <v-row v-else> 
       <v-col cols="12" md="12" v-for="post in posts">
         <AgendaItem :post="post" />
         <hr class="dotted-hr red" v-if="isMobile && posts.indexOf(post) != posts.length - 1">
