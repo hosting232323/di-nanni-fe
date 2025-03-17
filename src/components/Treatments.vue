@@ -34,19 +34,19 @@ const treatments = [
     id: 1,
     title: 'Agopuntura',
     image: agopunturaImg,
-    route: '/agopuntura'
+    route: '/trattamenti/agopuntura'
   },
   {
     id: 2,
     title: 'Fitoterapia e Aromaterapia',
     image: fitoterapiaImg,
-    route: '/fitoterapia'
+    route: '/trattamenti/fitoterapia'
   },
   {
     id: 3,
     title: 'Tecniche complementari',
     image: tecnicheImg,
-    route: '/tecniche'
+    route: '/trattamenti/tecniche-complementari'
   }
 ]
 </script>
@@ -54,15 +54,14 @@ const treatments = [
 <style scoped>
 .treatments-section {
   padding: 4rem 2rem;
-  background-color: #faf6f1;
-  min-height: 100vh;
+  background-color: #7D2636;
   display: flex;
   flex-direction: column;
   align-items: center;
 }
 
 .treatments-title {
-  color: #8B4513;
+  color: white;
   font-size: 2.5rem;
   margin-bottom: 3rem;
   font-style: italic;
@@ -130,7 +129,6 @@ const treatments = [
   margin: 0;
   padding: 1rem;
   text-align: center;
-  color: #8B4513;
+  color: #7D2636;
 }
-
 </style>

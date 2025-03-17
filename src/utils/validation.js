@@ -39,6 +39,13 @@ const passwordRules = requiredRules.concat([
   }
 ]);
 
+const nameRules = requiredRules.concat([
+  (value) => {
+    if (/^[a-zA-Z\s]+$/.test(value)) return true;
+    return 'Il nome può contenere solo lettere e spazi.';
+  }
+]);
+
 const validateInput = (value, rules) => {
   const errors = [];
   for (const rule of rules) {
@@ -53,5 +60,6 @@ export default {
   requiredRules,
   emailRules,
   siteRules,
-  passwordRules
+  passwordRules,
+  nameRules
 };
