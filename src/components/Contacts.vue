@@ -1,72 +1,78 @@
 <template>
   <section class="contact-section">
-    <div class="social-container">
-      <v-row justify="center" class="social-buttons">
-        <v-btn icon href="https://www.instagram.com/fapricambiauto/" target="_blank" aria-label="Instagram"
-          class="social-btn">
-          <v-icon size="44px" color="#E1306C">mdi-instagram</v-icon>
-        </v-btn>
-
-        <v-btn icon href="https://www.facebook.com/fapricambiauto?locale=it_IT" target="_blank" aria-label="Facebook"
-          class="social-btn">
-          <v-icon size="44px" color="#1877F2">mdi-facebook</v-icon>
-        </v-btn>
-      </v-row>
-    </div>
     <v-container>
-      <v-row>
-        <v-col cols="12" :md="6">
-          <div class="form-section">
-            <h2 class="form-title">Scrivimi</h2>
-            <v-form ref="form" v-model="isValid" @submit.prevent="handleSubmit">
-              <div class="form-group">
-                <label for="name">Il tuo nome</label>
-                <v-text-field v-model="formData.nome" label="Nome" :rules="validation.requiredRules" required />
-              </div>
-              <div class="form-group">
-                <label for="email">La tua email</label>
-                <v-text-field v-model="formData.email" label="Email" :rules="validation.emailRules" required />
-              </div>
-              <div class="form-group">
-                <label>Oggetto (facoltativo)</label>
-                <div class="checkbox-group">
-                  <label class="checkbox-label">
-                    <input type="checkbox" v-model="formData.appointmentRequest">
-                    Richiesta appuntamento
-                  </label>
-                  <label class="checkbox-label">
-                    <input type="checkbox" v-model="formData.questionRequest">
-                    Vorrei farti una domanda...
-                  </label>
-                </div>
-              </div>
-              <div class="form-group">
-                <label for="message">Il tuo messaggio</label>
-                <v-textarea v-model="formData.message" label="Messaggio" required rows="4" />
-              </div>
-              <v-btn type="submit" :disabled="!isValid" color="primary">INVIA</v-btn>
-            </v-form>
+
+      <v-row align="center" class="mb-6">
+        <v-col cols="6" class="text-left">
+          <img src="@/assets/logo.png" alt="Logo" class="logo">
+        </v-col>
+        <v-col cols="6" class="text-right">
+          <div class="social-buttons">
+            <v-btn icon href="https://www.instagram.com" target="_blank" class="social-btn">
+              <v-icon size="30px" color="#E1306C">mdi-instagram</v-icon>
+            </v-btn>
+            <v-btn icon href="https://www.facebook.com" target="_blank" class="social-btn">
+              <v-icon size="30px" color="#1877F2">mdi-facebook</v-icon>
+            </v-btn>
           </div>
         </v-col>
-        <v-col cols="12" :md="6">
-          <div class="contact-info">
-            <div class="contact-links">
-              <a href="tel:+393242425380" class="contact-link">
-                <v-icon class="contact-icon">mdi-phone</v-icon>
-                Chiamami
-              </a>
-              <a href="https://wa.me/+393425644546" class="contact-link">
-                <v-icon class="contact-icon">mdi-whatsapp</v-icon>
-                Contattami su WhatsApp
-              </a>
-            </div>
-            <div class="contact-details">
-              <h3>Indirizzo</h3>
-              <p>Via Corfù, 13</p>
-              <p>70121 Bari</p>
-              <h3>Orario studio</h3>
-              <p>Dal lunedì al sabato solo su appuntamento</p>
-            </div>
+      </v-row>
+
+      <v-row>
+        <v-col cols="12" md="6">
+          <v-form ref="form" v-model="isValid" @submit.prevent="handleSubmit">
+            <v-text-field 
+              v-model="formData.nome" 
+              label="Il tuo nome" 
+              :rules="validation.nameRules" 
+              required 
+              class="custom-input"
+            />
+            <v-text-field 
+              v-model="formData.email" 
+              label="La tua email" 
+              :rules="validation.emailRules" 
+              required 
+              class="custom-input"
+            />
+            <v-text-field 
+              v-model="formData.oggetto" 
+              label="Oggetto (facoltativo)" 
+              class="custom-input"
+            />
+            
+            <v-checkbox 
+              v-model="formData.appointmentRequest" 
+              label="Richiesta appuntamento" 
+              class="custom-checkbox"
+            />
+            <v-checkbox 
+              v-model="formData.questionRequest" 
+              label="Vorrei farti una domanda..." 
+              class="custom-checkbox"
+            />
+          </v-form>
+        </v-col>
+
+        <v-col cols="12" md="6">
+          <v-textarea 
+            v-model="formData.message" 
+            label="Il tuo messaggio" 
+            :rules="validation.requiredRules" 
+            required 
+            rows="4" 
+            class="custom-input mb-4"
+          />
+          
+          <v-btn type="submit" :disabled="!isValid" class="submit-btn mb-6">INVIA</v-btn>
+
+          <div class="contact-links">
+            <a href="tel:+393242425380" class="contact-link">
+              <v-icon class="contact-icon">mdi-phone</v-icon> Chiamami
+            </a>
+            <a href="https://wa.me/+393425644546" class="contact-link">
+              <v-icon class="contact-icon">mdi-whatsapp</v-icon> Scrivimi su Whatsapp
+            </a>
           </div>
         </v-col>
       </v-row>
@@ -76,17 +82,15 @@
 
 <script setup>
 import { ref, reactive } from 'vue';
-import validation from '@/utils/validation.js';
 import http from '@/utils/http.js';
-import mobile from '@/utils/mobile.js';
-
-const isMobile = mobile.setupMobileUtils();
+import validation from '@/utils/validation.js';
 
 const isValid = ref(false);
 const form = ref(null);
 const formData = reactive({
   nome: '',
   email: '',
+  oggetto: '',
   appointmentRequest: false,
   questionRequest: false,
   message: ''
@@ -98,10 +102,12 @@ const handleSubmit = () => {
       email: import.meta.env.VITE_FORM_MAIL,
       subject: "Nuovo contatto dal form del sito",
       body: `Nome: ${formData.nome}\nEmail: ${formData.email}\n` +
+        `Oggetto: ${formData.oggetto || 'Nessuno'}\n` +
         `Richiesta appuntamento: ${formData.appointmentRequest ? 'Sì' : 'No'}\n` +
         `Domanda: ${formData.questionRequest ? 'Sì' : 'No'}\n` +
         `Messaggio: ${formData.message}`
     };
+
     http.postRequest('send-mail', mailData, () => {
       alert("Mail inviata con successo! Ti ringraziamo per averci contattato.");
     }, 'POST');
@@ -112,19 +118,25 @@ const handleSubmit = () => {
 </script>
 
 <style scoped>
-.social-container {
-  display: flex;
-  justify-content: center;
-  margin-bottom: 2rem;
-  margin-top: -3rem;
+.contact-section {
+  background: linear-gradient(to right, #fbe3e8, #f8d4d9);
+  padding: 40px 20px;
+  border-radius: 10px;
+}
+
+.logo {
+  max-width: 200px;
+  margin-bottom: 15px;
 }
 
 .social-buttons {
-  gap: 1.5rem;
+  display: flex;
+  justify-content: flex-end;
+  gap: 15px;
+  margin-bottom: 20px;
 }
 
 .social-btn {
-  box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1);
   transition: transform 0.2s ease-in-out;
 }
 
@@ -133,49 +145,58 @@ const handleSubmit = () => {
 }
 
 .form-title {
-  color: #8B4513;
-  font-size: 2rem;
-  margin-bottom: 2rem;
+  color: #7D2636;
+  font-size: 1.8rem;
+  text-align: center;
+  margin-bottom: 20px;
 }
 
-.form-group {
-  margin-bottom: 1.5rem;
+.custom-input {
+  background: white;
+  border-radius: 20px;
+  padding: 10px;
 }
 
-.form-group label {
-  display: block;
-  color: #8B4513;
-  margin-bottom: 0.5rem;
+.custom-checkbox {
+  color: #7D2636;
+}
+
+.submit-btn {
+  background-color: #7D2636;
+  color: white;
+  font-weight: bold;
+  width: 100%;
+  border-radius: 20px;
+  padding: 10px;
+  margin-top: 10px;
+}
+
+.submit-btn:hover {
+  background-color: #5a1b29;
+}
+
+.contact-info {
+  text-align: center;
+  margin-top: 50px;
 }
 
 .contact-links {
   display: flex;
   flex-direction: column;
-  gap: 1.5rem;
-  margin-bottom: 3rem;
+  gap: 15px;
+  align-items: center;
 }
 
 .contact-link {
   display: flex;
   align-items: center;
-  gap: 1rem;
-  color: #8B4513;
+  gap: 10px;
+  color: #7D2636;
   text-decoration: none;
   font-size: 1.2rem;
 }
 
 .contact-icon {
-  width: 24px;
-  height: 24px;
-}
-
-.contact-details h3 {
-  color: #8B4513;
-  margin: 1.5rem 0 0.5rem;
-}
-
-.contact-details p {
-  color: #666;
-  margin: 0.25rem 0;
+  font-size: 24px;
 }
 </style>
