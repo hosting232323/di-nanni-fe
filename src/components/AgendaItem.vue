@@ -1,11 +1,11 @@
 <template>
 
-  <v-container v-if="isFeatured" class="featured-post">
+  <v-container v-if="isFeatured && !isMobile" class="featured-post">
     <v-row class="relative-container">
       <!-- Sezione immagini -->
       <v-col cols="12" md="7" class="image-container">
         <div class="post-image">
-          <v-img :src="post.cover" class="featured-image" max-height="400px" />
+          <v-img :src="post.cover" class="featured-image" max-height="400px"/>
         </div>
       </v-col>
 
@@ -15,7 +15,7 @@
           <p class="topic-date">{{ formatTopics(post.topics) }} {{ formatDate(post.updated_at) }}</p>
           <p class="reading-time">{{ calculateReadingTime(post.content) }}</p>
           <h2 class="truncate-title">{{ post.title }}</h2>
-          <p class="truncate-text">{{ post.content }}</p>
+          <p class="truncate-text" v-if="!isMobile">{{ post.content }}</p>
         </div>
       </v-col>
     </v-row>
@@ -23,7 +23,7 @@
 
   <v-container v-else class="d-flex mt-4 mb-4">
     <router-link :to="`/agenda/${post.id}`">
-      <v-img :src="post.cover" width="200px" max-height="225px"/>
+      <v-img :src="post.cover" width="170px" class="featured-image"/>
     </router-link>
 
     <div style="margin-left: 15px;">
@@ -34,7 +34,7 @@
         <h2 class="truncate-title">{{ post.title }}</h2>
       </router-link>
 
-      <p v-if="post" class="truncate-text">{{ post.content }}</p>
+      <p v-if="!isMobile" class="truncate-text">{{ post.content }}</p>
     </div>
   </v-container>
 </template>
@@ -49,6 +49,7 @@ const props = defineProps({
   height: Number,
   isFeatured: Boolean
 });
+
 
 const getStyle = () => {
   let styleValue = 'px';
@@ -89,14 +90,12 @@ const calculateReadingTime = (content, wordsPerMinute = 200) => {
 
 
 <style scoped>
-/* Contenitore principale */
 .featured-post {
   position: relative;
   border-radius: 10px;
   overflow: hidden;
 }
 
-/* Sezione immagine */
 .image-container {
   position: relative;
 }
@@ -107,7 +106,6 @@ const calculateReadingTime = (content, wordsPerMinute = 200) => {
   object-fit: cover;
 }
 
-/* Sezione testo sovrapposta */
 .text-container {
   position: absolute;
   top: 50%;
@@ -115,11 +113,8 @@ const calculateReadingTime = (content, wordsPerMinute = 200) => {
   transform: translate(-50%, -50%);
   background: #fff;
   padding: 20px;
-  /* border-radius: 8px; */
-  /* max-width: 400px; */
 }
 
-/* Stili del testo */
 .truncate-title {
   font-size: 24px;
   font-weight: bold;
@@ -152,8 +147,15 @@ const calculateReadingTime = (content, wordsPerMinute = 200) => {
     padding: 15px;
   }
 
+  .topic-date, .reading-time {
+    font-size: 13px
+  }
+  .featured-image {
+    max-width: 150px !important;
+    max-height: 150px !important;
+  }
   .truncate-title {
-    font-size: 20px;
+    font-size: 16px;
   }
 }
 </style>
