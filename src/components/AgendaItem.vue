@@ -14,7 +14,9 @@
         <div class="text-box">
           <p class="topic-date">{{ formatTopics(post.topics) }} {{ formatDate(post.updated_at) }}</p>
           <p class="reading-time">{{ calculateReadingTime(post.content) }}</p>
-          <h2 class="truncate-title">{{ post.title }}</h2>
+          <router-link :to="`/agenda/${post.id}`" style="text-decoration: none;">
+            <h2 class="truncate-title">{{ post.title }}</h2>
+          </router-link>
           <p class="truncate-text" v-if="!isMobile">{{ post.content }}</p>
         </div>
       </v-col>
