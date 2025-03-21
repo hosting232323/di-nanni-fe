@@ -123,8 +123,8 @@ const menuItems = [
     ]
   },
   {
-    text: 'Scopri di più',
-    route: '/scopri-di-piu'
+    text: 'Agenda',
+    route: '/agenda'
   }
 ]
 </script>

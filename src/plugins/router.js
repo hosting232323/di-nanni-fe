@@ -11,31 +11,14 @@ const routes = [
         component: () => import('@/views/Home.vue')
       },
       {
+        path: 'trattamenti/agopuntura',
+        name: 'Agopuntura',
+        component: () => import('@/views/trattamenti/Agopuntura.vue')
+      },
+      {
         path: '/trattamenti',
         name: 'Trattamenti',
-        component: () => import('@/views/Trattamenti.vue'),
-        children: [
-          {
-            path: 'agopuntura',
-            name: 'Agopuntura',
-            component: () => import('@/views/trattamenti/Agopuntura.vue')
-          },
-          {
-            path: 'fitoterapia',
-            name: 'Fitoterapia',
-            component: () => import('@/views/trattamenti/Fitoterapia.vue')
-          },
-          {
-            path: 'aromaterapia',
-            name: 'Aromaterapia',
-            component: () => import('@/views/trattamenti/Aromaterapia.vue')
-          },
-          {
-            path: 'tecniche-complementari',
-            name: 'TecnicheComplementari',
-            component: () => import('@/views/trattamenti/TecnicheComplementari.vue')
-          }
-        ]
+        component: () => import('@/views/Trattamenti.vue')
       },
       {
         path: '/chi-sono',
@@ -85,11 +68,6 @@ const routes = [
         path: '/agenda/:id',
         name: 'Dettaglio Agenda',
         component: () => import('@/views/DettaglioAgenda.vue')
-      },
-      {
-        path: '/agopuntura',
-        name: 'Agopuntura',
-        component: () => import('@/views/Agopuntura.vue')
       }
     ]
   }
