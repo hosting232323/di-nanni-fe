@@ -75,7 +75,17 @@ const routes = [
         path: '/scopri-di-piu',
         name: 'ScopriDiPiu',
         component: () => import('@/views/ScopriDiPiu.vue')
-      }
+      },
+      {
+        path: '/agenda',
+        name: 'Agenda',
+        component: () => import('@/views/Agenda.vue')
+      },
+      {
+        path: '/agenda/:id',
+        name: 'Dettaglio Agenda',
+        component: () => import('@/views/DettaglioAgenda.vue')
+      },
     ]
   }
 ];
