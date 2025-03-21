@@ -86,6 +86,11 @@ const routes = [
         name: 'Dettaglio Agenda',
         component: () => import('@/views/DettaglioAgenda.vue')
       },
+      {
+        path: '/agopuntura',
+        name: 'Agopuntura',
+        component: () => import('@/views/Agopuntura.vue')
+      }
     ]
   }
 ];
