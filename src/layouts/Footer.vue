@@ -19,17 +19,10 @@
           </ul>
         </v-col>
         <v-col cols="12" md="3">
-          <h3 class="footer-title">Contatti</h3>
-          <ul class="footer-list">
-            <li><router-link to="/contatti/scrivimi">Scrivimi</router-link></li>
-            <li><router-link to="/contatti/info">Contatti</router-link></li>
-          </ul>
+          <h3 class="footer-title">Contattami</h3>
         </v-col>
         <v-col cols="12" md="3">
-          <h3 class="footer-title">Scopri di più</h3>
-          <ul class="footer-list">
-            <li><router-link to="/scopri-di-piu">Scopri di più</router-link></li>
-          </ul>
+          <h3 class="footer-title">Agenda</h3>
         </v-col>
       </v-row>
       <v-row justify="center" class="social-row">

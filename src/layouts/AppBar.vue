@@ -12,12 +12,10 @@
 
   <v-app-bar v-else elevation="0" class="custom-appbar">
     <v-container class="d-flex align-center">
-      <v-spacer></v-spacer>
-      <v-spacer></v-spacer>
+      <v-spacer />
       <nav class="nav-links">
         <v-menu
-          v-for="(item, index) in menuItems"
-          :key="index"
+          v-for="item in menuItems"
           open-on-hover
           transition="slide-y-transition"
           class="menu-container"
@@ -98,7 +96,6 @@ const isMobile = mobile.setupMobileUtils();
 const menuItems = [
   {
     text: 'Trattamenti',
-    route: '/trattamenti',
     submenu: [
       { text: 'Agopuntura', route: '/trattamenti/agopuntura' },
       { text: 'Fitoterapia', route: '/trattamenti/fitoterapia' },
@@ -108,7 +105,6 @@ const menuItems = [
   },
   {
     text: 'Scopri chi sono',
-    route: '/chi-sono',
     submenu: [
       { text: 'Come procedo', route: '/chi-sono/come-procedo' },
       { text: 'La mia storia', route: '/chi-sono/la-mia-storia' }
@@ -116,11 +112,7 @@ const menuItems = [
   },
   {
     text: 'Contattami',
-    route: '/contatti',
-    submenu: [
-      { text: 'Scrivimi', route: '/contatti/scrivimi' },
-      { text: 'Contatti', route: '/contatti/info' }
-    ]
+    route: '/contatti'
   },
   {
     text: 'Agenda',

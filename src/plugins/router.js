@@ -40,19 +40,7 @@ const routes = [
       {
         path: '/contatti',
         name: 'Contatti',
-        component: () => import('@/views/Contatti.vue'),
-        children: [
-          {
-            path: 'scrivimi',
-            name: 'Scrivimi',
-            component: () => import('@/views/contatti/Scrivimi.vue')
-          },
-          {
-            path: 'info',
-            name: 'ContattiInfo',
-            component: () => import('@/views/contatti/Info.vue')
-          }
-        ]
+        component: () => import('@/views/Contatti.vue')
       },
       {
         path: '/scopri-di-piu',
