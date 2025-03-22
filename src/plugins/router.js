@@ -16,11 +16,6 @@ const routes = [
         component: () => import('@/views/trattamenti/Agopuntura.vue')
       },
       {
-        path: '/trattamenti',
-        name: 'Trattamenti',
-        component: () => import('@/views/Trattamenti.vue')
-      },
-      {
         path: '/chi-sono',
         name: 'ChiSono',
         component: () => import('@/views/ChiSono.vue'),
