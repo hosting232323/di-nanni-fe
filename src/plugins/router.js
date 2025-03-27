@@ -18,19 +18,7 @@ const routes = [
       {
         path: '/chi-sono',
         name: 'ChiSono',
-        component: () => import('@/views/ChiSono.vue'),
-        children: [
-          {
-            path: 'come-procedo',
-            name: 'ComeProcedo',
-            component: () => import('@/views/chi-sono/ComeProcedo.vue')
-          },
-          {
-            path: 'la-mia-storia',
-            name: 'LaMiaStoria',
-            component: () => import('@/views/chi-sono/LaMiaStoria.vue')
-          }
-        ]
+        component: () => import('@/views/ChiSono.vue')        
       },
       {
         path: '/contatti',
