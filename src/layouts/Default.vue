@@ -2,7 +2,7 @@
   <v-app>
     <AppBar />
     <v-main>
-      <router-view />
+      <router-view class="app-background" />
     </v-main>
     <Footer />
   </v-app>
@@ -17,3 +17,9 @@ script.type = 'module';
 script.src = 'https://chatty-be.replit.app/chat-file/js?file=inject&user_id=2';
 document.body.appendChild(script);
 </script>
+
+<style>
+.app-background {
+	background: linear-gradient(to right, #fbe3e8, #f8d4d9);
+}
+</style>

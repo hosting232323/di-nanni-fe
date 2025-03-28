@@ -14,15 +14,20 @@
         <v-col cols="12" md="3">
           <h3 class="footer-title">Scopri chi sono</h3>
           <ul class="footer-list">
-            <li><router-link to="/chi-sono/come-procedo">Come procedo</router-link></li>
-            <li><router-link to="/chi-sono/la-mia-storia">La mia storia</router-link></li>
+            <li><router-link to="/chi-sono">La mia storia - Come procedo</router-link></li>
           </ul>
         </v-col>
         <v-col cols="12" md="3">
           <h3 class="footer-title">Contattami</h3>
+          <ul class="footer-list">
+            <li><router-link to="/contatti">Qualcosa non è chiaro?</router-link></li>
+          </ul>
         </v-col>
         <v-col cols="12" md="3">
           <h3 class="footer-title">Agenda</h3>
+          <ul class="footer-list">
+            <li><router-link to="/agenda">Visualizza i miei post!</router-link></li>
+          </ul>
         </v-col>
       </v-row>
       <v-row justify="center" class="social-row">

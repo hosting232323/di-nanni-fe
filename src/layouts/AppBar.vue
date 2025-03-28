@@ -105,10 +105,7 @@ const menuItems = [
   },
   {
     text: 'Scopri chi sono',
-    submenu: [
-      { text: 'Come procedo', route: '/chi-sono/come-procedo' },
-      { text: 'La mia storia', route: '/chi-sono/la-mia-storia' }
-    ]
+    route: '/chi-sono'
   },
   {
     text: 'Contattami',
