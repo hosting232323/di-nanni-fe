@@ -1,8 +1,8 @@
 <template>
-  <v-app>
+  <v-app class="app-background">
     <AppBar />
     <v-main>
-      <router-view class="app-background" />
+      <router-view  />
     </v-main>
     <Footer />
   </v-app>
@@ -20,6 +20,6 @@ document.body.appendChild(script);
 
 <style>
 .app-background {
-	background: linear-gradient(to right, #fbe3e8, #f8d4d9);
+	background: #f8d4d9;
 }
 </style>

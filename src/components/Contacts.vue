@@ -119,7 +119,6 @@ const handleSubmit = () => {
 
 <style scoped>
 .contact-section {
-  background: linear-gradient(to right, #fbe3e8, #f8d4d9);
   padding: 40px 20px;
   border-radius: 10px;
 }
