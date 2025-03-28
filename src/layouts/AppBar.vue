@@ -12,6 +12,7 @@
 
   <v-app-bar v-else elevation="0" class="custom-appbar">
     <v-container class="d-flex align-center">
+      <img src="@/assets/logo.png" alt="" height="60"/>
       <v-spacer />
       <nav class="nav-links">
         <v-menu
@@ -105,10 +106,7 @@ const menuItems = [
   },
   {
     text: 'Scopri chi sono',
-    submenu: [
-      { text: 'Come procedo', route: '/chi-sono/come-procedo' },
-      { text: 'La mia storia', route: '/chi-sono/la-mia-storia' }
-    ]
+    route: '/chi-sono'
   },
   {
     text: 'Contattami',

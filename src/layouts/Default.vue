@@ -1,8 +1,8 @@
 <template>
-  <v-app>
+  <v-app class="app-background">
     <AppBar />
     <v-main>
-      <router-view />
+      <router-view  />
     </v-main>
     <Footer />
   </v-app>
@@ -17,3 +17,9 @@ script.type = 'module';
 script.src = 'https://chatty-be.replit.app/chat-file/js?file=inject&user_id=2';
 document.body.appendChild(script);
 </script>
+
+<style>
+.app-background {
+	background: #f8d4d9;
+}
+</style>
