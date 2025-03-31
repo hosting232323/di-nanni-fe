@@ -12,7 +12,9 @@
 
   <v-app-bar v-else elevation="0" class="custom-appbar">
     <v-container class="d-flex align-center">
-      <img src="@/assets/logo.png" alt="" height="60"/>
+      <router-link to="/" class="logo-link">
+        <img src="@/assets/logo.png" alt="" height="60"/>
+      </router-link>
       <v-spacer />
       <nav class="nav-links">
         <v-menu
@@ -145,8 +147,10 @@ const menuItems = [
 
 .logo-link {
   text-decoration: none;
+  position: relative;
+  background-color: rgba(255, 255, 255, 0.5);
+  padding: 20px;
 }
-
 .mobile-drawer {
   background-color: #7D2636 !important;
 }

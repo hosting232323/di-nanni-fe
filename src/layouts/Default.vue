@@ -20,6 +20,6 @@ document.body.appendChild(script);
 
 <style>
 .app-background {
-	background: #f8d4d9;
+	background: #f8d4d9 !important;
 }
 </style>
