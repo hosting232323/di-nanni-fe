@@ -148,8 +148,6 @@ const menuItems = [
 .logo-link {
   text-decoration: none;
   position: relative;
-  background-color: rgba(255, 255, 255, 0.5);
-  padding: 20px;
 }
 .mobile-drawer {
   background-color: #7D2636 !important;
