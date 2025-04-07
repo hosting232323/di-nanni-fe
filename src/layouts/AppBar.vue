@@ -9,43 +9,45 @@
       </router-link>
     </v-container>
   </v-app-bar>
-
   <v-app-bar v-else elevation="0" class="custom-appbar">
-    <v-container class="d-flex align-center">
+    <div class="left-section d-flex align-center">
       <router-link to="/" class="logo-link">
         <img src="@/assets/logo.png" alt="" height="60"/>
       </router-link>
-      <v-spacer />
-      <nav class="nav-links">
-        <v-menu
-          v-for="item in menuItems"
-          open-on-hover
-          transition="slide-y-transition"
-          class="menu-container"
-        >
-          <template v-slot:activator="{ props }">
-            <v-btn v-bind="props" variant="text" class="nav-item" :to="item.route">
-              <i>{{ item.text }}</i>
-              <v-icon v-if="item.submenu && item.submenu.length > 0" size="16">
-                mdi-chevron-down
-              </v-icon>
-            </v-btn>
-          </template>
-          <v-list v-if="item.submenu && item.submenu.length > 0" class="submenu-list">
-            <v-list-item
-              v-for="(subItem, subIndex) in item.submenu"
-              :key="subIndex"
-              :to="subItem.route"
-              class="submenu-item"
-            >
-              <v-list-item-title>{{ subItem.text }}</v-list-item-title>
-            </v-list-item>
-          </v-list>
-        </v-menu>
-      </nav>
-    </v-container>
+    </div>
+    <div class="right-section">
+      <v-container class="d-flex align-center justify-space-between">
+        <v-spacer />
+        <nav class="nav-links">
+          <v-menu
+            v-for="item in menuItems"
+            open-on-hover
+            transition="slide-y-transition"
+            class="menu-container"
+          >
+            <template v-slot:activator="{ props }">
+              <v-btn v-bind="props" variant="text" class="nav-item" :to="item.route">
+                <i>{{ item.text }}</i>
+                <v-icon v-if="item.submenu && item.submenu.length > 0" size="16">
+                  mdi-chevron-down
+                </v-icon>
+              </v-btn>
+            </template>
+            <v-list v-if="item.submenu && item.submenu.length > 0" class="submenu-list">
+              <v-list-item
+                v-for="(subItem, subIndex) in item.submenu"
+                :key="subIndex"
+                :to="subItem.route"
+                class="submenu-item"
+              >
+                <v-list-item-title>{{ subItem.text }}</v-list-item-title>
+              </v-list-item>
+            </v-list>
+          </v-menu>
+        </nav>
+      </v-container>
+    </div>
   </v-app-bar>
-
   <v-navigation-drawer
     v-if="isMobile"
     v-model="drawer"
@@ -63,7 +65,6 @@
         >
           <v-list-item-title>{{ item.text }}</v-list-item-title>
         </v-list-item>
-        
         <v-list-group v-else :value="item.text">
           <template v-slot:activator="{ props }">
             <v-list-item 
@@ -75,7 +76,6 @@
               <v-list-item-title>{{ item.text }}</v-list-item-title>
             </v-list-item>
           </template>
-
           <v-list-item
             v-for="(subItem, subIndex) in item.submenu"
             :key="subIndex"
@@ -123,8 +123,23 @@ const menuItems = [
 
 <style scoped>
 .custom-appbar {
-  background-color: #7D2636 !important;
-  padding: 5px 0;
+  display: flex;
+  align-items: center;
+  background-color: #7d2636;
+}
+
+.custom-appbar .left-section {
+  background: linear-gradient(to right, #f8d4d9 0%, #f8d4d9 50%, #7d2636 100%) !important;
+  width: 50%;
+  height: 100%;
+  position: relative;
+  padding: 64px;
+}
+
+.custom-appbar .right-section {
+  background-color: #7d2636;
+  width: 50%;
+  height: 100%;
 }
 
 .nav-links {
