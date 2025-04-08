@@ -1,7 +1,7 @@
 <template>
   <v-app-bar v-if="isMobile" elevation="0" class="custom-appbar">
     <v-container class="d-flex align-center justify-space-between">
-      <v-btn icon @click="drawer = !drawer">
+      <v-btn icon @click="drawer = !drawer" style="color: #fff !important;">
         <v-icon>mdi-menu</v-icon>
       </v-btn>
       <router-link to="/" class="logo-link">
@@ -103,6 +103,9 @@ const menuItems = [
       { text: 'Agopuntura', route: '/trattamenti/agopuntura' },
       { text: 'Fitoterapia', route: '/trattamenti/fitoterapia' },
       { text: 'Aromaterapia', route: '/trattamenti/aromaterapia' },
+      { text: 'Taopatch', route: '/trattamenti/aromaterapia' },
+      { text: 'EFT (Emotional Freedom Technique)', route: '/trattamenti/aromaterapia' },
+      { text: 'Sabada e Rebozo', route: '/trattamenti/aromaterapia' },
       { text: 'Tecniche complementari', route: '/trattamenti/tecniche-complementari' }
     ]
   },
@@ -125,7 +128,7 @@ const menuItems = [
 .custom-appbar {
   display: flex;
   align-items: center;
-  background-color: #7d2636;
+  background: linear-gradient(to left, #f8d4d9 0%, #f8d4d9 50%, #7d2636 100%) !important
 }
 
 .custom-appbar .left-section {
