@@ -109,9 +109,65 @@
 </template>
 
 <script>
+import { useHead } from '@vueuse/head';
+
 export default {
   name: 'ChiSono',
 };
+
+useHead({
+  title: "Chi è Doriana Di Nanni - Medico e Terapie Olistiche a Bari",
+  meta: [
+    {
+      name: "description",
+      content:
+        "Conosci la Dott.ssa Doriana Di Nanni, medico chirurgo specializzato in anatomia patologica e pratiche olistiche come agopuntura e fitoterapia a Bari. Scopri il suo approccio terapeutico integrato e la sua filosofia di cura personalizzata."
+    },
+    {
+      name: "keywords",
+      content:
+        "Doriana Di Nanni, medico olistico Bari, medicina integrata, agopuntura Bari, fitoterapia, approccio olistico, medicina complementare, benessere corpo mente, chi sono"
+    },
+    { name: "author", content: "Doriana Di Nanni" },
+    { name: "robots", content: "index, follow" },
+    { name: "viewport", content: "width=device-width, initial-scale=1.0" },
+    { property: "og:title", content: "Chi è Doriana Di Nanni - Medico e Terapie Olistiche a Bari" },
+    {
+      property: "og:description",
+      content:
+        "Scopri il percorso personale e professionale della Dott.ssa Doriana Di Nanni, esperta in medicina e tecniche olistiche a Bari. Un metodo terapeutico che unisce scienza ed empatia per migliorare il benessere."
+    },
+    { property: "og:type", content: "website" },
+    { property: "og:url", content: "https://dorianadinanni.it/chi-sono" },
+    { property: "og:image", content: "https://dorianadinanni.it/assets/logo.png" },
+    { property: "og:locale", content: "it_IT" },
+    { property: "og:site_name", content: "Doriana Di Nanni" },
+    { name: "twitter:card", content: "summary_large_image" },
+    {
+      name: "twitter:title",
+      content: "Chi è Doriana Di Nanni - Medico e Terapie Olistiche a Bari"
+    },
+    {
+      name: "twitter:description",
+      content:
+        "Dott.ssa Doriana Di Nanni, medico e specialista in pratiche olistiche a Bari. Conosci il suo metodo terapeutico e il suo percorso professionale."
+    },
+    { name: "twitter:image", content: "https://dorianadinanni.it/assets/logo.png" },
+    { name: "twitter:site", content: "@dorianadinanni" },
+    { name: "geo.region", content: "IT-BA" },
+    { name: "geo.placename", content: "Bari" },
+    { name: "geo.position", content: "41.106006;16.862826" },
+    { name: "ICBM", content: "41.106006, 16.862826" },
+    { name: "business:contact_data:street_address", content: "Via Corfù, 13" },
+    { name: "business:contact_data:locality", content: "Bari" },
+    { name: "business:contact_data:region", content: "BA" },
+    { name: "business:contact_data:postal_code", content: "70121" },
+    { name: "business:contact_data:country_name", content: "Italy" },
+    { name: "business:contact_data:email", content: "info@dorianadinanni.it" },
+    { name: "business:contact_data:phone_number", content: "+39 379 218 5146" },
+    { name: "business:contact_data:website", content: "https://dorianadinanni.it" }
+  ]
+});
 </script>
 
 <style scoped>
