@@ -16,6 +16,36 @@ const routes = [
         component: () => import('@/views/trattamenti/Agopuntura.vue')
       },
       {
+        path: 'trattamenti/fitoterapia',
+        name: 'Fitoterapia',
+        component: () => import('@/views/trattamenti/Fitoterapia.vue')
+      },
+      {
+        path: 'trattamenti/aromaterapia',
+        name: 'Aromaterapia',
+        component: () => import('@/views/trattamenti/Aromaterapia.vue')
+      },
+      {
+        path: 'trattamenti/taopatch',
+        name: 'Taopatch',
+        component: () => import('@/views/trattamenti/Taopatch.vue')
+      },
+      {
+        path: 'trattamenti/emotional-freedom-technique',
+        name: 'EFT (Emotional Freedom Technique)',
+        component: () => import('@/views/trattamenti/EmotionalFreedomTechnique.vue')
+      },
+      {
+        path: 'trattamenti/sabada-rebozo',
+        name: 'Sabada e Rebozo',
+        component: () => import('@/views/trattamenti/SabadaRebozo.vue')
+      },
+      {
+        path: 'trattamenti/tecniche-complementari',
+        name: 'Tecniche complementari',
+        component: () => import('@/views/trattamenti/TecnicheComplementari.vue')
+      },
+      {
         path: '/chi-sono',
         name: 'ChiSono',
         component: () => import('@/views/ChiSono.vue')        

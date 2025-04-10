@@ -1,29 +1,48 @@
 <template>
   <footer class="footer">
     <v-container>
-      <v-row>
-        <v-col cols="12" md="3">
+      <v-row class="justify-center">
+        <v-col cols="12" md="6" v-if="!isMobile">
           <h3 class="footer-title">Trattamenti</h3>
-          <ul class="footer-list">
-            <li><router-link to="/trattamenti/agopuntura">Agopuntura</router-link></li>
-            <li><router-link to="/trattamenti/fitoterapia">Fitoterapia</router-link></li>
-            <li><router-link to="/trattamenti/aromaterapia">Aromaterapia</router-link></li>
-            <li><router-link to="/trattamenti/tecniche-complementari">Tecniche complementari</router-link></li>
-          </ul>
+          <div class="d-flex justify-center">
+            <ul class="footer-list">
+              <li><router-link to="/trattamenti/agopuntura">Agopuntura</router-link></li>
+              <li><router-link to="/trattamenti/fitoterapia">Fitoterapia</router-link></li>
+              <li><router-link to="/trattamenti/aromaterapia">Aromaterapia</router-link></li>
+              <li><router-link to="/trattamenti/tecniche-complementari">Taopatch</router-link></li>
+            </ul>
+            <ul class="footer-list">
+              <li><router-link to="/trattamenti/agopuntura">Emotional Freedom Technique</router-link></li>
+              <li><router-link to="/trattamenti/fitoterapia">Sabada e Rebozo</router-link></li>
+              <li><router-link to="/trattamenti/aromaterapia">Tecniche complementari</router-link></li>
+            </ul>
+          </div>
         </v-col>
-        <v-col cols="12" md="3">
-          <h3 class="footer-title">Scopri chi sono</h3>
-          <ul class="footer-list">
-            <li><router-link to="/chi-sono">La mia storia - Come procedo</router-link></li>
-          </ul>
+        <v-col cols="12" md="6" v-else>
+          <h3 class="footer-title">Trattamenti</h3>
+          <div class="d-flex justify-center">
+            <ul class="footer-list">
+              <li><router-link to="/trattamenti/agopuntura">Agopuntura</router-link></li>
+              <li><router-link to="/trattamenti/fitoterapia">Fitoterapia</router-link></li>
+              <li><router-link to="/trattamenti/aromaterapia">Aromaterapia</router-link></li>
+              <li><router-link to="/trattamenti/tecniche-complementari">Taopatch</router-link></li>
+              <li><router-link to="/trattamenti/agopuntura">Emotional Freedom Technique</router-link></li>
+              <li><router-link to="/trattamenti/fitoterapia">Sabada e Rebozo</router-link></li>
+              <li><router-link to="/trattamenti/aromaterapia">Tecniche complementari</router-link></li>
+            </ul>
+          </div>
         </v-col>
         <v-col cols="12" md="3">
           <h3 class="footer-title">Contattami</h3>
           <ul class="footer-list">
             <li><router-link to="/contatti">Qualcosa non è chiaro?</router-link></li>
           </ul>
-        </v-col>
-        <v-col cols="12" md="3">
+          <br>
+          <h3 class="footer-title">Scopri chi sono</h3>
+          <ul class="footer-list">
+            <li><router-link to="/chi-sono">La mia storia - Come procedo</router-link></li>
+          </ul>
+          <br>
           <h3 class="footer-title">Agenda</h3>
           <ul class="footer-list">
             <li><router-link to="/agenda">Visualizza i miei post!</router-link></li>
@@ -42,6 +61,12 @@
   </footer>
 </template>
 
+<script setup>
+import mobile from '@/utils/mobile';
+
+const isMobile = mobile.setupMobileUtils();
+</script>
+
 <style scoped>
 .footer {
   background: linear-gradient(to top, #7D2636, #a33a4d);
@@ -56,9 +81,14 @@
   font-weight: bold;
 }
 
+.double-footer {
+  display: flex;
+}
+
 .footer-list {
   list-style: none;
   padding: 0;
+  min-width: 270px;
 }
 
 .footer-list li {
