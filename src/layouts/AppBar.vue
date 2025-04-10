@@ -103,9 +103,9 @@ const menuItems = [
       { text: 'Agopuntura', route: '/trattamenti/agopuntura' },
       { text: 'Fitoterapia', route: '/trattamenti/fitoterapia' },
       { text: 'Aromaterapia', route: '/trattamenti/aromaterapia' },
-      { text: 'Taopatch', route: '/trattamenti/aromaterapia' },
-      { text: 'EFT (Emotional Freedom Technique)', route: '/trattamenti/aromaterapia' },
-      { text: 'Sabada e Rebozo', route: '/trattamenti/aromaterapia' },
+      { text: 'Taopatch', route: '/trattamenti/taopatch' },
+      { text: 'EFT (Emotional Freedom Technique)', route: '/trattamenti/emotional-freedom-technique' },
+      { text: 'Sabada e Rebozo', route: '/trattamenti/sabada-rebozo' },
       { text: 'Tecniche complementari', route: '/trattamenti/tecniche-complementari' }
     ]
   },
@@ -128,20 +128,18 @@ const menuItems = [
 .custom-appbar {
   display: flex;
   align-items: center;
-  background: linear-gradient(to left, #f8d4d9 0%, #f8d4d9 50%, #7d2636 100%) !important
+  background: linear-gradient(to right, #f8d4d9 0%, #f8d4d9 20%, #7d2636 50%, #7d2636 100%) !important;
 }
 
 .custom-appbar .left-section {
-  background: linear-gradient(to right, #f8d4d9 0%, #f8d4d9 50%, #7d2636 100%) !important;
-  width: 50%;
+  width: 30%;
   height: 100%;
   position: relative;
   padding: 64px;
 }
 
 .custom-appbar .right-section {
-  background-color: #7d2636;
-  width: 50%;
+  width: 70%;
   height: 100%;
 }
 
@@ -166,6 +164,7 @@ const menuItems = [
 .logo-link {
   text-decoration: none;
   position: relative;
+  padding: 10px;
 }
 .mobile-drawer {
   background-color: #7D2636 !important;
@@ -224,5 +223,11 @@ const menuItems = [
 
 :deep(.v-list-group__header.v-list-item--active) {
   background-color: transparent !important;
+}
+
+@media screen and (max-width: 599px) {
+  .custom-appbar {
+    background: linear-gradient(to left, #f8d4d9 0%, #f8d4d9 20%, #7d2636 50%, #7d2636 100%) !important;
+  }
 }
 </style>

@@ -163,7 +163,7 @@ useHead({
     { name: "business:contact_data:region", content: "BA" },
     { name: "business:contact_data:postal_code", content: "70121" },
     { name: "business:contact_data:country_name", content: "Italy" },
-    { name: "business:contact_data:email", content: "info@dorianadinanni.it" },
+    { name: "business:contact_data:email", content: "d.dinanni@gmail.com" },
     { name: "business:contact_data:phone_number", content: "+39 379 218 5146" },
     { name: "business:contact_data:website", content: "https://dorianadinanni.it" }
   ]
