@@ -40,7 +40,7 @@ const treatments = [
     id: 2,
     title: 'Fitoterapia e Aromaterapia',
     image: fitoterapiaImg,
-    route: '/trattamenti/fitoterapia'
+    route: '/trattamenti/fitoterapia-aromaterapia'
   },
   {
     id: 3,

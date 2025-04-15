@@ -16,14 +16,9 @@ const routes = [
         component: () => import('@/views/trattamenti/Agopuntura.vue')
       },
       {
-        path: 'trattamenti/fitoterapia',
-        name: 'Fitoterapia',
-        component: () => import('@/views/trattamenti/Fitoterapia.vue')
-      },
-      {
-        path: 'trattamenti/aromaterapia',
-        name: 'Aromaterapia',
-        component: () => import('@/views/trattamenti/Aromaterapia.vue')
+        path: 'trattamenti/fitoterapia-aromaterapia',
+        name: 'Fitoterapia e Aromaterapia',
+        component: () => import('@/views/trattamenti/FitoterapiaAromaterapia.vue')
       },
       {
         path: 'trattamenti/taopatch',
