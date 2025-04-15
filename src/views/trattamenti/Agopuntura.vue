@@ -2,12 +2,12 @@
 	<div>
 		<v-container :class="isMobile ? 'px-md-16 px-4 mt-5' : 'px-md-16 px-4 mt-10'">
 			<br v-if="!isMobile" />
+			<h1 class="font-weight-bold mb-3 text-center" style="color: #7d2b3b; font-family: Montserrat, Lato, 'Open Sans', Calibri, sans-serif;">Cos'è l'Agopuntura?</h1>
 			<v-row class="mb-5 mt-5" style="margin-top: 3% !important;">
 				<v-col cols="12" md="6">
 					<video autoplay loop muted src="@/assets/agopuntura.mp4" style="max-width: 100%; max-height: 100%; object-fit: contain;"></video>
 				</v-col>
 				<v-col cols="12" md="6" style="margin: auto;">
-					<h2 class="text-h5 font-weight-bold mb-3" style="color: #7d2b3b; font-family: Montserrat, Lato, 'Open Sans', Calibri, sans-serif; font-size: 20pt;">Cos'è l'Agopuntura?</h2>
 					<p class="body-1">
 						L'<strong><span style="color: #7d2b3b;">agopuntura</span></strong> è una pratica della medicina tradizionale cinese che consiste nell'inserire aghi sottili in specifici punti del corpo per riequilibrare l'energia vitale.<br>
                         Ha il <strong><span style="color: #7d2b3b;">vantaggio</span></strong> di non utilizzare farmaci, non causa effetti collaterali o complicanze nella maggior parte dei casi, è utile nei pazienti in cui i farmaci possono creare allergie o sono controindicati.
@@ -25,13 +25,13 @@
 					<video autoplay loop muted src="@/assets/agopuntura_piede.mp4" style="max-width: 40%; max-height: 30%; object-fit: contain;"></video>
 				</v-col>
 			</v-row>
+			<h2 class="font-weight-bold mb-3 text-center" style="color: #7d2b3b; font-size: 28px;">Sulle sedute</h2>
 			<v-row class="align-center">
 				<v-col cols="12" md="6">
 					<v-img src="@/assets/agopuntura.jpg" alt="Agopuntura" aspect-ratio="16/9" max-width="600"
 						rounded="lg" elevation="7" />
 				</v-col>
 				<v-col cols="12" md="6">
-					<h2 class="text-h5 font-weight-bold mb-3" style="color: #7d2b3b">Sulle sedute</h2>
 					<p class="body-1">
                         Il <strong><span style="color: #7d2b3b;">primo incontro</span></strong> potrebbe durare quasi un’ora, le <strong><span style="color: #7d2b3b;">sedute di mantenimento</span></strong> dai 30 ai 40 minuti. Il tempo che intercorre con gli aghi inseriti  è variabile dai 20 ai 30 minuti.<br>
                         Gli <strong><span style="color: #7d2b3b;">aghi utilizzati</span></strong> sono usa e getta, sono molto sottili e flessibili. Il loro inserimento potrebbe provocare un leggero “effetto pizzicotto”, un formicolio, un minimo senso di calore ma non sono dolorosi (non devono esserlo per l’intera durata della seduta) e soprattutto sono effetti del tutto personali.<br>  
@@ -56,9 +56,9 @@ const isMobile = mobile.setupMobileUtils();
 
 <style scoped>
 .body-1 {
-            font-family: Montserrat, Lato, "Open Sans", Calibri, sans-serif;
-            font-size: 16pt;
-            line-height: 1.5;
-            color: #333;
-        }
+	font-family: Montserrat, Lato, "Open Sans", Calibri, sans-serif;
+	font-size: 16pt;
+	line-height: 1.5;
+	color: #333;
+}
 </style>

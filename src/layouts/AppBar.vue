@@ -101,8 +101,7 @@ const menuItems = [
     text: 'Trattamenti',
     submenu: [
       { text: 'Agopuntura', route: '/trattamenti/agopuntura' },
-      { text: 'Fitoterapia', route: '/trattamenti/fitoterapia' },
-      { text: 'Aromaterapia', route: '/trattamenti/aromaterapia' },
+      { text: 'Fitoterapia e Aromaterapia', route: '/trattamenti/fitoterapia-aromaterapia' },
       { text: 'Taopatch', route: '/trattamenti/taopatch' },
       { text: 'EFT (Emotional Freedom Technique)', route: '/trattamenti/emotional-freedom-technique' },
       { text: 'Sabada e Rebozo', route: '/trattamenti/sabada-rebozo' },
