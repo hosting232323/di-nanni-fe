@@ -1,39 +1,66 @@
 <template>
-	<div>
-		<v-container :class="isMobile ? 'px-md-16 px-4 mt-5' : 'px-md-16 px-4 mt-10'">
-			<br v-if="!isMobile" />
-			<h1 class="font-weight-bold mb-3 text-center" style="color: #7d2b3b; font-family: Montserrat, Lato, 'Open Sans', Calibri, sans-serif;">La Fitotarapia</h1>
-            <video autoplay loop muted src="@/assets/fitoterapia.mp4" style="max-width: 100%; max-height: 100%; object-fit: contain;"></video>
-            <p class="body-1">
-                I medicinali fitoterapici sono definiti tali se il principio attivo è una sostanza vegetale; sono formati da una miscela di sostanze vegetali biologicamente attive. 
-                Sono utilizzati <strong><span style="color: #7d2b3b;">per fini terapeutici e preventivi</span></strong>.<br>
-                Non sono sostanze innocue ma bisogna tenere in considerazione eventuali interazioni con farmaci che si assumono con regolarità ed eventuali effetti indesiderati.<br>
-                I fitoterapici possono essere assunti comunemente sotto forma di <strong><span style="color: #7d2b3b;">compresse o capsule, oppure gocce</span></strong>.  
-            </p>
-            <br>
-            <h1 class="font-weight-bold mb-3 text-center" style="color: #7d2b3b; font-family: Montserrat, Lato, 'Open Sans', Calibri, sans-serif;">L'Aromaterapia</h1>
-            <v-img src="@/assets/aromaterapia.png" alt="Agopuntura" aspect-ratio="16/9" 
-						 elevation="7" />
-            <p class="body-1">
-                L’aromaterapia è una forma di fitoterapia che utilizza gli <strong><span style="color: #7d2b3b;">oli essenziali</span></strong> ricavati da diversi metodi di estrazione di determinate componenti delle piante (fiori, corteccia, radici, foglie, frutti etc).<br>
-                Possono essere assunti <strong><span style="color: #7d2b3b;">per via inalatoria, orale o cutanea</span></strong>.<br>
-                La sua funzione è estremamente eterogenea ma molto efficace e combinabile con altre forme di terapia e prevenzione.
-            </p>
-        </v-container>
-	</div>
+    <div class="wrapper">
+      <div ref="first" class="scroll-section">
+        <Transition name="fade">
+          <Fitoterapia v-if="activeSection === 1" />
+        </Transition>
+      </div>
+      <div ref="second" class="scroll-section">
+        <Transition name="fade">
+          <Aromaterapia v-if="activeSection === 2" />
+        </Transition>
+      </div>
+    </div>
 </template>
 
 <script setup>
-import mobile from "@/utils/mobile";
+import { ref, onMounted, onBeforeUnmount } from "vue";
+import Fitoterapia from "@/components/Fitoterapia.vue";
+import Aromaterapia from "@/components/Aromaterapia.vue";
 
-const isMobile = mobile.setupMobileUtils();
+const activeSection = ref(1);
+const first = ref(null);
+const second = ref(null);
+
+const observer = new IntersectionObserver(
+    (entries) => {
+        entries.forEach((entry) => {
+        if (entry.isIntersecting) {
+            activeSection.value = entry.target === first.value ? 1 : 2;
+        }
+        });
+    },
+    { threshold: 0.5 }
+    );
+
+onMounted(() => {
+    if (first.value) observer.observe(first.value);
+    if (second.value) observer.observe(second.value);
+});
+
+onBeforeUnmount(() => {
+    if (first.value) observer.unobserve(first.value);
+    if (second.value) observer.unobserve(second.value);
+});
 </script>
 
 <style scoped>
-.body-1 {
-	font-family: Montserrat, Lato, "Open Sans", Calibri, sans-serif;
-	font-size: 16pt;
-	line-height: 1.5;
-	color: #333;
+.wrapper {
+    position: relative;
+}
+.scroll-section:first-child {
+    height: calc(100vh - 64px);  
+}
+.scroll-section {
+    height: 100vh;    
+    position: relative;
+}
+.fade-enter-active,
+.fade-leave-active {
+    transition: opacity 0.5s;
+}
+.fade-enter-from,
+.fade-leave-to {
+    opacity: 0;
 }
 </style>
