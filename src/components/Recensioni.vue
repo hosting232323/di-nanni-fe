@@ -1,80 +1,94 @@
 <template>
-    <v-container class="dioassissi">
-        <div class="review-wrapper">
-        <v-window show-arrows>
-          <template #prev>
-            <v-btn class="arrow-button" icon="mdi-chevron-left" />
-          </template>
-          <template #next>
-            <v-btn class="arrow-button" icon="mdi-chevron-right" />
-          </template>
-  
-          <v-window-item v-for="reviewGroup in chunkArray(reviews, 4)">
-            <v-card v-for="review in reviewGroup" :width="cardWidth" class="cards" style="border-radius: 12px;">
-                <v-card-title class="d-flex align-center" style="font-size: 16px;">
-                <v-avatar size="40" class="mr-3">
-                    <canvas :ref="el => setCanvasRef(el, review.name)" width="40" height="40"></canvas>
-                </v-avatar>
-                {{ review.name }}
-                </v-card-title>
-                <v-card-subtitle class="mt-1">
-                <v-icon color="#ffbb29" v-for="n in 5" :key="n">mdi-star</v-icon>
-                </v-card-subtitle>
-                <v-card-text style="font-size: 14px;">
-                {{ review.review }}
-                </v-card-text>
-            </v-card>
+  <v-container class="dioassissi">
+    <div class="review-wrapper position-relative">
+      <div class="outer-container">
+        <v-btn class="arrow-button prev-arrow" icon @click="prevSlide" :disabled="windowIndex === 0">
+          <v-icon>mdi-chevron-left</v-icon>
+        </v-btn>
+        <v-btn class="arrow-button next-arrow" icon @click="nextSlide" :disabled="windowIndex === groupedReviews.length - 1">
+          <v-icon>mdi-chevron-right</v-icon>
+        </v-btn>
+        <v-window v-model="windowIndex" class="mt-4 carousel-window">
+          <v-window-item v-for="(group, index) in groupedReviews" :key="index">
+            <v-row class="justify-center">
+              <v-col v-for="review in group" :key="review.name" cols="12" sm="5" md="4" class="d-flex justify-center">
+                <v-card class="review-card" :style="{ height: cardHeight + 'px' }">
+                  <div class="review-header">
+                    <div class="avatar-container">
+                      <canvas :ref="el => setCanvasRef(el, review.name, index)" width="60" height="60"></canvas>
+                    </div>
+                    <div class="reviewer-info">
+                      <div class="font-weight-bold text-truncate reviewer-name">{{ review.name }}</div>
+                      <div class="stars-container">
+                        <template v-for="n in 5" :key="n">
+                          <v-icon v-if="review.rating >= n" color="#FFD700" size="20"> mdi-star </v-icon>
+                          <v-icon v-else-if="review.rating >= n - 0.5" color="#FFD700" size="20"> mdi-star-half-full </v-icon>
+                          <v-icon v-else color="#C0C0C0" size="20"> mdi-star-outline </v-icon>
+                        </template>
+                      </div>
+                    </div>
+                  </div>
+                  <div class="review-content">
+                    {{ review.review }}
+                  </div>
+                </v-card>
+              </v-col>
+            </v-row>
           </v-window-item>
-      </v-window>
+        </v-window>
       </div>
+    </div>
   </v-container>
 </template>
 
 <script setup>
-import { onMounted, ref, computed } from 'vue';
+import { onMounted, onBeforeUnmount, ref, computed, watch } from 'vue';
 
+const windowIndex = ref(0);
 const canvasRefs = ref({});
-const cardWidth = computed(() => window.innerWidth < 600 ? '250' : '350');
+const cardHeight = ref(250);
 
 const reviews = ref([
-  { name: 'Julien Larcinese', review: 'Personale cordialissimo, molto disponibile.' },
-  { name: 'Gianmarco Russo', review: 'Eccellente e gentilissimi. Vengo da Lecce per comprare da loro.' },
-  { name: 'Antonio Elle', review: 'Personale gentile, preparato e veloce.' },
-  { name: 'Luca Elia', review: "Ampia disponibilità di ricambi e rapidità nel reperire anche quelli più particolari." },
-  { name: 'Teresa Grauso', review: 'Negozio molto ben fornito di ricambi auto. Il personale è molto competente e cordiale.' },
-  { name: 'Fabio Greco', review: 'Ho trovato sempre il ricambio che cercavo. Personale professionale e disponibile.' },
-  { name: 'Paolo BMW', review: 'Personale gentile, professionali e veloci. prezzi ottimi.' },
-  { name: 'Juri Andrea', review: 'Trovi tutto ciò che ha bisogno la tua auto...' },
-  { name: 'Carmine Ricciardi', review: 'Ottime persone,  gentili, disponibili e preparate.' },
-  { name: 'Roberta Toma', review: 'Personale preparato e disponibile. Prezzi concorrenziali. Decisamente consigliato.' }
+  { name: 'Giovanni Basalisco', review: 'La dottoressa Di Nanni unisce grande professionalità e competenza,fondate su rigorosi studi scientifici, ad empatia ed approccio olistico ai problemi dei pazienti...', rating: 5 },
+  { name: 'Francesca Ambrosi', review: 'Un prezioso aiuto e supporto. La Dottoressa Di Nanni è sempre disponibile e pronta ad accogliermi per un consulto su numerose tematiche...', rating: 5 },
+  { name: 'Giorgia Neri', review: 'L\’agopuntura è un\’esperienza fantastica che bisogna provare almeno una volta nella vita. Se a praticarla è la dolce Doriana, allora tutto diventa magico!', rating: 5 },
+  { name: 'Michele Mennuti', review: "La dott.ssa Di Nanni è davvero una grande professionista. Da sempre disponibile con terapie personalizzate e tanti consigli utili per ogni paziente.", rating: 5 },
+  { name: 'Samantha Chiurlia', review: 'Non posso che consigliare e ringraziare con tutta me stessa la Dott.sa Di Nanni per l’aiuto che mi ha dato in un momento difficile della mia vita♥️', rating: 5 },
+  { name: 'Emanuele Costanza', review: 'La mia cefalea muscolo tensiva è ormai un lontano ricordo, grazie ai trattamenti della dottoressa', rating: 5 },
+  { name: 'Carla Bavaro', review: 'Grazie alla Dottoressa Di Nanni, la mia insonnia è sparita! Professionale, disponibile , preparata e disponibile. Consigliatissima.', rating: 5 },
+  { name: 'Marilena Passabi', review: 'La Dottoressa Di Nanni...Semplicemente meravigliosa. Professionale, umana, empatica e con il raro e prezioso dono di saper ascoltare... Grazie di cuore', rating: 5 },
+  { name: 'Gaia Ferorelli', review: 'Avevo un dolore alla mano legato all\'utilizzo del mouse, grazie all\'intervento della Dott.ssa Di Nanni è passato e non si è più verificato. Esperienza ottima!', rating: 5 },
+  { name: 'Elisa Zuffa', review: 'Con un breve percorso di agopuntura ho potuto dire addio ai dolori mestruali lancinanti con cui combattevo da anni.', rating: 5 },
+  { name: 'Irene Caruso', review: 'I suggerimenti della dott.ssa Di Nanni sono stati fondamentali per la mia gravidanza, dalla fase di programmazione fino alla nascita di mio figlio...', rating: 5 },
+  { name: 'Costantino Ricci', review: 'Premetto che sono un medico e che, scioccamente e da cieco uomo di scienza, mi sono avvicinato “da paziente” in maniera riluttante a queste terapie...', rating: 5 },
+  { name: 'Paola Cicciomessere', review: '', rating: 5 },
+  { name: 'Caterina Cavallera', review: '', rating: 5 },
+  { name: 'Gerardo Cazzato', review: '', rating: 5 }
 ]);
 
-const setCanvasRef = (el, name) => {
-  if (el && !canvasRefs.value[name]) {
-    canvasRefs.value[name] = el;
+const setCanvasRef = (el, name, groupIndex) => {
+  if (el) {
+    const key = `${name}-${groupIndex}`;
+    canvasRefs.value[key] = el;
   }
-};
-
-const chunkArray = (array, size) => {
-  const result = [];
-  for (let i = 0; i < array.length; i += size)
-    result.push(array.slice(i, i + size));
-  return result;
 };
 
 const generateProfileImage = (canvas, name) => {
   if (!canvas) return;
-
   const ctx = canvas.getContext('2d');
+  ctx.clearRect(0, 0, 60, 60);
+
+  const hash = name.split('').reduce((acc, char) => acc + char.charCodeAt(0), 0);
   const colors = ['#FF5733', '#33FF57', '#3357FF', '#F39C12', '#8E44AD', '#16A085', '#E74C3C'];
-  const bgColor = colors[Math.floor(Math.random() * colors.length)];
+  const bgColor = colors[hash % colors.length];
+  
   ctx.fillStyle = bgColor;
-  ctx.fillRect(0, 0, 40, 40);
+  ctx.fillRect(0, 0, 60, 60);
   ctx.fillStyle = '#FFFFFF';
-  ctx.font = '20px Arial';
+  ctx.font = '28px Arial';
   ctx.textAlign = 'center';
   ctx.textBaseline = 'middle';
-  ctx.fillText(name.charAt(0).toUpperCase(), 20, 22);
+  ctx.fillText(name.charAt(0).toUpperCase(), 30, 30);
 };
 
 const shuffleReviews = () => {
@@ -84,38 +98,165 @@ const shuffleReviews = () => {
     .map(({ value }) => value);
 };
 
+const groupSize = ref(window.innerWidth < 600 ? 1 : 3);
+
+const updateGroupSize = () => {
+  const newSize = window.innerWidth < 600 ? 1 : 3;
+  groupSize.value = newSize;
+
+  cardHeight.value = window.innerWidth < 600 ? 200 : 250;
+};
+
+const groupedReviews = computed(() => {
+  const result = [];
+  for (let i = 0; i < reviews.value.length; i += groupSize.value) {
+    result.push(reviews.value.slice(i, i + groupSize.value));
+  }
+  return result;
+});
+
+const prevSlide = () => {
+  if (windowIndex.value > 0) windowIndex.value--;
+};
+const nextSlide = () => {
+  if (windowIndex.value < groupedReviews.value.length - 1) windowIndex.value++;
+};
+
+watch(windowIndex, (newIndex) => {
+  setTimeout(() => {
+    const currentGroup = groupedReviews.value[newIndex];
+    if (currentGroup) {
+      currentGroup.forEach(review => {
+        const canvas = canvasRefs.value[`${review.name}-${newIndex}`];
+        if (canvas) generateProfileImage(canvas, review.name);
+      });
+    }
+  }, 50);
+});
+
 onMounted(() => {
   shuffleReviews();
-  reviews.value.forEach(review => {
-    const canvas = canvasRefs.value[review.name];
-    if (canvas) {
-      generateProfileImage(canvas, review.name);
+  updateGroupSize();
+
+  setTimeout(() => {
+    const currentGroup = groupedReviews.value[windowIndex.value];
+    if (currentGroup) {
+      currentGroup.forEach(review => {
+        const canvas = canvasRefs.value[`${review.name}-${windowIndex.value}`];
+        if (canvas) generateProfileImage(canvas, review.name);
+      });
     }
-  });
+  }, 100);
+
+  window.addEventListener('resize', updateGroupSize);
+});
+
+onBeforeUnmount(() => {
+  window.removeEventListener('resize', updateGroupSize);
 });
 </script>
 
 <style scoped>
-.cards{
+.cards {
   margin-left: 10px;
   margin-right: 10px;
   padding: 4px;
 }
 
 .review-wrapper {
-  padding-top: 32px;
-  padding-bottom: 32px;
+  padding-top: 60px;
+  padding-bottom: 60px;
   background-color: #f8d4da;
 }
 
+.review-card {
+  display: flex;
+  flex-direction: column;
+  margin: 0 8px;
+  padding: 24px;
+  box-sizing: border-box;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.15) !important;
+  border-radius: 12px !important;
+}
+
+.review-header {
+  display: flex;
+  align-items: flex-start;
+  margin-bottom: 20px;
+}
+
+.avatar-container canvas{
+  border-radius: 50%;
+  border: 2px solid white;
+  flex: 0 0 60px;
+  margin-right: 16px;
+}
+
+.reviewer-info {
+  flex: 1;
+  min-width: 0;
+  max-width: 100%;
+  overflow: hidden;
+  padding-top: 8px;
+}
+
+.reviewer-name {
+  font-size: 18px;
+  margin-bottom: 6px;
+}
+
+.review-content {
+  flex: 1;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  display: -webkit-box;
+  -webkit-line-clamp: 8;
+  -webkit-box-orient: vertical;
+  font-size: 14px;
+  line-height: 1.6;
+  padding-bottom: 6px;
+}
+
+.stars-container {
+  display: flex;
+  margin-top: 6px;
+}
+
+.outer-container {
+  position: relative;
+  width: 90%;
+  margin: 0 auto;
+  padding: 0 50px;
+}
+
+.carousel-window {
+  overflow: visible;
+}
+
 .arrow-button {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
   border: 4px solid #a63b52;
   border-radius: 50%;
-  padding: 8px;
   background-color: white;
   cursor: pointer;
-  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.1);
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.15);
   transition: background-color 0.3s;
+  z-index: 10;
+  height: 56px;
+  width: 56px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.prev-arrow {
+  left: -35px;
+}
+
+.next-arrow {
+  right: -35px;
 }
 
 .arrow-button:hover {
@@ -123,31 +264,40 @@ onMounted(() => {
 }
 
 @media (max-width: 600px) {
-  .v-card {
-    min-height: 150px;
+  .outer-container {
+    width: 85%;
+    padding: 0 30px;
   }
 
-  .v-avatar {
-    width: 32px !important;
-    height: 32px !important;
+  .avatar-container {
+    flex: 0 0 48px;
+    margin-right: 12px;
+  }
+  
+  .reviewer-name {
+    font-size: 16px;
+  }
+  
+  .review-content {
+    font-size: 14px;
+    line-height: 1.4;
   }
 
   .v-icon {
-    font-size: 16px !important;
+    font-size: 18px !important;
+  }
+  
+  .arrow-button {
+    height: 44px;
+    width: 44px;
+  }
+  
+  .prev-arrow {
+    left: -20px;
   }
 
-  .v-card-title {
-    font-size: 16px;
-  }
-
-  .v-card-subtitle {
-    font-size: 12px;
-    margin: 0 !important;
-  }
-
-  .v-card-text {
-    font-size: 13px;
+  .next-arrow {
+    right: -20px;
   }
 }
 </style>
-  
