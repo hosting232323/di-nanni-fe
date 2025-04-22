@@ -2,10 +2,10 @@
     <div class="scroll-container">
         <div class="sticky-section">
             <Transition name="fade">
-                <Fitoterapia v-show="activeSection === 1" />
+                <Fitoterapia v-if="activeSection === 1" />
             </Transition>
             <Transition name="fade">
-                <Aromaterapia v-show="activeSection === 2" />
+                <Aromaterapia v-if="activeSection === 2" />
             </Transition>
         </div>
 
@@ -56,7 +56,6 @@ onBeforeUnmount(() => {
 .sticky-section {
     position: sticky;
     top: 64px;
-    /* compensazione per l'appbar */
     height: calc(100vh - 64px);
     background: white;
     display: flex;
@@ -69,9 +68,9 @@ onBeforeUnmount(() => {
 .sticky-section>* {
     width: 100%;
     height: 100%;
+    min-width: 100%;
 }
 
-/* Spacer per creare lo scroll a vuoto */
 .spacer {
     height: 100vh;
 }

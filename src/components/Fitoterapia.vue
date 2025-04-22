@@ -62,6 +62,5 @@
   font-size: 1.1rem;
   line-height: 1.5;
   color: #fff;
-  /* padding: 0 100px; */
 }
 </style>

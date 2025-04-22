@@ -35,7 +35,6 @@
   object-fit: cover;
   z-index: 1;
   filter: brightness(0.6);
-  /* scurisce leggermente l'immagine per leggibilità */
 }
 
 .overlay {
