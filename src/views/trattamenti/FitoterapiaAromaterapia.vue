@@ -1,64 +1,86 @@
 <template>
-    <div class="wrapper">
-      <div ref="first" class="scroll-section">
-        <Transition name="fade">
-          <Fitoterapia v-if="activeSection === 1" />
-        </Transition>
-      </div>
-      <div ref="second" class="scroll-section">
-        <Transition name="fade">
-          <Aromaterapia v-if="activeSection === 2" />
-        </Transition>
-      </div>
+    <div class="scroll-container">
+        <div class="sticky-section">
+            <Transition name="fade">
+                <Fitoterapia v-show="activeSection === 1" />
+            </Transition>
+            <Transition name="fade">
+                <Aromaterapia v-show="activeSection === 2" />
+            </Transition>
+        </div>
+
+        <div class="spacer" ref="trigger1" />
+        <div class="spacer" ref="trigger2" />
     </div>
 </template>
 
 <script setup>
-import { ref, onMounted, onBeforeUnmount } from "vue";
-import Fitoterapia from "@/components/Fitoterapia.vue";
-import Aromaterapia from "@/components/Aromaterapia.vue";
+import { ref, onMounted, onBeforeUnmount } from 'vue';
+import Fitoterapia from '@/components/Fitoterapia.vue';
+import Aromaterapia from '@/components/Aromaterapia.vue';
 
 const activeSection = ref(1);
-const first = ref(null);
-const second = ref(null);
+const trigger1 = ref(null);
+const trigger2 = ref(null);
 
-const observer = new IntersectionObserver(
-    (entries) => {
-        entries.forEach((entry) => {
-        if (entry.isIntersecting) {
-            activeSection.value = entry.target === first.value ? 1 : 2;
-        }
-        });
-    },
-    { threshold: 0.5 }
-    );
+let observer;
 
 onMounted(() => {
-    if (first.value) observer.observe(first.value);
-    if (second.value) observer.observe(second.value);
+    observer = new IntersectionObserver(
+        (entries) => {
+            entries.forEach((entry) => {
+                if (entry.isIntersecting) {
+                    if (entry.target === trigger1.value) activeSection.value = 1;
+                    if (entry.target === trigger2.value) activeSection.value = 2;
+                }
+            });
+        },
+        { threshold: 0.5 }
+    );
+
+    if (trigger1.value) observer.observe(trigger1.value);
+    if (trigger2.value) observer.observe(trigger2.value);
 });
 
 onBeforeUnmount(() => {
-    if (first.value) observer.unobserve(first.value);
-    if (second.value) observer.unobserve(second.value);
+    if (trigger1.value) observer.unobserve(trigger1.value);
+    if (trigger2.value) observer.unobserve(trigger2.value);
 });
 </script>
 
 <style scoped>
-.wrapper {
+.scroll-container {
     position: relative;
 }
-.scroll-section:first-child {
-    height: calc(100vh - 64px);  
+
+.sticky-section {
+    position: sticky;
+    top: 64px;
+    /* compensazione per l'appbar */
+    height: calc(100vh - 64px);
+    background: white;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    z-index: 10;
+    overflow: hidden;
 }
-.scroll-section {
-    height: 100vh;    
-    position: relative;
+
+.sticky-section>* {
+    width: 100%;
+    height: 100%;
 }
+
+/* Spacer per creare lo scroll a vuoto */
+.spacer {
+    height: 100vh;
+}
+
 .fade-enter-active,
 .fade-leave-active {
-    transition: opacity 0.5s;
+    transition: opacity 0.5s ease;
 }
+
 .fade-enter-from,
 .fade-leave-to {
     opacity: 0;
