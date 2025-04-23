@@ -38,23 +38,24 @@
 .overlay {
   position: relative;
   z-index: 2;
-  padding: 2rem;
   color: #fff;
   text-shadow: 1px 1px 4px #000;
   background: rgba(0, 0, 0, 0.35);
   height: 100%;
+  width: 100%;
+  padding: 2rem;
   display: flex;
   flex-direction: column;
-  justify-content: center;
+  justify-content: space-between;
+  align-items: flex-start;
+  box-sizing: border-box;
 }
 
 .title {
-  color: #fff;
-  text-align: center;
-  font-weight: bold;
   font-family: Montserrat, Lato, 'Open Sans', Calibri, sans-serif;
-  margin-bottom: 1rem;
+  font-weight: bold;
   font-size: 2rem;
+  margin: 0;
 }
 
 .body-1 {
@@ -62,5 +63,7 @@
   font-size: 1.1rem;
   line-height: 1.5;
   color: #fff;
+  width: 100%;
 }
+
 </style>

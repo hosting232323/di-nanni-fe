@@ -1,18 +1,24 @@
 <template>
     <div class="scroll-container">
-        <div class="sticky-section">
-            <Transition name="fade">
-                <Fitoterapia v-if="activeSection === 1" />
-            </Transition>
-            <Transition name="fade">
-                <Aromaterapia v-if="activeSection === 2" />
-            </Transition>
+      <div class="sticky-section">
+        <div class="content-wrapper">
+          <Transition name="fade">
+            <div v-if="activeSection === 1" class="section">
+              <Fitoterapia />
+            </div>
+          </Transition>
+          <Transition name="fade">
+            <div v-if="activeSection === 2" class="section">
+              <Aromaterapia />
+            </div>
+          </Transition>
         </div>
-
-        <div class="spacer" ref="trigger1" />
-        <div class="spacer" ref="trigger2" />
+      </div>
+  
+      <div class="spacer" ref="trigger1" />
+      <div class="spacer" ref="trigger2" />
     </div>
-</template>
+</template>  
 
 <script setup>
 import { ref, onMounted, onBeforeUnmount } from 'vue';
@@ -54,15 +60,25 @@ onBeforeUnmount(() => {
 }
 
 .sticky-section {
-    position: sticky;
-    top: 64px;
-    height: calc(100vh - 64px);
-    background: white;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    z-index: 10;
-    overflow: hidden;
+  position: sticky;
+  top: 64px;
+  height: calc(100vh - 64px);
+  background: white;
+  overflow: hidden;
+}
+
+.content-wrapper {
+  position: relative;
+  width: 100%;
+  height: 100%;
+}
+
+.section {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
 }
 
 .sticky-section>* {
