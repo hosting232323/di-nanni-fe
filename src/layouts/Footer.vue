@@ -1,7 +1,7 @@
 <template>
   <footer class="footer">
     <v-container>
-      <v-row class="justify-center">
+      <v-row class="justify-center" style="justify-content: space-around !important;">
         <v-col cols="12" md="6" v-if="!isMobile">
           <h3 class="footer-title">Trattamenti</h3>
           <div class="d-flex justify-center">
@@ -31,20 +31,9 @@
           </div>
         </v-col>
         <v-col cols="12" md="3">
-          <h3 class="footer-title">Contattami</h3>
-          <ul class="footer-list">
-            <li><router-link to="/contatti">Qualcosa non è chiaro?</router-link></li>
-          </ul>
-          <br>
-          <h3 class="footer-title">Scopri chi sono</h3>
-          <ul class="footer-list">
-            <li><router-link to="/chi-sono">La mia storia - Come procedo</router-link></li>
-          </ul>
-          <br>
-          <h3 class="footer-title">Agenda</h3>
-          <ul class="footer-list">
-            <li><router-link to="/agenda">Visualizza i miei post!</router-link></li>
-          </ul>
+          <h3 class="footer-title"><router-link to="/contatti">Contattami</router-link></h3>
+          <h3 class="footer-title"><router-link to="/chi-sono">Scopri chi sono</router-link></h3>
+          <h3 class="footer-title"><router-link to="/agenda">Agenda</router-link></h3>
         </v-col>
       </v-row>
       <v-row justify="center" class="social-row">
@@ -77,6 +66,15 @@ const isMobile = mobile.setupMobileUtils();
   font-size: 1.5rem;
   margin-bottom: 1rem;
   font-weight: bold;
+}
+
+.footer-title a {
+  text-decoration: none;
+  color: white;
+}
+
+.footer-title a:hover {
+  text-decoration: underline;
 }
 
 .double-footer {
