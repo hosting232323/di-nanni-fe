@@ -12,7 +12,7 @@
   <v-app-bar v-else elevation="0" class="custom-appbar">
     <div class="left-section d-flex align-center">
       <router-link to="/" class="logo-link">
-        <img src="@/assets/logo.png" alt="" height="60"/>
+        <img src="@/assets/logo.png" alt="" height="55"/>
       </router-link>
     </div>
     <div class="right-section">
@@ -127,6 +127,8 @@ const menuItems = [
 .custom-appbar {
   display: flex;
   align-items: center;
+  justify-content: center;
+  height: 70px !important;
   background: linear-gradient(to right, #f8d4d9 0%, #f8d4d9 20%, #7d2636 50%, #7d2636 100%) !important;
 }
 
