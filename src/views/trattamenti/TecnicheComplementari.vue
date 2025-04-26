@@ -1,38 +1,46 @@
 <template>
-	<div>
-		<v-container :class="isMobile ? 'px-md-16 px-4 mt-5' : 'px-md-16 px-4 mt-10'">
-			<br v-if="!isMobile" />
-			<h1 class="font-weight-bold mb-3 text-center" style="color: #7d2b3b; font-family: Montserrat, Lato, 'Open Sans', Calibri, sans-serif;">Tecniche Complementari</h1>
-            <p class="body-1">Sono tecniche che possono essere eseguite da sole e/o assieme all’agopuntura e all’utilizzo di oli essenziali diluiti in olio vegetale. Si tratta di manualità diverse che aiutano la circolazione di energia e sangue che possono essere supportate con il guasha e/o coppette.</p>
-            <br>
-			<v-container>
-				<v-window v-model="window" show-arrows>
-					<v-window-item v-for="(item, i) in tecniche" :key="i">
-						<!-- <v-card class="pa-4 d-flex flex-column flex-md-row justify-center align-center" elevation="4"> -->
-						<div class="pa-4 d-flex flex-column flex-md-row justify-center align-center">
-							<v-col cols="12" md="5" class="mb-4 mb-md-0">
-								<v-img
-								:src="item.image"
-								:alt="item.title"
-								aspect-ratio="16/9"
-								max-width="500"
-								rounded="lg"
-								class="mx-auto"
-								/>
-							</v-col>
-							<v-col cols="12" md="5">
-								<h2 class="font-weight-bold text-center text-md-left mb-4" style="color: #7d2b3b; font-size: 28px; text-align: center;">
-								{{ item.title }}
-								</h2>
-								<p class="body-1" v-html="item.description" />
-							</v-col>
+	<v-container :class="isMobile ? 'px-md-16 px-4 mt-5' : 'px-md-16 px-4 mt-10'">
+		<br v-if="!isMobile" />
+		<h1 class="font-weight-bold mb-3 text-center" style="color: #7d2b3b; font-family: Montserrat, Lato, 'Open Sans', Calibri, sans-serif;">Tecniche Complementari</h1>
+		<p class="body-1">Sono tecniche che possono essere eseguite da sole e/o assieme all’agopuntura e all’utilizzo di oli essenziali diluiti in olio vegetale. Si tratta di manualità diverse che aiutano la circolazione di energia e sangue che possono essere supportate con il guasha e/o coppette.</p>
+		<br>
+		<v-container>
+			<v-window v-model="window">
+				<v-window-item v-for="(item, i) in tecniche" :key="i">
+					<div class="d-flex justify-center">
+						<div class="section" v-if="!isMobile">
+							<v-img :src="item.image" :alt="item.title" class="media" />
+							<div class="overlay">
+								<h1>{{ item.title }}</h1>
+								<p class="body-1" style="color: #fff !important;" v-html="item.description" />
+							</div>
 						</div>
-						<!-- </v-card> -->
-					</v-window-item>
-				</v-window>
-			</v-container>
-        </v-container>
-	</div>
+						<div v-else>
+							<h1>{{ item.title }}</h1>
+							<v-img :src="item.image" :alt="item.title" />
+							<p class="body-1" v-html="item.description" />
+						</div>
+					</div>
+				</v-window-item>
+			</v-window>
+			<div class="pagination-indicator d-flex justify-center align-items-center mt-3">
+				<v-btn icon @click="goToPrevPage" :disabled="window === 0">
+					<v-icon>mdi-chevron-left</v-icon>
+				</v-btn>
+				<div class="dots-container d-flex justify-center">
+					<span
+					v-for="(item, i) in tecniche"
+					:key="i"
+					:class="['dot', { active: window === i }]"
+					@click="window = i"
+					></span>
+				</div>
+				<v-btn icon @click="goToNextPage" :disabled="window === tecniche.length - 1">
+					<v-icon>mdi-chevron-right</v-icon>
+				</v-btn>
+			</div>
+		</v-container>
+	</v-container>
 </template>
 
 <script setup>
@@ -51,10 +59,9 @@ const tecniche = [
     title: 'La Coppettazione',
     image: coppettazione,
     description: `
-      La coppettazione utilizza delle “<strong><span style="color: #7d2b3b;">coppette</span></strong>” di diverso materiale (più comunemente in vetro, ma anche bambù e silicone) che creano un effetto sottovuoto a contatto con la pelle (come una specie di ventosa).<br>
+      La coppettazione utilizza delle “<strong><span style="color: #7d2b3b;">coppette</span></strong>” di diverso materiale che creano un effetto sottovuoto a contatto con la pelle (come una specie di ventosa).<br>
       <strong><span style="color: #7d2b3b;">Si lavora su determinati punti oppure lungo un meridiano particolare</span></strong>. È possibile mantenere la coppetta in un punto per pochi minuti.<br>
       È eseguibile <strong><span style="color: #7d2b3b;">a caldo o a freddo</span></strong>. In entrambi i casi è possibile che a termine del trattamento rimangano dei segni non dolorosi sulla pelle che in pochissimi giorni andranno via da soli.<br>
-      È utile soprattutto nelle <strong><span style="color: #7d2b3b;">tensioni muscolari, nelle contratture, allevia il dolore</span></strong> con lo scopo di portare in superficie il sangue e le tossine.
     `
   },
   {
@@ -76,13 +83,91 @@ const tecniche = [
     `
   }
 ]
+
+const goToPrevPage = () => {
+  if (window.value > 0) {
+    window.value--;
+  }
+}
+
+const goToNextPage = () => {
+  if (window.value < tecniche.length - 1) {
+    window.value++;
+  }
+}
 </script>
 
+
 <style scoped>
+.section {
+  position: relative;
+  width: 600px;
+}
+
+.media {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  z-index: 1;
+  filter: brightness(0.6);
+}
+
+.overlay {
+  position: relative;
+  z-index: 2;
+  color: #fff;
+  height: 100%;
+  width: 100%;
+  padding: 2rem;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  align-items: flex-start;
+  box-sizing: border-box;
+}
+
 .body-1 {
-	font-family: Montserrat, Lato, "Open Sans", Calibri, sans-serif;
-	font-size: 18px;
-	line-height: 1.5;
-	color: #333;
+  font-family: Montserrat, Lato, "Open Sans", Calibri, sans-serif;
+  font-size: 18px;
+  line-height: 1.5;
+  color: #000;
+}
+
+.pagination-indicator {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.pagination-indicator .v-btn {
+  z-index: 999;
+  background: none;
+  box-shadow: none;
+}
+
+.dots-container {
+  display: flex;
+  gap: 8px;
+  margin: 0 12px;
+}
+
+.dot {
+  width: 12px;
+  height: 12px;
+  border-radius: 50%;
+  background-color: #bbb;
+  cursor: pointer;
+  transition: background-color 0.3s;
+}
+
+.dot.active {
+  background-color: #7d2b3b;
+}
+
+.v-btn {
+  padding: 0;
 }
 </style>
