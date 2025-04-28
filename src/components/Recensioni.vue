@@ -60,10 +60,7 @@ const reviews = ref([
   { name: 'Gaia Ferorelli', review: 'Avevo un dolore alla mano legato all\'utilizzo del mouse, grazie all\'intervento della Dott.ssa Di Nanni è passato e non si è più verificato. Esperienza ottima!', rating: 5 },
   { name: 'Elisa Zuffa', review: 'Con un breve percorso di agopuntura ho potuto dire addio ai dolori mestruali lancinanti con cui combattevo da anni.', rating: 5 },
   { name: 'Irene Caruso', review: 'I suggerimenti della dott.ssa Di Nanni sono stati fondamentali per la mia gravidanza, dalla fase di programmazione fino alla nascita di mio figlio...', rating: 5 },
-  { name: 'Costantino Ricci', review: 'Premetto che sono un medico e che, scioccamente e da cieco uomo di scienza, mi sono avvicinato “da paziente” in maniera riluttante a queste terapie...', rating: 5 },
-  { name: 'Paola Cicciomessere', review: '', rating: 5 },
-  { name: 'Caterina Cavallera', review: '', rating: 5 },
-  { name: 'Gerardo Cazzato', review: '', rating: 5 }
+  { name: 'Costantino Ricci', review: 'Premetto che sono un medico e che, scioccamente e da cieco uomo di scienza, mi sono avvicinato “da paziente” in maniera riluttante a queste terapie...', rating: 5 }
 ]);
 
 const setCanvasRef = (el, name, groupIndex) => {
@@ -98,10 +95,10 @@ const shuffleReviews = () => {
     .map(({ value }) => value);
 };
 
-const groupSize = ref(window.innerWidth < 600 ? 1 : 3);
+const groupSize = ref(window.innerWidth < 600 ? 2 : 3);
 
 const updateGroupSize = () => {
-  const newSize = window.innerWidth < 600 ? 1 : 3;
+  const newSize = window.innerWidth < 600 ? 2 : 3;
   groupSize.value = newSize;
 
   cardHeight.value = window.innerWidth < 600 ? 200 : 250;
@@ -210,7 +207,7 @@ onBeforeUnmount(() => {
   overflow: hidden;
   text-overflow: ellipsis;
   display: -webkit-box;
-  -webkit-line-clamp: 8;
+  -webkit-line-clamp: 3;
   -webkit-box-orient: vertical;
   font-size: 14px;
   line-height: 1.6;
@@ -273,25 +270,26 @@ onBeforeUnmount(() => {
     flex: 0 0 48px;
     margin-right: 12px;
   }
-  
+
   .reviewer-name {
     font-size: 16px;
   }
-  
+
   .review-content {
     font-size: 14px;
     line-height: 1.4;
+    -webkit-line-clamp: 3; /* <<--- aggiungi qui */
   }
 
   .v-icon {
     font-size: 18px !important;
   }
-  
+
   .arrow-button {
     height: 44px;
     width: 44px;
   }
-  
+
   .prev-arrow {
     left: -20px;
   }
