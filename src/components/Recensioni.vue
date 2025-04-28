@@ -278,7 +278,7 @@ onBeforeUnmount(() => {
   .review-content {
     font-size: 14px;
     line-height: 1.4;
-    -webkit-line-clamp: 3; /* <<--- aggiungi qui */
+    -webkit-line-clamp: 3;
   }
 
   .v-icon {
