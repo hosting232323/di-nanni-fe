@@ -2,7 +2,7 @@
 	<div class="no-top-margin">
 		<v-container class="pa-0" fluid>
 			<v-row class="mb-0 mt-0 pt-0" no-gutters>
-				<v-col cols="12" md="6" class="pa-0">
+				<v-col cols="12" md="6" class="pa-0" v-if="!isMobile">
 					<div class="media-container">
 						<video autoplay loop muted src="@/assets/agopuntura.mp4" style="width: 100%; height: 100vh; object-fit: cover;"></video>
 					</div>
@@ -18,13 +18,18 @@
 				</v-col>
 			</v-row>
 			<v-row class="mb-0" no-gutters>
+				<v-col cols="12" md="6" class="pa-0" v-if="isMobile">
+					<div class="media-container">
+						<video autoplay loop muted src="@/assets/agopuntura_piede.mp4" style="width: 100%; height: 100vh; object-fit: cover;"></video>
+					</div>
+				</v-col>
 				<v-col cols="12" md="6" class="px-md-6 px-4 d-flex align-center bg-color">
 					<div class="body-1 py-8">
 						È un <strong><span style="color: #7d2b3b;">trattamento sicuro</span></strong> e ha pochissimi effetti collaterali, (dolore e lividi e/o sanguinamenti sulle parti in cui entrano i piccoli aghi).<br><br>
 						<strong><span style="color: #7d2b3b;">Non è doloroso</span></strong> e cura molte patologie dolorose (in ambito osteomuscolare e post-operatorio) e non (disturbi neurologici, dermatologici, digestivi, ginecologici di pertinenza otorinolaringoiatrica etc.)
 					</div>
 				</v-col>
-				<v-col cols="12" md="6" class="pa-0">
+				<v-col cols="12" md="6" class="pa-0" v-if="!isMobile">
 					<div class="media-container">
 						<video autoplay loop muted src="@/assets/agopuntura_piede.mp4" style="width: 100%; height: 100vh; object-fit: cover;"></video>
 					</div>
@@ -49,11 +54,16 @@
 				</v-col>
 			</v-row>
 			<v-row no-gutters>
-				<v-col cols="12" class="px-6 py-4 bg-color">
-					<p class="body-2 text-center">
-						Ad oggi è <strong><span style="color: #7d2b3b;">riconosciuta e validata dai sistemi sanitari nazionali e dall'Organizzazione Mondiale della Sanità.</span></strong><br>
-						In Italia questo sistema terapeutico è stato inserito nei <strong><span style="color: #7d2b3b;">LEA (livelli essenziali di assistenza): perciò in alcune regioni italiane è possibile effettuare queste prestazioni tramite il Servizio Sanitario Nazionale.</span></strong>  
+				<v-col cols="12" class="px-6 py-8 bg-color">
+					<div class="text-center">
+					<h3 class="highlight-title mb-4">Riconoscimenti ufficiali</h3>
+					<p class="body-2 mb-2">
+						Ad oggi è <strong class="highlight">riconosciuta e validata</strong> dai sistemi sanitari nazionali e dall'Organizzazione Mondiale della Sanità.
 					</p>
+					<p class="body-2">
+						In Italia è stata inserita nei <strong class="highlight">LEA (livelli essenziali di assistenza)</strong>, quindi in alcune regioni è possibile accedere a questi trattamenti tramite il Servizio Sanitario Nazionale.
+					</p>
+					</div>
 				</v-col>
 			</v-row>
         </v-container>
@@ -95,6 +105,18 @@ const isMobile = mobile.setupMobileUtils();
     height: 100vh;
     overflow: hidden;
     position: relative;
+}
+
+.highlight-title {
+  font-size: 24px;
+  font-weight: 600;
+  color: #7d2b3b;
+  font-family: Montserrat, Lato, "Open Sans", Calibri, sans-serif;
+}
+
+.highlight {
+  color: #7d2b3b;
+  font-weight: 600;
 }
 
 @media (max-width: 960px) {
