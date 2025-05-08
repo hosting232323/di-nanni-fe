@@ -1,21 +1,29 @@
 <template>
+
   <section id="treatments" class="treatments-section">
     <h2 class="treatments-title">Trattamenti</h2>
+    <p class="treatments-description">
+      Ogni persona è unica, così come il percorso verso il benessere.<br />
+      Ecco perché offro una varietà di trattamenti pensati per rispondere a esigenze diverse, sia fisiche che emotive.<br />
+      Dall’agopuntura alla fitoterapia, dal Taopatch® alle tecniche corporee tradizionali, ogni disciplina può essere utile in molti ambiti.<br />
+      Se hai un disturbo o un disagio e ti chiedi se uno di questi approcci possa aiutarti, contattami: insieme possiamo valutare la strada migliore per te.
+    </p>
     <div class="treatments-container">
       <RouterLink 
         v-for="treatment in treatments" 
         :key="treatment.id"
         :to="treatment.route"
         class="treatment-card"
+        :style="{width: isMobile ? '200px': '350px', height: isMobile ? '200px': '350px'}"
       >
         <div class="card-inner">
           <div class="card-front">
             <img :src="treatment.image" :alt="treatment.title" />
-            <h3>{{ treatment.title }}</h3>
+            <h3 :style="{fontSize: isMobile ? '14px': '18px', padding: isMobile ? '12px': '16px'}">{{ treatment.title }}</h3>
           </div>
           <div class="card-back">
             <img :src="treatment.image" :alt="treatment.title" />
-            <h3>{{ treatment.title }}</h3>
+            <h3 :style="{fontSize: isMobile ? '14px': '18px', padding: isMobile ? '12px': '16px'}">{{ treatment.title }}</h3>
           </div>
         </div>
       </RouterLink>
@@ -28,6 +36,12 @@ import { RouterLink } from 'vue-router'
 import agopunturaImg from '@/assets/agopuntura.jpg'
 import fitoterapiaImg from '@/assets/fitoterapia.jpg'
 import tecnicheImg from '@/assets/tecniche.jpg'
+import taopatchImg from '@/assets/taopatch.png'
+import eftImg from '@/assets/eft.jpg'
+import sabadarebozoImg from '@/assets/sabadarebozo.png'
+import mobile from "@/utils/mobile.js";
+
+const isMobile = mobile.setupMobileUtils();
 
 const treatments = [
   {
@@ -44,6 +58,24 @@ const treatments = [
   },
   {
     id: 3,
+    title: 'Taopatch',
+    image: taopatchImg,
+    route: '/trattamenti/taopatch'
+  },
+  {
+    id: 4,
+    title: 'Emotional Freedom Technique',
+    image: eftImg,
+    route: '/trattamenti/emotional-freedom-technique'
+  },
+  {
+    id: 5,
+    title: 'Sabada e Rebozo',
+    image: sabadarebozoImg,
+    route: '/trattamenti/sabada-rebozo'
+  },
+  {
+    id: 6,
     title: 'Tecniche complementari',
     image: tecnicheImg,
     route: '/trattamenti/tecniche-complementari'
@@ -63,8 +95,16 @@ const treatments = [
 .treatments-title {
   color: white;
   font-size: 2.5rem;
-  margin-bottom: 3rem;
+  margin-bottom: 2rem;
   font-style: italic;
+}
+
+.treatments-description {
+  color: white;
+  font-size: 1.1rem;
+  max-width: 900px;
+  margin-bottom: 4rem;
+  line-height: 1.6;
 }
 
 .treatments-container {

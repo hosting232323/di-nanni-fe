@@ -5,6 +5,22 @@
 		<p class="body-1">Sono tecniche che possono essere eseguite da sole e/o assieme all’agopuntura e all’utilizzo di oli essenziali diluiti in olio vegetale. Si tratta di manualità diverse che aiutano la circolazione di energia e sangue che possono essere supportate con il guasha e/o coppette.</p>
 		<br>
 		<v-container>
+      <div class="pagination-indicator d-flex justify-center align-items-center mt-3" v-if="!isMobile">
+				<v-btn icon @click="goToPrevPage" :disabled="window === 0">
+					<v-icon>mdi-chevron-left</v-icon>
+				</v-btn>
+				<div class="dots-container d-flex justify-center">
+					<span
+					v-for="(item, i) in tecniche"
+					:key="i"
+					:class="['dot', { active: window === i }]"
+					@click="window = i"
+					></span>
+				</div>
+				<v-btn icon @click="goToNextPage" :disabled="window === tecniche.length - 1">
+					<v-icon>mdi-chevron-right</v-icon>
+				</v-btn>
+			</div>
 			<v-window v-model="window">
 				<v-window-item v-for="(item, i) in tecniche" :key="i">
 					<div class="d-flex justify-center">
@@ -23,7 +39,7 @@
 					</div>
 				</v-window-item>
 			</v-window>
-			<div class="pagination-indicator d-flex justify-center align-items-center mt-3">
+			<div class="pagination-indicator d-flex justify-center align-items-center mt-3" v-if="isMobile">
 				<v-btn icon @click="goToPrevPage" :disabled="window === 0">
 					<v-icon>mdi-chevron-left</v-icon>
 				</v-btn>

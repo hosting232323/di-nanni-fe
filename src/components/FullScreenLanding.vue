@@ -25,10 +25,13 @@
         <img src="@/assets/doriana.png" alt="Dott.ssa Di Nanni" :class="{ 'doctor-image-mobile-img': isMobile }" />
       </div>
 
-
-      <div class="info-box">
-        <p><strong>Indirizzo:</strong> Via Curzio, 13<br />70123 Bari</p>
-        <p><strong>Orario studio:</strong><br />dal lunedì al sabato<br />solo su appuntamento</p>
+      <div class="info-box" v-if="!isMobile" style="width: 280px;">
+        <strong>Indirizzo:</strong> Via Curzio, 13 70123 Bari <br />
+        <strong>Orario studio:</strong> dal lunedì al sabato<br />solo su appuntamento
+      </div>
+      <div class="info-box" v-else>
+        <strong>Indirizzo:</strong> Via Curzio, 13<br />70123 Bari
+        <strong>Orario studio:</strong><br />dal lunedì al sabato<br />solo su appuntamento
       </div>
 
     </div>
@@ -46,7 +49,7 @@ const isMobile = mobile.setupMobileUtils();
 .fullscreen-container {
   position: relative;
   width: 100vw;
-  height: 100vh;
+  height: calc(100vh - 64px);
   overflow: hidden;
 }
 

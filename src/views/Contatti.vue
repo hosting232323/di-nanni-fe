@@ -3,6 +3,7 @@
 </template>
 
 <script setup>
+import { useHead } from '@vueuse/head';
 import Contacts from '@/components/Contacts.vue';
 
 useHead({
