@@ -86,21 +86,20 @@ const treatments = [
 <style scoped>
 .treatments-section {
   padding: 4rem 2rem;
-  background-color: #7D2636;
   display: flex;
   flex-direction: column;
   align-items: center;
 }
 
 .treatments-title {
-  color: white;
+  color: #7d2636;
   font-size: 2.5rem;
   margin-bottom: 2rem;
   font-style: italic;
 }
 
 .treatments-description {
-  color: white;
+  color: #7d2636;
   font-size: 1.1rem;
   max-width: 900px;
   margin-bottom: 4rem;
