@@ -1,17 +1,13 @@
 <template>
-  <div class="section">
-    <video autoplay loop muted src="@/assets/fitoterapia.mp4" class="media" />
+  <div class="section">    
+    <v-img src="@/assets/rebozo.jpg" alt="Aromaterapia" cover class="media" />
 
     <div class="overlay">
-      <h1 class="title">La Fitoterapia</h1>
+      <h1 class="title">Il rebozo</h1>
       <p class="body-1">
-        I medicinali fitoterapici sono definiti tali se il principio attivo è una sostanza vegetale; sono formati da una
-        miscela di sostanze vegetali biologicamente attive.
-        Sono utilizzati <strong><span style="color: #7d2b3b;">per fini terapeutici e preventivi</span></strong>.<br>
-        Non sono sostanze innocue ma bisogna tenere in considerazione eventuali interazioni con farmaci che si assumono
-        con regolarità ed eventuali effetti indesiderati.<br>
-        I fitoterapici possono essere assunti comunemente sotto forma di <strong><span style="color: #7d2b3b;">compresse
-            o capsule, oppure gocce</span></strong>.
+        Il rebozo è un <strong><span style="color: #7d2b3b;">tessuto di tradizione messicana</span></strong> utilizzato in un percorso di 
+        crescita e trasformazione della donna in tutte le sue fasi di vita (periodo fertile, gravidanza, parto, post-parto e menopausa).  
+        È un percorso <strong><span style="color: #7d2b3b;">integrabile con altri approcci olistici</span></strong>.
       </p>
     </div>
   </div>
