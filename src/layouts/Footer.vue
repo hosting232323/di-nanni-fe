@@ -12,7 +12,7 @@
             </ul>
             <ul class="footer-list">
               <li><router-link to="/trattamenti/agopuntura">Emotional Freedom Technique</router-link></li>
-              <li><router-link to="/trattamenti/fitoterapia-aromaterapia">Sabada e Rebozo</router-link></li>
+              <li><router-link to="/trattamenti/fitoterapia-aromaterapia">Sobada e Rebozo</router-link></li>
               <li><router-link to="/trattamenti/fitoterapia-aromaterapia">Tecniche complementari</router-link></li>
             </ul>
           </div>
@@ -25,7 +25,7 @@
               <li><router-link to="/trattamenti/fitoterapia-aromaterapia">Fitoterapia e Aromaterapia</router-link></li>
               <li><router-link to="/trattamenti/tecniche-complementari">Taopatch</router-link></li>
               <li><router-link to="/trattamenti/agopuntura">Emotional Freedom Technique</router-link></li>
-              <li><router-link to="/trattamenti/fitoterapia-aromaterapia">Sabada e Rebozo</router-link></li>
+              <li><router-link to="/trattamenti/fitoterapia-aromaterapia">Sobada e Rebozo</router-link></li>
               <li><router-link to="/trattamenti/fitoterapia-aromaterapia">Tecniche complementari</router-link></li>
             </ul>
           </div>
