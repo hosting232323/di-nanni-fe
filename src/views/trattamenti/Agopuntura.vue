@@ -25,7 +25,7 @@
 				</v-col>
 				<v-col cols="12" class="text-container">
 					<div class="body-1 py-8">
-					<strong><span class="highlight-title-large">Cos'è l'Agopuntura?</span></strong>
+					<strong><span class="highlight-title-large px-4">Cos'è l'Agopuntura?</span></strong>
 						<p class="mt-4 px-4">
 							L'<strong><span class="highlight">agopuntura</span></strong> è una pratica della medicina tradizionale cinese che consiste nell'inserire aghi sottili in specifici punti del corpo per riequilibrare l'energia vitale.<br>
 							Ha il <strong><span class="highlight">vantaggio</span></strong> di non utilizzare farmaci, non causa effetti collaterali o complicanze nella maggior parte dei casi, è utile nei pazienti in cui i farmaci possono creare allergie o sono controindicati.
@@ -59,7 +59,7 @@
 					</div>
 				</v-col>
 			</v-row>
-			<v-row class="desktop-row" no-gutters>
+			<v-row class="desktop-row" no-gutters v-if="!isMobile">
 				<v-col cols="12" md="6" class="pa-0 full-height">
 					<div class="media-container">
 						<v-img src="@/assets/agopuntura.jpg" alt="Agopuntura" height="100%" width="100%" cover />
@@ -69,6 +69,23 @@
 					<div class="body-1">
 						<strong><span class="highlight-title-large px-4">Sulle sedute</span></strong>
 						<p class="mt-4 px-4">
+							Il <strong><span class="highlight">primo incontro</span></strong> potrebbe durare quasi un'ora, le <strong><span class="highlight">sedute di mantenimento</span></strong> dai 30 ai 40 minuti. Il tempo che intercorre con gli aghi inseriti è variabile dai 20 ai 30 minuti.<br><br>
+							Gli <strong><span class="highlight">aghi utilizzati</span></strong> sono usa e getta, sono molto sottili e flessibili. Il loro inserimento potrebbe provocare un leggero "effetto pizzicotto", un formicolio, un minimo senso di calore ma non sono dolorosi (non devono esserlo per l'intera durata della seduta) e soprattutto sono effetti del tutto personali.<br><br>
+							<strong><span class="highlight">È importante riposarsi dopo la seduta evitando pesanti esercizi fisici e grandi abbuffate con alcolici.</span></strong>
+						</p>
+					</div>
+				</v-col>
+			</v-row>
+			<v-row no-gutters v-if="isMobile">
+				<v-col cols="12" class="pa-0">
+					<div class="media-container">
+						<v-img src="@/assets/agopuntura.jpg" alt="Agopuntura" style="width: 100%; height: 65vh; object-fit: cover;" />
+					</div>
+				</v-col>
+				<v-col cols="12" class="text-container">
+					<div class="body-1 py-8 px-4">
+						<strong><span class="highlight-title-large">Sulle sedute</span></strong>
+						<p class="mt-4">
 							Il <strong><span class="highlight">primo incontro</span></strong> potrebbe durare quasi un'ora, le <strong><span class="highlight">sedute di mantenimento</span></strong> dai 30 ai 40 minuti. Il tempo che intercorre con gli aghi inseriti è variabile dai 20 ai 30 minuti.<br><br>
 							Gli <strong><span class="highlight">aghi utilizzati</span></strong> sono usa e getta, sono molto sottili e flessibili. Il loro inserimento potrebbe provocare un leggero "effetto pizzicotto", un formicolio, un minimo senso di calore ma non sono dolorosi (non devono esserlo per l'intera durata della seduta) e soprattutto sono effetti del tutto personali.<br><br>
 							<strong><span class="highlight">È importante riposarsi dopo la seduta evitando pesanti esercizi fisici e grandi abbuffate con alcolici.</span></strong>
