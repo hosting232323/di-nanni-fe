@@ -18,7 +18,7 @@
                       <canvas :ref="el => setCanvasRef(el, review.name, index)" width="60" height="60"></canvas>
                     </div>
                     <div class="reviewer-info">
-                      <div class="font-weight-bold text-truncate reviewer-name">{{ review.name }}</div>
+                      <div class="font-weight-bold reviewer-name">{{ review.name }}</div>
                       <div class="stars-container">
                         <template v-for="n in 5" :key="n">
                           <v-icon v-if="review.rating >= n" color="#FFD700" size="20">mdi-star</v-icon>
@@ -72,7 +72,7 @@ const shuffleReviews = () => {
 
 const updateGroupSize = () => {
   groupSize.value = window.innerWidth < 600 ? 2 : 3;
-  cardHeight.value = window.innerWidth < 600 ? 200 : 250;
+  cardHeight.value = window.innerWidth < 600 ? 230 : 250;
 };
 
 const groupedReviews = computed(() => {
@@ -115,7 +115,7 @@ const reviews = ref([
   { name: 'Giorgia Neri', review: 'L\’agopuntura è un\’esperienza fantastica che bisogna provare almeno una volta nella vita. Se a praticarla è la dolce Doriana, allora tutto diventa magico!', rating: 5 },
   { name: 'Michele Mennuti', review: "La dott.ssa Di Nanni è davvero una grande professionista. Da sempre disponibile con terapie personalizzate e tanti consigli utili per ogni paziente.", rating: 5 },
   { name: 'Samantha Chiurlia', review: 'Non posso che consigliare e ringraziare con tutta me stessa la Dott.sa Di Nanni per l’aiuto che mi ha dato in un momento difficile della mia vita♥️', rating: 5 },
-  { name: 'Emanuele Costanza', review: 'La mia cefalea muscolo tensiva è ormai un lontano ricordo, grazie ai trattamenti della dottoressa', rating: 5 },
+  { name: 'Emanuele Costanza', review: 'La mia cefalea muscolo tensiva è ormai un lontano ricordo, grazie ai trattamenti della dottoressa.', rating: 5 },
   { name: 'Carla Bavaro', review: 'Grazie alla Dottoressa Di Nanni, la mia insonnia è sparita! Professionale, disponibile , preparata e disponibile. Consigliatissima.', rating: 5 },
   { name: 'Marilena Passabi', review: 'La Dottoressa Di Nanni... Semplicemente meravigliosa. Professionale, umana, empatica e con il raro e prezioso dono di saper ascoltare... Grazie di cuore', rating: 5 },
   { name: 'Gaia Ferorelli', review: 'Avevo un dolore alla mano legato all\'utilizzo del mouse, grazie all\'intervento della Dott.ssa Di Nanni è passato e non si è più verificato. Esperienza ottima!', rating: 5 },
@@ -157,10 +157,10 @@ const reviews = ref([
   flex: 1;
   min-width: 0;
   overflow: hidden;
-  padding-top: 8px;
 }
 
 .reviewer-name {
+  white-space: normal;
   font-size: 18px;
   margin-bottom: 6px;
 }
@@ -213,11 +213,12 @@ const reviews = ref([
 .arrow-button:hover { background-color: #f8d4da; }
 
 @media (max-width: 600px) {
+  .stars-container .v-icon { font-size: 15px !important; }
   .avatar-container canvas { height: 40px; }
   .outer-container { width: 85%; padding: 0 30px; }
   .avatar-container { flex: 0 0 48px; margin-right: 12px; }
-  .reviewer-name { font-size: 16px; }
-  .review-content { font-size: 13px; line-height: 1.4; -webkit-line-clamp: 4; }
+  .reviewer-name { font-size: 16px;}
+  .review-content { font-size: 13px; line-height: 1.4; display: -webkit-box; -webkit-line-clamp: 5; -webkit-box-orient: vertical; overflow: hidden; margin-top: -8px; padding-bottom: 12px; max-height: calc(1.4em * 5); text-overflow: ellipsis; white-space:normal ;}
   .arrow-button { height: 44px; width: 44px; }
   .prev-arrow { left: -20px; }
   .next-arrow { right: -20px; }
