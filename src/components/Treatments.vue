@@ -38,7 +38,7 @@ import fitoterapiaImg from '@/assets/fitoterapia.jpg'
 import tecnicheImg from '@/assets/tecniche.jpg'
 import taopatchImg from '@/assets/taopatch.png'
 import eftImg from '@/assets/eft.jpg'
-import sabadarebozoImg from '@/assets/sabadarebozo.png'
+import sobadarebozoImg from '@/assets/sobadarebozo.png'
 import mobile from "@/utils/mobile.js";
 
 const isMobile = mobile.setupMobileUtils();
@@ -70,9 +70,9 @@ const treatments = [
   },
   {
     id: 5,
-    title: 'Sabada e Rebozo',
-    image: sabadarebozoImg,
-    route: '/trattamenti/sabada-rebozo'
+    title: 'Sobada e Rebozo',
+    image: sobadarebozoImg,
+    route: '/trattamenti/sobada-rebozo'
   },
   {
     id: 6,

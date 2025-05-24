@@ -1,21 +1,20 @@
 <template>
   <div class="section">
-    <v-img src="@/assets/aromaterapia.png" alt="Aromaterapia" cover class="media" />
+    <v-img src="@/assets/sobada.jpg" alt="Aromaterapia" cover class="media" />
 
     <div class="overlay">
-      <h1 class="title">L'Aromaterapia</h1>
+      <h1 class="title">La sobada</h1>
       <p class="body-1">
-        L’aromaterapia è una forma di fitoterapia che utilizza gli
-        <strong><span style="color: #7d2b3b;">oli essenziali</span></strong> ricavati da diversi metodi di estrazione di
-        determinate componenti delle piante (fiori, corteccia, radici, foglie, frutti etc).<br>
-        Possono essere assunti
-        <strong><span style="color: #7d2b3b;">per via inalatoria, orale o cutanea</span></strong>.<br>
-        La sua funzione è estremamente eterogenea ma molto efficace e combinabile con altre forme di terapia e
-        prevenzione.
+        La sobada è un <strong><span style="color: #7d2b3b;">massaggio addominale e uterino</span></strong> della cultura Maya, che ristabilisce 
+        l’equilibrio del corpo e i problemi dell’apparato riproduttivo della donna e dell’uomo. Utile in 
+        <strong><span style="color: #7d2b3b;">disturbi del ciclo, di fertilità, di sessualità e nel post-parto</span></strong>. 
+        È un "lavoro" su organi e meridiani energetici focalizzandosi sull’importanza del calore nel nostro corpo. A tale scopo, è 
+        fondamentale il contributo del rebozo. 
       </p>
     </div>
   </div>
 </template>
+
 
 <style scoped>
 .section {
