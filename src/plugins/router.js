@@ -31,9 +31,9 @@ const routes = [
         component: () => import('@/views/trattamenti/EmotionalFreedomTechnique.vue')
       },
       {
-        path: 'trattamenti/sabada-rebozo',
-        name: 'Sabada e Rebozo',
-        component: () => import('@/views/trattamenti/SabadaRebozo.vue')
+        path: 'trattamenti/sobada-rebozo',
+        name: 'Sobada e Rebozo',
+        component: () => import('@/views/trattamenti/SobadaRebozo.vue')
       },
       {
         path: 'trattamenti/tecniche-complementari',
@@ -72,16 +72,8 @@ const routes = [
 const router = createRouter({
   history: createWebHistory(),
   routes,
-  scrollBehavior(to, savedPosition) {
-    if (to.hash)
-      return {
-        el: to.hash,
-        behavior: 'smooth'
-      };
-    else if (savedPosition)
-      return savedPosition;
-    else
-      return { left: 0, top: 0 };
+  scrollBehavior() {
+    return { left: 0, top: 0, behavior: 'smooth' };
   }
 });
 

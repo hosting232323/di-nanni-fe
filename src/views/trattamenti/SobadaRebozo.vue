@@ -4,12 +4,12 @@
         <div class="content-wrapper">
           <Transition name="fade">
             <div v-if="activeSection === 1" class="section">
-              <Fitoterapia />
+              <Sobada />
             </div>
           </Transition>
           <Transition name="fade">
             <div v-if="activeSection === 2" class="section">
-              <Aromaterapia />
+              <Rebozo />
             </div>
           </Transition>
         </div>
@@ -22,8 +22,8 @@
 
 <script setup>
 import { ref, onMounted, onBeforeUnmount } from 'vue';
-import Fitoterapia from '@/components/Fitoterapia.vue';
-import Aromaterapia from '@/components/Aromaterapia.vue';
+import Sobada from '@/components/Sobada.vue';
+import Rebozo from '@/components/Rebozo.vue';
 
 const activeSection = ref(1);
 const trigger1 = ref(null);

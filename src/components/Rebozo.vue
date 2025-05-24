@@ -1,17 +1,13 @@
 <template>
-  <div class="section">
-    <v-img src="@/assets/aromaterapia.png" alt="Aromaterapia" cover class="media" />
+  <div class="section">    
+    <v-img src="@/assets/rebozo.jpg" alt="Aromaterapia" cover class="media" />
 
     <div class="overlay">
-      <h1 class="title">L'Aromaterapia</h1>
+      <h1 class="title">Il rebozo</h1>
       <p class="body-1">
-        L’aromaterapia è una forma di fitoterapia che utilizza gli
-        <strong><span style="color: #7d2b3b;">oli essenziali</span></strong> ricavati da diversi metodi di estrazione di
-        determinate componenti delle piante (fiori, corteccia, radici, foglie, frutti etc).<br>
-        Possono essere assunti
-        <strong><span style="color: #7d2b3b;">per via inalatoria, orale o cutanea</span></strong>.<br>
-        La sua funzione è estremamente eterogenea ma molto efficace e combinabile con altre forme di terapia e
-        prevenzione.
+        Il rebozo è un <strong><span style="color: #7d2b3b;">tessuto di tradizione messicana</span></strong> utilizzato in un percorso di 
+        crescita e trasformazione della donna in tutte le sue fasi di vita (periodo fertile, gravidanza, parto, post-parto e menopausa).  
+        È un percorso <strong><span style="color: #7d2b3b;">integrabile con altri approcci olistici</span></strong>.
       </p>
     </div>
   </div>
@@ -20,7 +16,7 @@
 <style scoped>
 .section {
   position: relative;
-  height: 100vh;
+  height: calc(100vh - 64px);
   width: 100%;
   overflow: hidden;
 }
@@ -33,7 +29,6 @@
   height: 100%;
   object-fit: cover;
   z-index: 1;
-  filter: brightness(0.6);
 }
 
 .overlay {
