@@ -1,6 +1,35 @@
 <template>
   <footer class="footer">
-    <v-container>
+    <v-row>
+      <v-col cols="12" lg="4" md="3" class="d-flex flex-column justify-center align-center">
+        <img src="@/assets/logo.png" height="80px" width="152px">
+        <div class="d-flex justify-center">
+          <a href=""><span class="mdi mdi-instagram social"></span></a>
+          <a href=""><span class="mdi mdi-facebook social"></span></a>
+        </div>
+      </v-col>
+      <v-col cols="12" lg="4" md="6">
+        <h3 class="footer-title">Trattamenti</h3>
+          <div class="d-flex justify-sm-space-around">
+            <ul class="footer-list">
+              <li><router-link to="/trattamenti/agopuntura">Agopuntura</router-link></li>
+              <li><router-link to="/trattamenti/fitoterapia-aromaterapia">Fitoterapia e Aromaterapia</router-link></li>
+              <li><router-link to="/trattamenti/taopatch">Taopatch</router-link></li>
+            </ul>
+            <ul class="footer-list">
+              <li><router-link to="/trattamenti/emotional-freedom-technique">Emotional Freedom Technique</router-link></li>
+              <li><router-link to="/trattamenti/sobada-rebozo">Sobada e Rebozo</router-link></li>
+              <li><router-link to="/trattamenti/tecniche-complementari">Tecniche complementari</router-link></li>
+            </ul>
+          </div>
+      </v-col>
+      <v-col cols="12" lg="4" md="3" class="d-flex flex-column justify-sm-space-around">
+        <router-link class="other-title" to="/contatti">Contattami</router-link>
+        <router-link class="other-title" to="/chi-sono">Scopri chi sono</router-link>
+        <router-link class="other-title" to="/agenda">Agenda</router-link>
+      </v-col>
+    </v-row>
+    <!-- <v-container>
       <v-row class="justify-center" style="justify-content: space-around !important;">
         <v-col cols="12" md="6" v-if="!isMobile">
           <h3 class="footer-title">Trattamenti</h3>
@@ -44,7 +73,7 @@
           <v-icon size="30px" color="#1877F2">mdi-facebook</v-icon>
         </v-btn>
       </v-row>
-    </v-container>
+    </v-container> -->
   </footer>
 </template>
 
@@ -62,18 +91,32 @@ const isMobile = mobile.setupMobileUtils();
   text-align: center;
 }
 
+.social {
+  font-size: 35px;
+  margin: 0 10px;
+  color: white;
+}
+
 .footer-title {
   font-size: 1.5rem;
   margin-bottom: 1rem;
   font-weight: bold;
 }
 
-.footer-title a {
+.footer-list {
+  padding: 0;
+  text-align: left;
+}
+
+.other-title {
+ font-size: 18px;
+}
+.footer-title a, .other-title {
   text-decoration: none;
   color: white;
 }
 
-.footer-title a:hover {
+.footer-title a:hover , .other-title:hover {
   text-decoration: underline;
 }
 
@@ -81,11 +124,7 @@ const isMobile = mobile.setupMobileUtils();
   display: flex;
 }
 
-.footer-list {
-  list-style: none;
-  padding: 0;
-  min-width: 270px;
-}
+
 
 .footer-list li {
   margin-bottom: 0.5rem;
