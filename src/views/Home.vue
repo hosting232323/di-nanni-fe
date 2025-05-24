@@ -14,6 +14,7 @@
       </p>
     </section>
     <Recensioni />
+    <HomeContacts />
     </div>
 </template>
 
@@ -22,6 +23,7 @@ import FullScreenLanding from '@/components/FullScreenLanding.vue'
 import Treatments from '../components/Treatments.vue';
 import { useHead } from '@vueuse/head';
 import Recensioni from '../components/Recensioni.vue';
+import HomeContacts from '../components/HomeContacts.vue';
 
 useHead({
   title: "Doriana Di Nanni - Agopuntura, Fitoterapia e Tecniche Olistiche a Bari",
