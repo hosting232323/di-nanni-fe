@@ -13,6 +13,7 @@
         <span class="cit-author">🗣️~ Ippocrate</span>
       </p>
     </section>
+    <HomeBlog />
     <Recensioni />
     <HomeContacts />
     </div>
@@ -23,6 +24,7 @@ import FullScreenLanding from '@/components/FullScreenLanding.vue'
 import Treatments from '../components/Treatments.vue';
 import { useHead } from '@vueuse/head';
 import Recensioni from '../components/Recensioni.vue';
+import HomeBlog from '../components/HomeBlog.vue';
 import HomeContacts from '../components/HomeContacts.vue';
 
 useHead({
