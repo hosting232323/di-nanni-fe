@@ -32,8 +32,11 @@
             <a href=""><span class="mdi mdi-facebook social"></span></a>
           </div>
       </v-col>
-      <v-col cols="12" md="4">
+      <v-col cols="12" md="4" v-if="!isMobile">
           <div ref="mapContainer" style="width: 400px; height: 400px;" />
+      </v-col>
+      <v-col cols="12" md="4" v-else>
+        <div ref="mapContainer" style="width: 300px; height: 300px;" />
       </v-col>
     </v-row>
   </v-container>
@@ -47,11 +50,14 @@ import OSM from 'ol/source/OSM';
 import Feature from 'ol/Feature';
 import Point from 'ol/geom/Point';
 import { fromLonLat } from 'ol/proj';
-import { onMounted, ref, reactive } from 'vue';
+import { onMounted, ref } from 'vue';
 import TileLayer from 'ol/layer/Tile';
 import { Icon, Style } from 'ol/style';
 import VectorLayer from 'ol/layer/Vector';
 import VectorSource from 'ol/source/Vector';
+import mobile from '@/utils/mobile';
+
+const isMobile = mobile.setupMobileUtils();
 
 const mapContainer = ref(null);
 
@@ -106,6 +112,7 @@ onMounted(() => {
 .social{
   font-size: 50px;
   margin: 0 20px;
+  color: #9a3548;;
 }
 
 ul {

@@ -1,22 +1,27 @@
 <template>
   <div>
     <FullScreenLanding next-section-id="treatments" />
-    <section class="cit-section">
-      <p class="cit-title">
-        La mano che cura tocca più del corpo: risveglia l'energia, ristora l'anima
-      </p>
-    </section>
+    <v-container>
+      <section class="cit-section">
+        <p class="cit-title">
+          La mano che cura tocca più del corpo: risveglia l'energia, ristora l'anima
+        </p>
+      </section>
+    </v-container>
+    <HomeChiSono />
     <Treatments />
-    <section class="cit-section">
-      <p class="cit-title">
-        "Il corpo umano è il tempio dell’anima, e come tale va curato e rispettato."
-        <span class="cit-author">🗣️~ Ippocrate</span>
-      </p>
-    </section>
+    <v-container>
+      <section class="cit-section">
+        <p class="cit-title">
+          "Il corpo umano è il tempio dell’anima, e come tale va curato e rispettato."
+          <span class="cit-author">🗣️~ Ippocrate</span>
+        </p>
+      </section>
+    </v-container>
     <HomeBlog />
     <Recensioni />
     <HomeContacts />
-    </div>
+  </div>
 </template>
 
 <script setup>
@@ -26,6 +31,7 @@ import { useHead } from '@vueuse/head';
 import Recensioni from '../components/Recensioni.vue';
 import HomeBlog from '../components/HomeBlog.vue';
 import HomeContacts from '../components/HomeContacts.vue';
+import HomeChiSono from '../components/HomeChiSono.vue';
 
 useHead({
   title: "Doriana Di Nanni - Agopuntura, Fitoterapia e Tecniche Olistiche a Bari",
@@ -83,38 +89,38 @@ useHead({
 </script>
 
 <style scoped>
-  .cit-section {
-      background-color: #7d2636;
-      display: flex;
-      flex-direction: column;
-      align-items: center;
-  }
+.cit-section {
+  /* background-color: #7d2636; */
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
 
+.cit-title {
+  margin: 0;
+  color: #7d2636;
+  font-size: 3.0rem;
+  font-style: italic;
+  max-width: 900px;
+  margin-bottom: 1rem;
+  margin-top: 1rem;
+}
+
+.cit-author {
+  margin: 0;
+  color: #f8d4d9;
+  font-size: 1.0rem;
+  font-style: italic;
+  max-width: 900px;
+  margin-bottom: 1rem;
+  margin-top: 1rem;
+}
+
+@media (max-width: 768px) {
   .cit-title {
-      margin: 0;
-      color: #f8d4d9;
-      font-size: 3.0rem;
-      font-style: italic;
-      max-width: 900px;
-      margin-bottom: 1rem;
-      margin-top: 1rem;
+    font-size: 2rem;
+    padding: 0 1rem;
+    text-align: center;
   }
-
-  .cit-author{
-    margin: 0;
-      color: #f8d4d9;
-      font-size: 1.0rem;
-      font-style: italic;
-      max-width: 900px;
-      margin-bottom: 1rem;
-      margin-top: 1rem;
-  }
-
-  @media (max-width: 768px) {
-    .cit-title {
-      font-size: 2rem;
-      padding: 0 1rem;
-      text-align: center;
-    }
-  } 
+}
 </style>
