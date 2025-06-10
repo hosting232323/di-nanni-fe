@@ -86,7 +86,6 @@ useHead({
     { name: "business:contact_data:website", content: "https://dorianadinanni.it" }
   ]
 });
-
 </script>
 
 <style scoped>

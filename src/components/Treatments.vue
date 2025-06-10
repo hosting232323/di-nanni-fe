@@ -1,5 +1,4 @@
 <template>
-
   <section id="treatments" class="treatments-section">
     <h2 class="treatments-title">Trattamenti</h2>
     <p class="treatments-description">
