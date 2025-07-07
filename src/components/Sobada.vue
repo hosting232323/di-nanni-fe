@@ -7,9 +7,7 @@
       <p class="body-1">
         La sobada è un <strong><span style="color: #7d2b3b;">massaggio addominale e uterino</span></strong> della cultura Maya, che ristabilisce 
         l’equilibrio del corpo e i problemi dell’apparato riproduttivo della donna e dell’uomo. Utile in 
-        <strong><span style="color: #7d2b3b;">disturbi del ciclo, di fertilità, di sessualità e nel post-parto</span></strong>. 
-        È un "lavoro" su organi e meridiani energetici focalizzandosi sull’importanza del calore nel nostro corpo. A tale scopo, è 
-        fondamentale il contributo del rebozo. 
+        <strong><span style="color: #7d2b3b;">disturbi del ciclo, di fertilità, di sessualità e nel post-parto</span></strong>.
       </p>
     </div>
   </div>
