@@ -1,6 +1,6 @@
 <template>
   <div class="section">    
-    <v-img src="@/assets/rebozo.jpg" alt="Aromaterapia" cover class="media" />
+    <v-img src="@/assets/rebozo.jpeg" alt="Aromaterapia" cover class="media" />
 
     <div class="overlay">
       <h1 class="title">Il rebozo</h1>

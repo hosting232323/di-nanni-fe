@@ -26,11 +26,6 @@ const routes = [
         component: () => import('@/views/trattamenti/Taopatch.vue')
       },
       {
-        path: 'trattamenti/emotional-freedom-technique',
-        name: 'EFT (Emotional Freedom Technique)',
-        component: () => import('@/views/trattamenti/EmotionalFreedomTechnique.vue')
-      },
-      {
         path: 'trattamenti/sobada-rebozo',
         name: 'Sobada e Rebozo',
         component: () => import('@/views/trattamenti/SobadaRebozo.vue')

@@ -17,7 +17,6 @@
               <li><router-link to="/trattamenti/taopatch">Taopatch</router-link></li>
             </ul>
             <ul class="footer-list">
-              <li><router-link to="/trattamenti/emotional-freedom-technique">Emotional Freedom Technique</router-link></li>
               <li><router-link to="/trattamenti/sobada-rebozo">Sobada e Rebozo</router-link></li>
               <li><router-link to="/trattamenti/tecniche-complementari">Tecniche complementari</router-link></li>
             </ul>
