@@ -1,16 +1,16 @@
 <template>
   <v-container>
     <v-row class="d-flex justify-center">
-      <v-col cols="12" md="4" class="d-flex justify-center flex-column">
-          <p class="d-flex align-center" style="margin-bottom: 20px;">
+      <v-col cols="12" sm="4" md="4" :class="['d-flex', 'justify-center', 'flex-column', { 'align-center': isMobile }]">
+          <p class="d-flex align-center" style="margin-bottom: 20px; width: 250px;">
             <span class="mdi mdi-map-marker-outline icon"></span>
             Via Curzio 13, 70123 Bari
           </p>
-          <p class="d-flex align-center" style="margin-bottom: 20px;">
+          <p class="d-flex align-center" style="margin-bottom: 20px; width: 250px;">
             <span class="mdi mdi-calendar-blank-outline icon"></span>
             <span>Dal <strong>lunedì</strong> al <strong>sabato</strong><br><i>solo su appuntamento</i></span>
           </p>
-          <div>
+          <div style="width: 250px;">
             <p class="d-flex align-center">
               <span class="mdi mdi-information-outline icon"></span>
               Per info e prenotazioni:
@@ -32,11 +32,8 @@
             <a href=""><span class="mdi mdi-facebook social"></span></a>
           </div>
       </v-col>
-      <v-col cols="12" md="4" v-if="!isMobile">
+      <v-col cols="12" sm="6"  md="4" v-if="!isMobile">
           <div ref="mapContainer" style="width: 400px; height: 400px;" />
-      </v-col>
-      <v-col cols="12" md="4" v-else>
-        <div ref="mapContainer" style="width: 300px; height: 300px;" />
       </v-col>
     </v-row>
   </v-container>
@@ -112,7 +109,11 @@ onMounted(() => {
 .social{
   font-size: 50px;
   margin: 0 20px;
-  color: #9a3548;;
+  color: #9a3548;
+  transition: color 0.3s ease;
+}
+.social:hover {
+  color: #ff3366;
 }
 
 ul {

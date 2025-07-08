@@ -35,8 +35,7 @@ import { RouterLink } from 'vue-router'
 import agopunturaImg from '@/assets/agopuntura.jpg'
 import fitoterapiaImg from '@/assets/fitoterapia.jpg'
 import tecnicheImg from '@/assets/tecniche.jpg'
-import taopatchImg from '@/assets/taopatch.png'
-import eftImg from '@/assets/eft.jpg'
+import taopatchImg from '@/assets/taopatch.jpeg'
 import sobadarebozoImg from '@/assets/sobadarebozo.png'
 import mobile from "@/utils/mobile.js";
 
@@ -60,12 +59,6 @@ const treatments = [
     title: 'Taopatch',
     image: taopatchImg,
     route: '/trattamenti/taopatch'
-  },
-  {
-    id: 4,
-    title: 'Emotional Freedom Technique',
-    image: eftImg,
-    route: '/trattamenti/emotional-freedom-technique'
   },
   {
     id: 5,

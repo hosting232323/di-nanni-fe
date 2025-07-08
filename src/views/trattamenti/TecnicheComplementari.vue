@@ -50,6 +50,7 @@ import { ref } from 'vue'
 import coppettazione from '@/assets/coppettazione.png'
 import guasha from '@/assets/guasha.png'
 import tuina from '@/assets/tui-na.jpg'
+import eft from '@/assets/eft.png'
 
 const window = ref(0)
 
@@ -80,6 +81,15 @@ const tecniche = [
       È il <strong><span style="color: #7d2b3b;">massaggio</span></strong> della Medicina Tradizionale Cinese; agisce sui meridiani energetici e sugli agopunti con diverse tecniche di manipolazione.<br>
       Ha lo scopo di <strong><span style="color: #7d2b3b;">sciogliere i blocchi energetici e favorire il movimento del sangue e dell’energia</span></strong>: regola la funzionalità degli organi e dei visceri e riattiva le risorse individuali accelerando i processi di guarigione.<br>
       È un valido supporto alle altre tecniche terapeutiche, utile in problemi osteomuscolari e non.
+    `
+  },
+  {
+    title: "Emotional Freedom Technique",
+    image: eft,
+    description: `
+      È una tecnica di <strong><span style="color: #7d2b3b;">auto-aiuto</span></strong> che stimola specifici punti energetici del corpo attraverso il <strong><span style="color: #7d2b3b;">tapping</span></strong> combinato con frasi di auto-accettazione.<br>
+      Ha lo scopo di <strong><span style="color: #7d2b3b;">liberare blocchi emotivi e ridurre stress e ansia</span></strong>, favorendo il riequilibrio energetico e il benessere psicofisico.<br>
+      È un valido supporto a terapie psicologiche e a tecniche di gestione dello stress.
     `
   }
 ]
