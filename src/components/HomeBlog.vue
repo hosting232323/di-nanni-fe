@@ -1,5 +1,5 @@
 <template>
-  <v-container>
+  <v-container class="padding-fix">
     <h1 class="homeblog-title">Ultimi post</h1>
     <div class="articles-wrapper">
       <div v-for="(post, index) in displayedPosts" :key="index" class="article-item">
