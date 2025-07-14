@@ -1,33 +1,33 @@
 <template>
-  <section id="treatments" class="treatments-section">
+  <v-container id="treatments" class="d-flex align-center flex-column padding-fix">
     <h2 class="treatments-title">Trattamenti</h2>
     <p class="treatments-description">
       Ogni persona è unica, così come il percorso verso il benessere.<br />
-      Ecco perché offro una varietà di trattamenti pensati per rispondere a esigenze diverse, sia fisiche che emotive.<br />
-      Dall’agopuntura alla fitoterapia, dal Taopatch® alle tecniche corporee tradizionali, ogni disciplina può essere utile in molti ambiti.<br />
-      Se hai un disturbo o un disagio e ti chiedi se uno di questi approcci possa aiutarti, contattami: insieme possiamo valutare la strada migliore per te.
+      Ecco perché offro una varietà di trattamenti pensati per rispondere a esigenze diverse, sia fisiche che
+      emotive.<br />
+      Dall’agopuntura alla fitoterapia, dal Taopatch® alle tecniche corporee tradizionali, ogni disciplina può essere
+      utile in molti ambiti.<br />
+      Se hai un disturbo o un disagio e ti chiedi se uno di questi approcci possa aiutarti, contattami: insieme possiamo
+      valutare la strada migliore per te.
     </p>
     <div class="treatments-container">
-      <RouterLink 
-        v-for="treatment in treatments" 
-        :key="treatment.id"
-        :to="treatment.route"
-        class="treatment-card"
-        :style="{width: isMobile ? '200px': '350px', height: isMobile ? '200px': '350px'}"
-      >
+      <RouterLink v-for="treatment in treatments" :key="treatment.id" :to="treatment.route" class="treatment-card"
+        :style="{ width: isMobile ? '200px' : '350px', height: isMobile ? '200px' : '350px' }">
         <div class="card-inner">
           <div class="card-front">
             <img :src="treatment.image" :alt="treatment.title" />
-            <h3 :style="{fontSize: isMobile ? '14px': '18px', padding: isMobile ? '12px': '16px'}">{{ treatment.title }}</h3>
+            <h3 :style="{ fontSize: isMobile ? '14px' : '18px', padding: isMobile ? '12px' : '16px' }">{{ treatment.title }}
+            </h3>
           </div>
           <div class="card-back">
             <img :src="treatment.image" :alt="treatment.title" />
-            <h3 :style="{fontSize: isMobile ? '14px': '18px', padding: isMobile ? '12px': '16px'}">{{ treatment.title }}</h3>
+            <h3 :style="{ fontSize: isMobile ? '14px' : '18px', padding: isMobile ? '12px' : '16px' }">{{ treatment.title }}
+            </h3>
           </div>
         </div>
       </RouterLink>
     </div>
-  </section>
+  </v-container>
 </template>
 
 <script setup>
@@ -76,13 +76,6 @@ const treatments = [
 </script>
 
 <style scoped>
-.treatments-section {
-  padding: 4rem 2rem;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-}
-
 .treatments-title {
   color: #7d2636;
   font-size: 2.5rem;

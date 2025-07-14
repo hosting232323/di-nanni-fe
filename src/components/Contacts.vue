@@ -1,6 +1,6 @@
 <template>
   <section class="contact-section">
-    <v-container>
+    <v-container class="padding-fix">
       <v-row class="mb-10 align-center justify-space-between">
         <v-col cols="12" md="6" class="logo-and-social">
           <img src="@/assets/logo.png" alt="Logo" class="logo" />

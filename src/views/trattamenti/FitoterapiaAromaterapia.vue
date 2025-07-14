@@ -32,31 +32,31 @@ const trigger2 = ref(null);
 let observer;
 
 onMounted(() => {
-    observer = new IntersectionObserver(
-        (entries) => {
-            entries.forEach((entry) => {
-                if (entry.isIntersecting) {
-                    if (entry.target === trigger1.value) activeSection.value = 1;
-                    if (entry.target === trigger2.value) activeSection.value = 2;
-                }
-            });
-        },
-        { threshold: 0.5 }
-    );
+  observer = new IntersectionObserver(
+    (entries) => {
+      entries.forEach((entry) => {
+        if (entry.isIntersecting) {
+          if (entry.target === trigger1.value) activeSection.value = 1;
+          if (entry.target === trigger2.value) activeSection.value = 2;
+        }
+      });
+    },
+    { threshold: 0.5, rootMargin: '0px 0px 40% 0px' }
+  );
 
-    if (trigger1.value) observer.observe(trigger1.value);
-    if (trigger2.value) observer.observe(trigger2.value);
+  if (trigger1.value) observer.observe(trigger1.value);
+  if (trigger2.value) observer.observe(trigger2.value);
 });
 
 onBeforeUnmount(() => {
-    if (trigger1.value) observer.unobserve(trigger1.value);
-    if (trigger2.value) observer.unobserve(trigger2.value);
+  if (trigger1.value) observer.unobserve(trigger1.value);
+  if (trigger2.value) observer.unobserve(trigger2.value);
 });
 </script>
 
 <style scoped>
 .scroll-container {
-    position: relative;
+  position: relative;
 }
 
 .sticky-section {
@@ -82,22 +82,22 @@ onBeforeUnmount(() => {
 }
 
 .sticky-section>* {
-    width: 100%;
-    height: 100%;
-    min-width: 100%;
+  width: 100%;
+  height: 100%;
+  min-width: 100%;
 }
 
 .spacer {
-    height: 100vh;
+  height: 100vh;
 }
 
 .fade-enter-active,
 .fade-leave-active {
-    transition: opacity 0.5s ease;
+  transition: opacity 0.5s ease;
 }
 
 .fade-enter-from,
 .fade-leave-to {
-    opacity: 0;
+  opacity: 0;
 }
 </style>

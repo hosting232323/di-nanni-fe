@@ -61,6 +61,6 @@
   font-size: 1.1rem;
   line-height: 1.5;
   color: #fff;
-  width: 100%;
+  width: 80%;
 }
 </style>

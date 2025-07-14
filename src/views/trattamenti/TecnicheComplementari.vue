@@ -111,8 +111,8 @@ const goToNextPage = () => {
 <style scoped>
 .section {
   position: relative;
-  width: 800px;
-  height: 500px;
+  width: 900px;
+  height: 600px;
 }
 
 .media {

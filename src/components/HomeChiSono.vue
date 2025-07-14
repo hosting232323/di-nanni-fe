@@ -1,5 +1,5 @@
 <template>
-  <v-container>
+  <v-container class="padding-fix">
   <v-row justify="center">
     <v-col cols="12" md="6" class="d-flex justify-center">
       <v-img src="../assets/Doriana_LaMiaStoria.jpg" alt="Dott.ssa Doriana Di Nanni" class="dinanni-img"/>
