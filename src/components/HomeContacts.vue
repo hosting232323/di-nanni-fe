@@ -1,5 +1,5 @@
 <template>
-  <v-container>
+  <v-container class="padding-fix">
     <v-row class="d-flex justify-center">
       <v-col cols="12" sm="4" md="4" :class="['d-flex', 'justify-center', 'flex-column', { 'align-center': isMobile }]">
           <p class="d-flex align-center" style="margin-bottom: 20px; width: 250px;">
@@ -121,7 +121,7 @@ ul {
   list-style: none;
 }
 ul li {
-  margin-bottom: 15px;
+  margin-bottom: 5px;
 }
 ul li a {
   color: #9a3548;

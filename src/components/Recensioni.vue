@@ -1,5 +1,5 @@
 <template>
-  <v-container>
+  <v-container class="padding-fix">
     <div class="review-wrapper position-relative">
       <div class="outer-container">
         <v-btn class="arrow-button prev-arrow" icon @click="prevSlide" :disabled="windowIndex === 0">
