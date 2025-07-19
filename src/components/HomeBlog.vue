@@ -1,7 +1,7 @@
 <template>
   <v-container class="padding-fix">
-    <h1 class="homeblog-title">Ultimi post</h1>
-    <div class="articles-wrapper">
+    <h1 class="text-h3 font-weight-bold" style="color: #7d2636;">Ultimi post</h1>
+    <div class="articles-wrapper mt-4">
       <div v-for="(post, index) in displayedPosts" :key="index" class="article-item">
         <img :src="post.cover" class="img" />
         <p class="title">{{ post.title }}</p>
