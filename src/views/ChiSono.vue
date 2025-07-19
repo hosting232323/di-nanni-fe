@@ -1,6 +1,6 @@
 <template>
   <v-container>
-    <v-timeline align="center">
+    <v-timeline align="center" v-if="!isMobile">
       <v-timeline-item 
         v-for="(element, i) in elements"     
         :key="i"
@@ -21,6 +21,28 @@
         <div>
           <h1 class="text-h3 font-weight-bold text-primary">{{ element.title }}</h1>
           <p class="font-weight-medium text-muted mt-4">{{ element.description }}</p>
+        </div>
+      </v-timeline-item>
+    </v-timeline>
+      
+    <v-timeline side="end" v-if="isMobile" style="margin-left: -30px;">
+      <v-timeline-item 
+        v-for="(element, i) in elements"     
+        :key="i"
+        :dot-color="element.dotColor"
+      > 
+        <template v-slot:icon>
+          <v-icon size="20" color="white">{{ element.icon }}</v-icon>
+        </template>
+        <div>
+          <h1 class="text-h3 font-weight-bold text-primary mb-4" style="font-size: 30px !important;">{{ element.title }}</h1>
+          <v-img 
+            :src="element.src" 
+            alt="Dott.ssa Doriana Di Nanni" 
+            class="dinanni-img"
+            cover
+          />
+          <p class="font-weight-medium text-muted mt-4" style="font-size: 14px !important;">{{ element.description }}</p>
         </div>
       </v-timeline-item>
     </v-timeline>
@@ -154,7 +176,8 @@ h1, h2 {
 
 @media (max-width: 600px) {
   .dinanni-img {
-    width: 100%;
+    width: 200px;
+    height: 200px;
   }
 }
 </style>
