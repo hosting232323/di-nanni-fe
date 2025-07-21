@@ -4,10 +4,10 @@
       <v-timeline-item 
         v-for="(element, i) in elements"     
         :key="i"
-        :dot-color="element.dotColor"
+        dot-color="#7D2636"
       > 
         <template v-slot:icon>
-          <v-icon size="20" color="white">{{ element.icon }}</v-icon>
+          <v-icon size="18" color="white">{{ element.icon }}</v-icon>
         </template>
 
         <template v-slot:opposite>
@@ -29,7 +29,7 @@
       <v-timeline-item 
         v-for="(element, i) in elements"     
         :key="i"
-        :dot-color="element.dotColor"
+        dot-color="#7D2636"
       > 
         <template v-slot:icon>
           <v-icon size="20" color="white">{{ element.icon }}</v-icon>
