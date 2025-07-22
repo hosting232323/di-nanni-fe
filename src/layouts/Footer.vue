@@ -10,19 +10,21 @@
       </v-col>
       <v-col cols="12" lg="4" md="6">
         <h3 class="footer-title">Trattamenti</h3>
-          <div class="d-flex justify-sm-space-around">
+          <div class="d-flex justify-space-around">
             <ul class="footer-list">
               <li><router-link to="/trattamenti/agopuntura">Agopuntura</router-link></li>
-              <li><router-link to="/trattamenti/fitoterapia-aromaterapia">Fitoterapia e Aromaterapia</router-link></li>
+              <li v-if="!isMobile"><router-link to="/trattamenti/fitoterapia-aromaterapia">Fitoterapia e Aromaterapia</router-link></li>
+              <li v-else><router-link to="/trattamenti/fitoterapia-aromaterapia">Fitoterapia e<br> Aromaterapia</router-link></li>
               <li><router-link to="/trattamenti/taopatch">Taopatch</router-link></li>
             </ul>
             <ul class="footer-list">
               <li><router-link to="/trattamenti/sobada-rebozo">Sobada e Rebozo</router-link></li>
-              <li><router-link to="/trattamenti/tecniche-complementari">Tecniche complementari</router-link></li>
+              <li v-if="!isMobile"><router-link to="/trattamenti/tecniche-complementari">Tecniche complementari</router-link></li>
+              <li v-else><router-link to="/trattamenti/tecniche-complementari">Tecniche<br>complementari</router-link></li>
             </ul>
           </div>
       </v-col>
-      <v-col cols="12" lg="4" md="3" class="d-flex flex-column justify-sm-space-around">
+      <v-col cols="12" lg="4" md="3" class="d-flex flex-column justify-space-around">
         <router-link class="other-title" to="/contatti">Contattami</router-link>
         <router-link class="other-title" to="/chi-sono">Scopri chi sono</router-link>
         <router-link class="other-title" to="/agenda">Agenda</router-link>

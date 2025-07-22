@@ -15,9 +15,6 @@
           width: isMobile ? '40%' : '80%',
           height: isMobile ? '40%' : '80%',
         }" />
-        <p class="specializzazione" :style="{
-          fontSize: isMobile ? '16px' : '24px'
-        }">Agopuntura e Fitoterapia</p>
       </div>
 
 
@@ -30,7 +27,7 @@
         <strong>Orario studio:</strong> dal lunedì al sabato<br />solo su appuntamento
       </div>
       <div class="info-box" v-else>
-        <strong>Indirizzo:</strong> Via Curzio, 13<br />70123 Bari
+        <strong>Indirizzo:</strong> Via Curzio, 13<br />70123 Bari<br>
         <strong>Orario studio:</strong><br />dal lunedì al sabato<br />solo su appuntamento
       </div>
 

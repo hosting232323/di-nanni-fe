@@ -1,5 +1,5 @@
 <template>
-  <div style="background-color: #7d2636; width: 100%;">
+  <div style="background-color: #7d2636">
     <v-container class="padding-fix">
       <p class="cit-title">{{ text }}</p>
     </v-container>
