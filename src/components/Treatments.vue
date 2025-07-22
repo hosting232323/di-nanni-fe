@@ -1,18 +1,22 @@
 <template>
-  <v-container id="treatments" class="d-flex align-center flex-column padding-fix">
-    <h2 class="treatments-title">Trattamenti</h2>
-    <p class="treatments-description">
+  <v-container id="treatments">
+    <h1 class="text-h3 font-weight-bold" style="color: #7d2636;">Trattamenti</h1>
+    <p class="font-weight-medium text-muted mt-4 mb-4">
       Ogni persona è unica, così come il percorso verso il benessere.<br />
       Ecco perché offro una varietà di trattamenti pensati per rispondere a esigenze diverse, sia fisiche che
-      emotive.<br />
+      emotive.<br>
       Dall’agopuntura alla fitoterapia, dal Taopatch® alle tecniche corporee tradizionali, ogni disciplina può essere
-      utile in molti ambiti.<br />
+      utile in molti ambiti.<br>
       Se hai un disturbo o un disagio e ti chiedi se uno di questi approcci possa aiutarti, contattami: insieme possiamo
       valutare la strada migliore per te.
     </p>
-    <div class="treatments-container">
-      <RouterLink v-for="treatment in treatments" :key="treatment.id" :to="treatment.route" class="treatment-card"
-        :style="{ width: isMobile ? '200px' : '350px', height: isMobile ? '200px' : '350px' }">
+    <div class="treatments-container mt-10 mb-10">
+      <RouterLink
+        v-for="treatment in treatments" :key="treatment.id"
+        :to="treatment.route"
+        class="treatment-card"
+        :style="{ width: isMobile ? '200px' : '300px', height: isMobile ? '200px' : '300px' }"
+      >
         <div class="card-inner">
           <div class="card-front">
             <img :src="treatment.image" :alt="treatment.title" />
@@ -76,33 +80,17 @@ const treatments = [
 </script>
 
 <style scoped>
-.treatments-title {
-  color: #7d2636;
-  font-size: 2.5rem;
-  margin-bottom: 2rem;
-  font-style: italic;
-}
-
-.treatments-description {
-  color: #7d2636;
-  font-size: 1.1rem;
-  max-width: 900px;
-  margin-bottom: 4rem;
-  line-height: 1.6;
-}
-
 .treatments-container {
   display: flex;
   justify-content: center;
   gap: 2rem;
   flex-wrap: wrap;
-  max-width: 1200px;
   margin: 0 auto;
 }
 
 .treatment-card {
-  width: 300px;
-  height: 300px;
+  width: 200px;
+  height: 200px;
   perspective: 1000px;
   text-decoration: none;
   color: inherit;

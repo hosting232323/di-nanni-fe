@@ -1,25 +1,25 @@
 <template>
   <v-container class="padding-fix">
-  <v-row justify="center">
-    <v-col cols="12" md="6" class="d-flex justify-center">
-      <v-img src="../assets/Doriana_LaMiaStoria.jpg" alt="Dott.ssa Doriana Di Nanni" class="dinanni-img"/>
-    </v-col>
-    <v-col cols="12" md="6" class="d-flex flex-column justify-center align-start">
-      <h1 class="text-h3 font-weight-bold" style="color: #7d2636;">Chi Sono</h1>
-      <p class="font-weight-medium text-muted mt-4 mb-4">
-        Sono la Dott.ssa Doriana Di Nanni e credo che ogni persona meriti un percorso di cura su misura, che unisca medicina
-        tradizionale e tecniche complementari. La mia missione è aiutarti a migliorare la qualità della tua vita con un approccio
-        scientifico e umano.
-      </p>
-      <a href="/chi-sono" class="more">Scopri di più...</a>
-    </v-col>
-  </v-row>
+    <v-row justify="center">
+      <v-col cols="12" md="4" class="d-flex justify-center">
+        <v-img src="../assets/Doriana_LaMiaStoria.jpg" alt="Dott.ssa Doriana Di Nanni" class="dinanni-img"/>
+      </v-col>
+      <v-col cols="12" md="8" class="d-flex flex-column justify-center align-start">
+        <h1 class="text-h3 font-weight-bold" style="color: #7d2636;">Chi Sono</h1>
+        <p class="font-weight-medium text-muted mt-4 mb-4">
+          Sono la Dott.ssa Doriana Di Nanni e credo che ogni persona meriti un percorso di cura su misura, che unisca medicina
+          tradizionale e tecniche complementari.<br>La mia missione è aiutarti a migliorare la qualità della tua vita con un approccio
+          scientifico e umano.
+        </p>
+        <a href="/chi-sono" class="more">Scopri di più...</a>
+      </v-col>
+    </v-row>
   </v-container>
 </template>
 
 <style scoped>
 .dinanni-img {
-  max-width: 400px;
+  max-width: 500px;
   border-radius: 12px;
 }
 
