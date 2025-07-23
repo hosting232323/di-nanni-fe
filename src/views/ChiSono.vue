@@ -50,37 +50,42 @@
 </template>
 
 <script setup>
+import { useHead } from '@vueuse/head';
 import mobile from '@/utils/mobile';
+
 const isMobile = mobile.setupMobileUtils();
 
-import { useHead } from '@vueuse/head';
+import img1 from '@/assets/Doriana_LaMiaStoria.jpg';
+import img2 from '@/assets/Doriana_ComeProcedo.jpg';
+import img3 from '@/assets/Doriana_Chisono.jpg';
+import img4 from '@/assets/Olismo_Integrazione.jpg';
 
 const elements = [
   {
     title: "Chi Sono",
     description: "Sono la Dott.ssa Doriana Di Nanni, laureata in Medicina e Chirurgia presso l'Università di Bari nel 2014 e specializzata in Anatomia Patologica a Bologna nel 2020. Integro la medicina tradizionale con tecniche complementari per offrire un approccio completo alla salute. Credo in un percorso di cura personalizzato, che tenga conto delle esigenze specifiche di ogni paziente. La mia missione è migliorare la qualità della vita attraverso un approccio scientifico e umano.",
-    src: "../src/assets/Doriana_LaMiaStoria.jpg",
+    src: img1,
     icon: "mdi-account-heart",
     dotColor: "deep-purple-lighten-1"
   },
   {
     title: "Come Procedo",
     description: "Il mio approccio terapeutico combina la medicina tradizionale con metodologie integrate. Durante la prima visita, effettuo un'analisi approfondita dello stato di salute del paziente, valutando sintomi, stile di vita e abitudini alimentari. Dopo aver raccolto tutte le informazioni necessarie, propongo un piano terapeutico personalizzato, che può includere trattamenti di medicina convenzionale e tecniche complementari come agopuntura e fitoterapia. Nel video di presentazione spiego come l'empatia e l'ascolto siano fondamentali nel mio metodo, per creare una relazione di fiducia con i pazienti e accompagnarli nel loro percorso di benessere.",
-    src: "../src/assets/Doriana_ComeProcedo.jpg",
+    src: img2,
     icon: "mdi-stethoscope",
     dotColor: "teal-darken-2"
   },
   {
     title: "La Mia Storia",
     description: "Fin da bambina ho avuto una grande passione per la medicina e il benessere delle persone. Dopo anni di studi e specializzazioni, ho deciso di integrare le conoscenze tradizionali con metodologie naturali e complementari per un approccio più completo e umano alla salute. Oggi esercito a Bari, dedicandomi alla cura dei pazienti con un metodo che valorizza sia la medicina scientifica sia le terapie alternative, cercando sempre il miglior equilibrio tra corpo e mente. Il mio percorso di formazione e le esperienze professionali mi hanno portato a sviluppare una visione olistica della medicina, che metto in pratica ogni giorno per aiutare i miei pazienti.",
-    src: "../src/assets/Doriana_Chisono.jpg",
+    src: img3,
     icon: "mdi-book-open-page-variant",
     dotColor: "amber-darken-2"
   },
   {
     title: "Integrazione e Olismo",
     description: "Sono convinta che il benessere sia il risultato di un equilibrio tra corpo e mente. L'integrazione di tecniche tradizionali e moderne è fondamentale per un approccio olistico e completo alla salute. Le mie terapie non sono solo per curare le malattie, ma anche per prevenire e mantenere il benessere. Utilizzo l'agopuntura, la fitoterapia e altre metodologie naturali come validi strumenti di cura, complementando le terapie convenzionali per un percorso terapeutico più completo. Se desideri un percorso personalizzato che prenda in considerazione le tue esigenze, contattami per scoprire insieme come posso aiutarti.",
-    src: "../src/assets/Olismo_Integrazione.jpg",
+    src: img4,
     icon: "mdi-book-open-page-variant",
     dotColor: "green-darken-1"
   }
