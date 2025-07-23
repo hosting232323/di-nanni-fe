@@ -55,10 +55,10 @@ import mobile from '@/utils/mobile';
 
 const isMobile = mobile.setupMobileUtils();
 
-import img1 from '@/assets/Doriana_LaMiaStoria.jpg';
-import img2 from '@/assets/Doriana_ComeProcedo.jpg';
-import img3 from '@/assets/Doriana_Chisono.jpg';
-import img4 from '@/assets/Olismo_Integrazione.jpg';
+import img1 from '@/assets/lamiastoria.jpg';
+import img2 from '@/assets/comeprocedo.jpg';
+import img3 from '@/assets/chisono.jpg';
+import img4 from '@/assets/olismointegrazione.jpg';
 
 const elements = [
   {
