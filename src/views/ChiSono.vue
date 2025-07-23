@@ -51,8 +51,8 @@
 
 <script setup>
 import { useHead } from '@vueuse/head';
-import mobile from '@/utils/mobile';
 
+import mobile from '@/utils/mobile';
 const isMobile = mobile.setupMobileUtils();
 
 import img1 from '@/assets/lamiastoria.jpg';
