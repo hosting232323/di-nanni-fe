@@ -52,13 +52,13 @@
 <script setup>
 import { useHead } from '@vueuse/head';
 
-import mobile from '@/utils/mobile';
-const isMobile = mobile.setupMobileUtils();
-
 import img1 from '@/assets/lamiastoria.jpg';
 import img2 from '@/assets/comeprocedo.jpg';
 import img3 from '@/assets/chisono.jpg';
 import img4 from '@/assets/olismointegrazione.jpg';
+
+import mobile from '@/utils/mobile';
+const isMobile = mobile.setupMobileUtils();
 
 const elements = [
   {
