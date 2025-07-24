@@ -1,6 +1,6 @@
 <template>
   <v-container>
-    <h1 style="font-family: 'Montserrat', sans-serif; text-transform: uppercase; margin: 10px 0;">Ultimi post</h1>
+    <h1 class="text-h3 font-weight-bold" style="color: #7d2636; margin: 10px 0;">Ultimi post</h1>
     <div v-for="(post, index) in displayedPosts" :key="post.id">
       <AgendaItem :post="post" :isFeatured="index === 0"/>
     </div>
