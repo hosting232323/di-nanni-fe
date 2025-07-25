@@ -28,8 +28,6 @@ import http from '@/utils/http';
 import mobile from '@/utils/mobile';
 import { useRoute } from 'vue-router';
 
-import VueMarkdown from 'vue-markdown-render';
-
 const post = ref({});
 const route = useRoute();
 const breadcrumbs = ref([]);
@@ -107,7 +105,6 @@ const shareUrl = (platform) => {
 
 .topic-date,
 .reading-time {
-  font-family: "Montserrat", sans-serif;
   font-size: 15px;
   text-transform: uppercase;
 }
@@ -139,7 +136,8 @@ const shareUrl = (platform) => {
 }
 
 .post-title {
-  font-family: "Montserrat", sans-serif;
   text-transform: uppercase;
+  color: #7d2636;
+  margin: 15px 0;
 }
 </style>
