@@ -2,7 +2,7 @@
   <v-container class="padding-fix">
     <v-row justify="center">
       <v-col cols="12" md="4" class="d-flex justify-center">
-        <v-img src="../assets/Doriana_LaMiaStoria.jpg" alt="Dott.ssa Doriana Di Nanni" class="dinanni-img"/>
+        <v-img src="../assets/lamiastoria.jpg" alt="Dott.ssa Doriana Di Nanni" class="dinanni-img"/>
       </v-col>
       <v-col cols="12" md="8" class="d-flex flex-column justify-center align-start">
         <h1 class="text-h3 font-weight-bold" style="color: #7d2636;">Chi Sono</h1>
