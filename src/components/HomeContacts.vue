@@ -32,7 +32,7 @@
             <a href=""><span class="mdi mdi-facebook social"></span></a>
           </div>
       </v-col>
-      <v-col cols="12" sm="6"  md="8" v-if="!isMobile">
+      <v-col cols="12" sm="6"  md="8">
         <v-card>
           <v-container style="padding: 6px;">
             <div ref="mapContainer" style="width: 100%; height: 400px;" />
