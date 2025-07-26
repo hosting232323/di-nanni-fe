@@ -75,8 +75,8 @@ onMounted(() => {
       anchor: [0.5, 1],
       anchorXUnits: 'fraction',
       anchorYUnits: 'fraction',
-      src: 'https://cdn-icons-png.flaticon.com/512/684/684908.png',
-      scale: 0.1
+      src: 'image.png',
+      scale: 1
     })
   });
 
@@ -100,7 +100,7 @@ onMounted(() => {
     ],
     view: new View({
       center: fromLonLat([16.8683, 41.1153]),
-      zoom: 12
+      zoom: 15
     })
   });
 });

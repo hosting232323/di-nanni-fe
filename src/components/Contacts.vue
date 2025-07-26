@@ -1,22 +1,10 @@
 <template>
   <section class="contact-section">
     <v-container class="padding-fix">
-      <v-row class="mb-10 align-center justify-space-between">
-        <v-col cols="12" md="6" class="logo-and-social">
-          <img src="@/assets/logo.png" alt="Logo" class="logo" />
-          <div class="social-buttons">
-            <v-btn icon href="https://www.instagram.com" target="_blank" class="social-btn">
-              <v-icon size="28" color="#E1306C">mdi-instagram</v-icon>
-            </v-btn>
-            <v-btn icon href="https://www.facebook.com" target="_blank" class="social-btn">
-              <v-icon size="28" color="#1877F2">mdi-facebook</v-icon>
-            </v-btn>
-          </div>
-        </v-col>
-      </v-row>
-
       <v-row>
         <v-col cols="12" md="5" class="text-content">
+          <img src="@/assets/logo.png" alt="Logo" class="logo" />
+
           <h2 class="section-title">Contattaci</h2>
           <p class="section-subtitle">
             Compila il modulo per richiedere un appuntamento o farci una domanda. Ti risponderemo il prima possibile!
@@ -29,6 +17,15 @@
             <a href="https://wa.me/+393425644546" class="contact-link">
               <v-icon class="contact-icon">mdi-whatsapp</v-icon> Chatta su WhatsApp
             </a>
+          </div>
+
+          <div class="social-buttons">
+            <v-btn icon href="https://www.instagram.com" target="_blank" class="social-btn">
+              <v-icon size="28" color="#E1306C">mdi-instagram</v-icon>
+            </v-btn>
+            <v-btn icon href="https://www.facebook.com" target="_blank" class="social-btn">
+              <v-icon size="28" color="#1877F2">mdi-facebook</v-icon>
+            </v-btn>
           </div>
         </v-col>
 
@@ -157,6 +154,7 @@ const handleSubmit = () => {
 .social-buttons {
   display: flex;
   gap: 12px;
+  margin-top: 15px;
 }
 
 .social-btn:hover {
