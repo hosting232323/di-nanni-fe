@@ -36,6 +36,18 @@
         <v-card>
           <v-container style="padding: 6px;">
             <div ref="mapContainer" style="width: 100%; height: 400px;" />
+              <div ref="popupContainer" class="ol-popup">
+              <v-icon icon="mdi-window-close" class="popup-close-btn" @click="closePopup"/>
+              <div ref="popupContent" class="d-flex flex-column align-start" >
+                <v-img :src="logo" width="110" height="auto" object-fit style="margin-bottom: 10px;"/>
+                <p style="font-size: 13px;" class="mb-1">Via Curzio 13, 70123 Bari</p>
+                <a :href="link" target="_blank" rel="noopener noreferrer" class="nav" style="color: #7d2636;">
+                  <v-icon icon="mdi-directions"  style="font-size: 16px;" class="mr-1"/>
+                  Navigazione
+                </a>
+              </div>
+              <div class="ol-popup-arrow"></div>
+            </div>
           </v-container>
         </v-card>
 
@@ -58,11 +70,16 @@ import { Icon, Style } from 'ol/style';
 import VectorLayer from 'ol/layer/Vector';
 import VectorSource from 'ol/source/Vector';
 import mobile from '@/utils/mobile';
+import Overlay from 'ol/Overlay';
+
+import logo from '@/assets/logo.png';
 
 const isMobile = mobile.setupMobileUtils();
+const link = `https://www.google.com/maps/search/?api=1&query=41.1153,16.8683`
 
 const mapContainer = ref(null);
-
+let popupContainer = ref(null);
+let overlay;
 let map;
 
 onMounted(() => {
@@ -103,7 +120,37 @@ onMounted(() => {
       zoom: 15
     })
   });
+
+  overlay = new Overlay({
+    element: popupContainer.value,
+    autoPan: true,
+    autoPanAnimation: {
+      duration: 250
+    },
+    positioning: 'bottom-center',
+    offset: [0, -175]
+  });
+
+  map.addOverlay(overlay);
+
+  map.on('singleclick', function (evt) {
+    const feature = map.forEachFeatureAtPixel(evt.pixel, function (feature) {
+      return feature;
+    });
+
+    if (feature === iconFeature) {
+      const coordinate = feature.getGeometry().getCoordinates();
+      overlay.setPosition(coordinate);
+    } else {
+      overlay.setPosition(undefined);
+    }
+  });
 });
+
+
+function closePopup() {
+  overlay.setPosition(undefined);
+}
 </script>
 
 <style scoped>
@@ -130,5 +177,61 @@ ul li {
 }
 ul li a {
   color: #9a3548;
+}
+
+.nav {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  text-decoration: none;
+  font-size: 13px;
+}
+.ol-popup {
+  position: absolute;
+  background: white;
+  border-radius: 8px;
+  padding: 8px 12px;
+  min-width: 220px;
+  box-shadow: 0 3px 14px rgba(0, 0, 0, .2);
+  pointer-events: auto;
+  transform: translateX(-50%);
+  white-space: nowrap;
+  font-size: 14px;
+  text-align: center;
+  user-select: none;
+  z-index: 1000;
+}
+
+.ol-popup-arrow {
+  position: absolute;
+  width: 0;
+  height: 0;
+  border-left: 10px solid transparent;
+  border-right: 10px solid transparent;
+  border-top: 10px solid white;
+  left: 50%;
+  bottom: -10px;
+  transform: translateX(-50%);
+  filter: drop-shadow(0 1px 1px rgba(0,0,0,0.1));
+  z-index: 1001;
+}
+
+.popup-close-btn {
+  position: absolute;
+  top: 8px;
+  right: 10px;
+  background: transparent;
+  border: none;
+  font-size: 18px;
+  font-weight: bold;
+  cursor: pointer;
+  line-height: 1;
+  color: #999;
+  transition: color 0.2s;
+  z-index: 1002;
+}
+
+.popup-close-btn:hover {
+  color: #333;
 }
 </style>
