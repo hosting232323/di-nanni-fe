@@ -4,7 +4,7 @@
     <div v-for="(post, index) in displayedPosts" :key="post.id">
       <AgendaItem :post="post" :isFeatured="index === 0"/>
     </div>
-    <div v-if="displayedPosts.length < posts.length" class="text-center mt-4">
+    <div v-if="displayedPosts.length < posts.length" class="mt-4">
       <a @click="loadMorePosts" class="more-posts">Mostra più articoli</a>
     </div>
   </v-container>
@@ -97,6 +97,8 @@ useHead({
   text-decoration: none;
   position: relative;
   display: inline-block;
+  font-style: italic;
+  color: #7d2636;
 }
 
 .more-posts::after {

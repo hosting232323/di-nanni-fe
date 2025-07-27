@@ -1,5 +1,5 @@
 <template>
-    <Contacts />
+  <Contacts />
 </template>
 
 <script setup>

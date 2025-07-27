@@ -18,11 +18,12 @@
     </div>
     <hr v-if="!isMobile" style="border: none; height: 1px; background-color: #767677;">
     <h1 class="post-title">{{ post.title }}</h1>
-    <p>{{ post.content }}</p>
+    <div v-html="renderedContent" class="markdown-content"></div>
   </v-container>
 </template>
 
 <script setup>
+import { marked } from 'marked';
 import { ref } from 'vue';
 import http from '@/utils/http';
 import mobile from '@/utils/mobile';
@@ -33,10 +34,13 @@ const route = useRoute();
 const breadcrumbs = ref([]);
 const isMobile = mobile.setupMobileUtils();
 
+const renderedContent = ref('');
+
 http.getRequest(`post/${route.params.id}`, {
   project: 'dorianadinanni.it'
 }, function (data) {
   post.value = data.post;
+  renderedContent.value = marked(post.value.content);
   breadcrumbs.value = [
     {
       title: 'Home',
@@ -96,7 +100,7 @@ const shareUrl = (platform) => {
   display: block;
   object-fit: cover;
   width: 100%;
-  max-height: 426px;
+  max-height: 450px;
   box-sizing: border-box;
 }
 .margin-desktop {
