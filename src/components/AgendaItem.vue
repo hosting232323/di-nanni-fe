@@ -1,29 +1,5 @@
 <template>
-
-  <v-container v-if="isFeatured && !isMobile" class="featured-post">
-    <v-row class="relative-container">
-      <!-- Sezione immagini -->
-      <v-col cols="12" md="7" class="image-container">
-        <div class="post-image">
-          <v-img :src="post.cover" class="featured-image" max-height="400px"/>
-        </div>
-      </v-col>
-
-      <!-- Sezione testo sovrapposta -->
-      <v-col cols="12" md="5" class="text-container">
-        <div class="text-box">
-          <p class="topic-date">{{ formatTopics(post.topics) }} {{ formatDate(post.updated_at) }}</p>
-          <p class="reading-time">{{ calculateReadingTime(post.content) }}</p>
-          <router-link :to="`/agenda/${post.id}`" style="text-decoration: none;">
-            <h2 class="truncate-title">{{ post.title }}</h2>
-          </router-link>
-          <p class="truncate-text" v-if="!isMobile">{{ post.content }}</p>
-        </div>
-      </v-col>
-    </v-row>
-  </v-container>
-
-  <v-container v-else class="d-flex mt-4 mb-4">
+  <v-container class="d-flex mt-4 mb-4" v-if="!isMobile">
     <router-link :to="`/agenda/${post.id}`">
       <v-img :src="post.cover" width="170px" class="featured-image"/>
     </router-link>
@@ -36,7 +12,23 @@
         <h2 class="truncate-title">{{ post.title }}</h2>
       </router-link>
 
-      <p v-if="!isMobile" class="truncate-text">{{ post.content }}</p>
+      <p class="truncate-text">{{ post.content }}</p>
+    </div>
+  </v-container>
+
+  <v-container class="mt-4 mb-4 d-flex flex-column" v-else>
+    <router-link :to="`/agenda/${post.id}`">
+      <img :src="post.cover" class="featured-image">
+    </router-link>
+
+    <div>
+      <p class="topic-date">{{ formatTopics(post.topics) }} {{ formatDate(post.updated_at) }} - {{ calculateReadingTime(post.content) }}</p>
+
+      <router-link :to="`/agenda/${post.id}`" style="text-decoration: none;">
+        <h2 class="truncate-title">{{ post.title }}</h2>
+      </router-link>
+
+      <p class="truncate-text">{{ post.content }}</p>
     </div>
   </v-container>
 </template>
@@ -103,9 +95,8 @@ const calculateReadingTime = (content, wordsPerMinute = 200) => {
 }
 
 .featured-image {
-  width: 100%;
   max-height: 225px;
-  object-fit: cover;
+  align-items: flex-start;
 }
 
 .text-container {
@@ -153,7 +144,6 @@ const calculateReadingTime = (content, wordsPerMinute = 200) => {
     font-size: 13px
   }
   .featured-image {
-    max-width: 150px !important;
     max-height: 150px !important;
   }
   .truncate-title {

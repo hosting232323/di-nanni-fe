@@ -7,6 +7,9 @@
     <div v-if="displayedPosts.length < posts.length" class="mt-4">
       <a @click="loadMorePosts" class="more-posts">Mostra più articoli</a>
     </div>
+    <div v-else class="mt-4">
+      <a @click="removeMorePosts" class="more-posts">Mostra meno</a>
+    </div>
   </v-container>
 </template>
 
@@ -19,7 +22,8 @@ import { useHead } from '@vueuse/head';
 
 const posts = ref([]);
 const isMobile = mobile.setupMobileUtils();
-const itemsToShow = ref(3);
+const maxItems = 4;
+const itemsToShow = ref(maxItems);
 
 http.getRequest('blog/post', {
   project: 'dorianadinanni.it'
@@ -31,6 +35,10 @@ const displayedPosts = computed(() => posts.value.slice(0, itemsToShow.value));
 
 const loadMorePosts = () => {
   itemsToShow.value += 5;
+};
+
+const removeMorePosts = () => {
+  itemsToShow.value = maxItems;
 };
 
 useHead({

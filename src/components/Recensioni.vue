@@ -1,5 +1,6 @@
 <template>
   <v-container class="padding-fix">
+    <h1 class="text-h3 font-weight-bold mb-4" style="color: #7d2636;">Cosa dicono di me</h1>
     <div class="review-wrapper position-relative">
       <div class="outer-container">
         <v-btn class="arrow-button prev-arrow" icon @click="prevSlide" :disabled="windowIndex === 0">
@@ -127,7 +128,7 @@ const reviews = ref([
 
 <style scoped>
 .review-wrapper {
-  padding: 60px 0;
+  padding: 20px 0;
   background-color: #f8d4da;
 }
 
