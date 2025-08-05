@@ -1,5 +1,6 @@
 <template>
   <v-container class="padding-fix">
+    <h1 class="text-h3 font-weight-bold mb-4" style="color: #7d2636;">Contattami</h1>
     <v-row class="d-flex justify-center">
       <v-col cols="12" sm="4" md="4" :class="['d-flex', 'justify-center', 'flex-column', { 'align-center': isMobile }]">
           <p class="d-flex align-center" style="margin-bottom: 20px; width: 250px;">
