@@ -17,10 +17,10 @@
         </div>
 
         <div class="social-buttons">
-          <v-btn icon href="https://www.instagram.com" target="_blank" class="social-btn">
+          <v-btn icon href="https://www.instagram.com/dott.ssa_dorianadinanni" target="_blank" class="social-btn">
             <v-icon size="28" color="#E1306C">mdi-instagram</v-icon>
           </v-btn>
-          <v-btn icon href="https://www.facebook.com" target="_blank" class="social-btn">
+          <v-btn icon href="https://www.facebook.com/inphytoveritas" target="_blank" class="social-btn">
             <v-icon size="28" color="#1877F2">mdi-facebook</v-icon>
           </v-btn>
         </div>

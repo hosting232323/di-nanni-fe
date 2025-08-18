@@ -1,5 +1,6 @@
 <template>
-  <v-container>
+  <Loading :home="false" v-if="loading"/>
+  <v-container v-else>
     <h1 class="text-h3 font-weight-bold" style="color: #7d2636; margin: 10px 0;">Ultimi post</h1>
     <div v-for="(post, index) in displayedPosts" :key="post.id">
       <AgendaItem :post="post" :isFeatured="index === 0"/>
@@ -19,8 +20,10 @@ import http from '@/utils/http';
 import mobile from '@/utils/mobile';
 import AgendaItem from '@/components/AgendaItem';
 import { useHead } from '@vueuse/head';
+import Loading from '@/components/Loading.vue';
 
 const posts = ref([]);
+const loading = ref(true);
 const isMobile = mobile.setupMobileUtils();
 const maxItems = 4;
 const itemsToShow = ref(maxItems);
@@ -28,7 +31,10 @@ const itemsToShow = ref(maxItems);
 http.getRequest('blog/post', {
   project: 'dorianadinanni.it'
 }, function (data) {
-  posts.value = data.posts.reverse();
+  if(data.status == 'ok') {
+    posts.value = data.posts.reverse();
+    loading.value = false;
+  }
 });
 
 const displayedPosts = computed(() => posts.value.slice(0, itemsToShow.value));

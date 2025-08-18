@@ -1,27 +1,34 @@
 <template>
   <v-container class="padding-fix">
     <h1 class="text-h3 font-weight-bold" style="color: #7d2636;">Ultimi post</h1>
-    <div class="articles-wrapper mt-4">
+    <Loading :home="true" v-if="loading"/>
+
+    <div class="articles-wrapper mt-4" v-if="!loading">
       <div v-for="(post, index) in displayedPosts" :key="index" class="article-item">
         <img :src="post.cover" class="img" />
         <p class="title">{{ post.title }}</p>
         <p>{{ truncate(post.content) }}</p>
       </div>
     </div>
-    <p><a href="/agenda" class="more-posts">Scopri di più...</a></p>
+    <p v-if="!loading"><a href="/agenda" class="more-posts">Scopri di più...</a></p>
   </v-container>
 </template>
 
 <script setup>
 import { ref, computed } from 'vue';
 import http from '@/utils/http';
+import Loading from './Loading.vue';
 
+const loading = ref(true);
 const posts = ref([]);
 
 http.getRequest('blog/post', {
   project: 'dorianadinanni.it'
 }, function (data) {
-  posts.value = data.posts.reverse();
+  if(data.status == 'ok') {
+    posts.value = data.posts.reverse();
+    loading.value = false;
+  }
 });
 
 const displayedPosts = computed(() => posts.value.slice(0, 3));
