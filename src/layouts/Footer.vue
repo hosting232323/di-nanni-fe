@@ -30,6 +30,9 @@
         <router-link class="other-title" to="/agenda">Agenda</router-link>
       </v-col>
     </v-row>
+    <p>Powered By <a href="https://fastsite.it" target="_blank" class="powered">FastSite</a></p>
+
+    
   </footer>
 </template>
 
@@ -64,15 +67,16 @@ const isMobile = mobile.setupMobileUtils();
   text-align: left;
 }
 
+
 .other-title {
  font-size: 18px;
 }
-.footer-title a, .other-title {
+.footer-title a, .other-title, .powered {
   text-decoration: none;
   color: white;
 }
 
-.footer-title a:hover , .other-title:hover {
+.footer-title a:hover , .other-title:hover, .powered:hover {
   text-decoration: underline;
 }
 
