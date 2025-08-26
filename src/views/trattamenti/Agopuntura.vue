@@ -1,64 +1,74 @@
 <template>
   	<div class="no-top-margin">
 		<v-container class="pa-0" fluid>
+			<!-- Card N. 1 -->
+			<!-- Desktop -->
 			<v-row class="desktop-row" no-gutters v-if="!isMobile">
 				<v-col cols="12" md="6" class="pa-0 full-height">
 					<div class="media-container">
-						<video autoplay loop muted src="@/assets/agopuntura.mp4" style="width: 100%; height: 100%; object-fit: cover; "></video>
+						<video autoplay loop muted playsinline src="@/assets/agopuntura.mp4" style="width: 100%; height: 100%; object-fit: cover; "></video>
 					</div>
 				</v-col>
 				<v-col cols="12" md="6" class="text-container">
 					<div class="body-1">
-						<strong><span class="highlight-title-large px-4">Cos'è l'Agopuntura?</span></strong>
-						<p class="mt-4 px-4">
+						<h1 class="text-h3 font-weight-bold highlight-title px-4">Cos'è l'Agopuntura?</h1>
+						<p class="mt-4 px-4" style="font-size: 18px !important">
 							L'<strong><span class="highlight">agopuntura</span></strong> è una pratica della medicina tradizionale cinese che consiste nell'inserire aghi sottili in specifici punti del corpo per riequilibrare l'energia vitale.<br>
 							Ha il <strong><span class="highlight">vantaggio</span></strong> di non utilizzare farmaci, non causa effetti collaterali o complicanze nella maggior parte dei casi, è utile nei pazienti in cui i farmaci possono creare allergie o sono controindicati.
 						</p>
 					</div>
 				</v-col>
 			</v-row>
+			<!-- Mobile -->
 			<v-row no-gutters v-if="isMobile">
 				<v-col cols="12" class="pa-0">
 					<div class="media-container">
-						<video autoplay loop muted src="@/assets/agopuntura.mp4" style="width: 100%; height: 65vh; object-fit: cover;"></video>
+						<video autoplay loop muted playsinline src="@/assets/agopuntura.mp4" style="width: 100%; height: 65vh; object-fit: cover;"></video>
 					</div>
 				</v-col>
 				<v-col cols="12" class="text-container">
 					<div class="body-1 py-8">
-					<strong><span class="highlight-title-large px-4">Cos'è l'Agopuntura?</span></strong>
-						<p class="mt-4 px-4">
+						<h1 class="text-h3 font-weight-bold highlight-title px-4" style="font-size: 30px !important;">Cos'è l'Agopuntura?</h1>
+						<p class="mt-4 px-4" style="font-size: 16px !important">
 							L'<strong><span class="highlight">agopuntura</span></strong> è una pratica della medicina tradizionale cinese che consiste nell'inserire aghi sottili in specifici punti del corpo per riequilibrare l'energia vitale.<br>
 							Ha il <strong><span class="highlight">vantaggio</span></strong> di non utilizzare farmaci, non causa effetti collaterali o complicanze nella maggior parte dei casi, è utile nei pazienti in cui i farmaci possono creare allergie o sono controindicati.
 						</p>
 					</div>
 				</v-col>
 			</v-row>
+
+			<!-- Card N. 2 -->
+			<!-- Desktop -->
 			<v-row class="desktop-row" no-gutters v-if="!isMobile">
 				<v-col cols="12" md="6" class="text-container">
-					<div class="body-1 px-4">
+					<div class="body-1 px-4" style="font-size: 18px !important">
 						È un <strong><span class="highlight">trattamento sicuro</span></strong> e ha pochissimi effetti collaterali, (dolore e lividi e/o sanguinamenti sulle parti in cui entrano i piccoli aghi).<br><br>
 						<strong><span class="highlight">Non è doloroso</span></strong> e cura molte patologie dolorose (in ambito osteomuscolare e post-operatorio) e non (disturbi neurologici, dermatologici, digestivi, ginecologici di pertinenza otorinolaringoiatrica etc.)
 					</div>
 				</v-col>
 				<v-col cols="12" md="6" class="pa-0 full-height">
 					<div class="media-container">
-						<video autoplay loop muted src="@/assets/agopuntura_piede.mp4" style="width: 100%; height: 100%; object-fit: cover;"></video>
+						<video autoplay loop muted playsinline src="@/assets/agopuntura_piede.mp4" style="width: 100%; height: 100%; object-fit: cover;"></video>
 					</div>
 				</v-col>
 			</v-row>
+			<!-- Mobile -->
 			<v-row no-gutters v-if="isMobile">
 				<v-col cols="12" class="pa-0">
 					<div class="media-container">
-						<video autoplay loop muted src="@/assets/agopuntura_piede.mp4" style="width: 100%; object-fit: cover;"></video>
+						<video autoplay loop muted playsinline src="@/assets/agopuntura_piede.mp4" style="width: 100%; object-fit: cover;"></video>
 					</div>
 				</v-col>
 				<v-col cols="12" class="text-container">
-					<div class="body-1 py-8 px-4">
+					<div class="body-1 py-8 px-4" style="font-size: 16px !important">
 						È un <strong><span class="highlight">trattamento sicuro</span></strong> e ha pochissimi effetti collaterali, (dolore e lividi e/o sanguinamenti sulle parti in cui entrano i piccoli aghi).<br><br>
 						<strong><span class="highlight">Non è doloroso</span></strong> e cura molte patologie dolorose (in ambito osteomuscolare e post-operatorio) e non (disturbi neurologici, dermatologici, digestivi, ginecologici di pertinenza otorinolaringoiatrica etc.)
 					</div>
 				</v-col>
 			</v-row>
+
+			<!-- Card N. 3 -->
+			<!-- Desktop -->
 			<v-row class="desktop-row" no-gutters v-if="!isMobile">
 				<v-col cols="12" md="6" class="pa-0 full-height">
 					<div class="media-container">
@@ -67,8 +77,8 @@
 				</v-col>
 				<v-col cols="12" md="6" class="text-container">
 					<div class="body-1">
-						<strong><span class="highlight-title-large px-4">Sulle sedute</span></strong>
-						<p class="mt-4 px-4">
+						<h1 class="text-h3 font-weight-bold highlight-title px-4">Sulle sedute</h1>
+						<p class="mt-4 px-4" style="font-size: 18px !important">
 							Il <strong><span class="highlight">primo incontro</span></strong> potrebbe durare quasi un'ora, le <strong><span class="highlight">sedute di mantenimento</span></strong> dai 30 ai 40 minuti. Il tempo che intercorre con gli aghi inseriti è variabile dai 20 ai 30 minuti.<br><br>
 							Gli <strong><span class="highlight">aghi utilizzati</span></strong> sono usa e getta, sono molto sottili e flessibili. Il loro inserimento potrebbe provocare un leggero "effetto pizzicotto", un formicolio, un minimo senso di calore ma non sono dolorosi (non devono esserlo per l'intera durata della seduta) e soprattutto sono effetti del tutto personali.<br><br>
 							<strong><span class="highlight">È importante riposarsi dopo la seduta evitando pesanti esercizi fisici e grandi abbuffate con alcolici.</span></strong>
@@ -76,16 +86,17 @@
 					</div>
 				</v-col>
 			</v-row>
+			<!-- Mobile -->
 			<v-row no-gutters v-if="isMobile">
 				<v-col cols="12" class="pa-0">
 					<div class="media-container">
-						<v-img src="@/assets/agopuntura.jpg" alt="Agopuntura" style="width: 100%; height: 65vh; object-fit: cover;" />
+						<v-img src="@/assets/agopuntura.jpg" alt="Agopuntura" style="width: 100%; height: 65vh;" cover />
 					</div>
 				</v-col>
 				<v-col cols="12" class="text-container">
 					<div class="body-1 py-8 px-4">
-						<strong><span class="highlight-title-large">Sulle sedute</span></strong>
-						<p class="mt-4">
+						<h1 class="text-h3 font-weight-bold highlight-title px-4" style="font-size: 30px !important;">Sulle sedute</h1>
+						<p class="mt-4 px-4" style="font-size: 16px !important">
 							Il <strong><span class="highlight">primo incontro</span></strong> potrebbe durare quasi un'ora, le <strong><span class="highlight">sedute di mantenimento</span></strong> dai 30 ai 40 minuti. Il tempo che intercorre con gli aghi inseriti è variabile dai 20 ai 30 minuti.<br><br>
 							Gli <strong><span class="highlight">aghi utilizzati</span></strong> sono usa e getta, sono molto sottili e flessibili. Il loro inserimento potrebbe provocare un leggero "effetto pizzicotto", un formicolio, un minimo senso di calore ma non sono dolorosi (non devono esserlo per l'intera durata della seduta) e soprattutto sono effetti del tutto personali.<br><br>
 							<strong><span class="highlight">È importante riposarsi dopo la seduta evitando pesanti esercizi fisici e grandi abbuffate con alcolici.</span></strong>
@@ -165,15 +176,8 @@ const isMobile = mobile.setupMobileUtils();
 }
 
 .highlight-title {
-  font-size: 24px;
-  font-weight: 600;
   color: #7d2b3b;
   font-family: Montserrat, Lato, "Open Sans", Calibri, sans-serif;
-}
-
-.highlight-title-large {
-  color: #7d2b3b;
-  font-size: 36px;
 }
 
 .highlight {

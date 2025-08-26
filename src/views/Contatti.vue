@@ -9,7 +9,7 @@
 
         <div class="contact-links mt-6 mb-6">
           <a href="tel:+393242425380" class="contact-link">
-            <v-icon class="contact-icon">mdi-phone</v-icon> +39 324 242 5380
+            <v-icon class="contact-icon">mdi-phone</v-icon> +39 379 218 5146‬
           </a>
           <a href="https://wa.me/+393425644546" class="contact-link">
             <v-icon class="contact-icon">mdi-whatsapp</v-icon> Chatta su WhatsApp
@@ -24,6 +24,7 @@
             <v-icon size="28" color="#1877F2">mdi-facebook</v-icon>
           </v-btn>
         </div>
+        <Map :class="['mt-6', isMobile ? 'mb-6' : '']" />
       </v-col>
 
       <v-col cols="12" md="7">
@@ -98,6 +99,10 @@ import { useHead } from '@vueuse/head';
 import { ref, reactive } from 'vue';
 import http from '@/utils/http.js';
 import validation from '@/utils/validation.js';
+import Map from '@/components/Map';
+import mobile from "@/utils/mobile";
+
+const isMobile = mobile.setupMobileUtils();
 
 const isValid = ref(false);
 const form = ref(null);
