@@ -1,6 +1,6 @@
 <template>
   <div class="section">
-    <video autoplay loop muted playsinline src="@/assets/fitoterapia.mp4" class="media" />
+    <video autoplay loop muted playsinline webkit-playsinline src="@/assets/fitoterapia.mp4" class="media" />
 
     <div class="overlay">
       <h1 class="title">La Fitoterapia</h1>

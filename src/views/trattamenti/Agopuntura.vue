@@ -6,7 +6,7 @@
 			<v-row class="desktop-row" no-gutters v-if="!isMobile">
 				<v-col cols="12" md="6" class="pa-0 full-height">
 					<div class="media-container">
-						<video autoplay loop muted playsinline src="@/assets/agopuntura.mp4" style="width: 100%; height: 100%; object-fit: cover; "></video>
+						<video autoplay loop muted playsinline webkit-playsinline src="@/assets/agopuntura.mp4" style="width: 100%; height: 100%; object-fit: cover; "></video>
 					</div>
 				</v-col>
 				<v-col cols="12" md="6" class="text-container">
@@ -23,7 +23,7 @@
 			<v-row no-gutters v-if="isMobile">
 				<v-col cols="12" class="pa-0">
 					<div class="media-container">
-						<video autoplay loop muted playsinline src="@/assets/agopuntura.mp4" style="width: 100%; height: 65vh; object-fit: cover;"></video>
+						<video autoplay loop muted playsinline webkit-playsinline src="@/assets/agopuntura.mp4" style="width: 100%; height: 65vh; object-fit: cover;"></video>
 					</div>
 				</v-col>
 				<v-col cols="12" class="text-container">
@@ -48,7 +48,7 @@
 				</v-col>
 				<v-col cols="12" md="6" class="pa-0 full-height">
 					<div class="media-container">
-						<video autoplay loop muted playsinline src="@/assets/agopuntura_piede.mp4" style="width: 100%; height: 100%; object-fit: cover;"></video>
+						<video autoplay loop muted playsinline webkit-playsinline src="@/assets/agopuntura_piede.mp4" style="width: 100%; height: 100%; object-fit: cover;"></video>
 					</div>
 				</v-col>
 			</v-row>
@@ -56,7 +56,7 @@
 			<v-row no-gutters v-if="isMobile">
 				<v-col cols="12" class="pa-0">
 					<div class="media-container">
-						<video autoplay loop muted playsinline src="@/assets/agopuntura_piede.mp4" style="width: 100%; object-fit: cover;"></video>
+						<video autoplay loop muted playsinline webkit-playsinline src="@/assets/agopuntura_piede.mp4" style="width: 100%; object-fit: cover;"></video>
 					</div>
 				</v-col>
 				<v-col cols="12" class="text-container">
