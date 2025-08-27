@@ -8,10 +8,10 @@
         </p>
 
         <div class="contact-links mt-6 mb-6">
-          <a href="tel:+393242425380" class="contact-link">
-            <v-icon class="contact-icon">mdi-phone</v-icon> +39 324 242 5380
+          <a href="tel:+393792185146" class="contact-link">
+            <v-icon class="contact-icon">mdi-phone</v-icon> +39 379 218 5146
           </a>
-          <a href="https://wa.me/+393425644546" class="contact-link">
+          <a href="https://wa.me/+393792185146" class="contact-link">
             <v-icon class="contact-icon">mdi-whatsapp</v-icon> Chatta su WhatsApp
           </a>
         </div>
@@ -24,6 +24,7 @@
             <v-icon size="28" color="#1877F2">mdi-facebook</v-icon>
           </v-btn>
         </div>
+        <Map :class="['mt-6', isMobile ? 'mb-6' : '']" />
       </v-col>
 
       <v-col cols="12" md="7">
@@ -98,6 +99,10 @@ import { useHead } from '@vueuse/head';
 import { ref, reactive } from 'vue';
 import http from '@/utils/http.js';
 import validation from '@/utils/validation.js';
+import Map from '@/components/Map';
+import mobile from "@/utils/mobile";
+
+const isMobile = mobile.setupMobileUtils();
 
 const isValid = ref(false);
 const form = ref(null);
@@ -172,8 +177,8 @@ useHead({
     { name: "twitter:site", content: "@dorianadinanni" },
     { name: "geo.region", content: "IT-BA" },
     { name: "geo.placename", content: "Bari" },
-    { name: "geo.position", content: "41.106006;16.862826" },
-    { name: "ICBM", content: "41.106006, 16.862826" },
+    { name: "geo.position", content: "41.1184;16.8847" },
+    { name: "ICBM", content: "41.1184, 16.8847" },
     { name: "business:contact_data:street_address", content: "Via Corfù, 13" },
     { name: "business:contact_data:locality", content: "Bari" },
     { name: "business:contact_data:region", content: "BA" },
