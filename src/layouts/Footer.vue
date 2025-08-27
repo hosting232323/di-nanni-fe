@@ -2,7 +2,6 @@
   <footer class="footer">
     <v-row>
       <v-col cols="12" lg="4" md="3" class="d-flex flex-column justify-center align-center">
-        <img src="@/assets/logo.png" height="80px" width="152px">
         <div class="d-flex justify-center">
           <a href="https://www.instagram.com/dott.ssa_dorianadinanni" target="_blank"><span class="mdi mdi-instagram social"></span></a>
           <a href="https://www.facebook.com/inphytoveritas" target="_blank"><span class="mdi mdi-facebook social"></span></a>
