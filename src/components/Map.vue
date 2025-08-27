@@ -7,7 +7,7 @@
         <div ref="popupContent" class="d-flex flex-column align-start">
           <v-img :src="logo" width="110" height="auto" object-fit style="margin-bottom: 10px;"/>
           <p style="font-size: 13px;" class="mb-1">Via Corfu 13, 70123 Bari</p>
-          <a href="https://www.google.com/maps/search/?api=1&query=41.1153,16.8683" target="_blank" rel="noopener noreferrer" class="nav" style="color: #7d2636;">
+          <a href="https://www.google.com/maps/search/?api=1&query=41.1184,16.8847" target="_blank" rel="noopener noreferrer" class="nav" style="color: #7d2636;">
             <v-icon icon="mdi-directions" style="font-size: 16px;" class="mr-1"/>
             Navigazione
           </a>
@@ -41,7 +41,7 @@ let map;
 
 onMounted(() => {
   const iconFeature = new Feature({
-    geometry: new Point(fromLonLat([16.8683, 41.1153]))
+    geometry: new Point(fromLonLat([16.8847, 41.1184]))
   });
 
   const iconStyle = new Style({
@@ -62,7 +62,7 @@ onMounted(() => {
   map = new Map({
     target: mapContainer.value,
     layers: [ new TileLayer({ source: new OSM() }), vectorLayer ],
-    view: new View({ center: fromLonLat([16.8683, 41.1153]), zoom: 15 })
+    view: new View({ center: fromLonLat([16.8847, 41.1184]), zoom: 15 })
   });
 
   overlay = new Overlay({
