@@ -18,7 +18,7 @@
             </p>
             <ul>
               <li>
-                <span class="mdi mdi-phone-outline icon"></span><a href="tel:+393792185146‬"><i>Chiamami</i></a>
+                <span class="mdi mdi-phone-outline icon"></span><a href="tel:+393792185146"><i>Chiamami</i></a>
               </li>
               <li>
                 <span class="mdi mdi-whatsapp icon"></span><a href=""><i>Scrivimi su Whatsapp</i></a>

@@ -8,10 +8,10 @@
         </p>
 
         <div class="contact-links mt-6 mb-6">
-          <a href="tel:+393242425380" class="contact-link">
-            <v-icon class="contact-icon">mdi-phone</v-icon> +39 379 218 5146‬
+          <a href="tel:+393792185146" class="contact-link">
+            <v-icon class="contact-icon">mdi-phone</v-icon> +39 379 218 5146
           </a>
-          <a href="https://wa.me/+393425644546" class="contact-link">
+          <a href="https://wa.me/+393792185146" class="contact-link">
             <v-icon class="contact-icon">mdi-whatsapp</v-icon> Chatta su WhatsApp
           </a>
         </div>
