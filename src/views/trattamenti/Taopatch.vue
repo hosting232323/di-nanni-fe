@@ -1,6 +1,8 @@
 <template>
 	<div class="no-top-margin">
 		<v-container class="pa-0" fluid>
+			<!-- Card N. 1 -->
+			<!-- Desktop -->
 			<v-row class="desktop-row" no-gutters v-if="!isMobile">
 				<v-col cols="12" md="6" class="pa-0 full-height">
 					<div class="media-container">
@@ -9,8 +11,8 @@
 				</v-col>
 				<v-col cols="12" md="6" class="text-container">
 					<div class="body-1">
-						<strong><span class="highlight-title-large px-4">Cos'è il Taopatch?</span></strong>
-						<p class="mt-4 px-4">
+						<h1 class="text-h3 font-weight-bold highlight-title px-4">Cos'è il Taopatch?</h1>
+						<p class="mt-4 px-4" style="font-size: 18px !important">
 							Il <strong><span class="highlight">Taopatch</span></strong> è un dispositivo innovativo della medicina
 							integrata che utilizza microdosi di luce per stimolare i punti riflessi del corpo e favorire il
 							riequilibrio energetico e il benessere generale.<br>
@@ -20,6 +22,7 @@
 					</div>
 				</v-col>
 			</v-row>
+			<!-- Mobile -->
 			<v-row no-gutters v-if="isMobile">
 				<v-col cols="12" class="pa-0">
 					<div class="media-container">
@@ -29,8 +32,8 @@
 				</v-col>
 				<v-col cols="12" class="text-container">
 					<div class="body-1 py-8">
-						<strong><span class="highlight-title-large px-4">Cos'è il Taopatch?</span></strong>
-						<p class="mt-4 px-4">
+						<h1 class="text-h3 font-weight-bold highlight-title px-4" style="font-size: 30px !important;">Cos'è il Taopatch?</h1>
+						<p class="mt-4 px-4" style="font-size: 16px !important">
 							Il <strong><span class="highlight">Taopatch</span></strong> è un dispositivo innovativo della medicina
 							integrata che utilizza microdosi di luce per stimolare i punti riflessi del corpo e favorire il
 							riequilibrio energetico e il benessere generale.<br>
@@ -40,9 +43,12 @@
 					</div>
 				</v-col>
 			</v-row>
+
+			<!-- Card N. 2 -->
+			<!-- Desktop -->
 			<v-row class="desktop-row" no-gutters v-if="!isMobile">
 				<v-col cols="12" md="6" class="text-container">
-					<div class="body-1 px-4">
+					<div class="body-1 px-4" style="font-size: 18px !important">
 						È un <strong><span class="highlight">trattamento sicuro</span></strong> e semplice da utilizzare: si applica
 						sulla pelle in specifici punti con un cerotto adesivo.<br>
 						<strong><span class="highlight">Non è doloroso</span></strong> e può contribuire a migliorare disturbi
@@ -55,6 +61,7 @@
 					</div>
 				</v-col>
 			</v-row>
+			<!-- Mobile -->
 			<v-row no-gutters v-if="isMobile">
 				<v-col cols="12" class="pa-0">
 					<div class="media-container">
@@ -63,7 +70,7 @@
 					</div>
 				</v-col>
 				<v-col cols="12" class="text-container">
-					<div class="body-1 py-8 px-4">
+					<div class="body-1 py-4 px-4" style="font-size: 16px !important">
 						È un <strong><span class="highlight">trattamento sicuro</span></strong> e semplice da utilizzare: si applica
 						sulla pelle in specifici punti con un cerotto adesivo.<br>
 						<strong><span class="highlight">Non è doloroso</span></strong> e può contribuire a migliorare disturbi
@@ -71,6 +78,9 @@
 					</div>
 				</v-col>
 			</v-row>
+
+			<!-- Card N. 3 -->
+			<!-- Desktop -->
 			<v-row class="desktop-row" no-gutters v-if="!isMobile">
 				<v-col cols="12" md="6" class="pa-0 full-height">
 					<div class="media-container">
@@ -79,8 +89,8 @@
 				</v-col>
 				<v-col cols="12" md="6" class="text-container">
 					<div class="body-1">
-						<strong><span class="highlight-title-large px-4">Sulle applicazioni</span></strong>
-						<p class="mt-4 px-4">
+						<h1 class="text-h3 font-weight-bold highlight-title px-4">Sulle applicazioni</h1>
+						<p class="mt-4 px-4" style="font-size: 18px !important">
 							Il <strong><span class="highlight">primo utilizzo</span></strong> può durare alcune ore o giorni, a
 							seconda della zona trattata e del problema da affrontare.<br>
 							Le <strong><span class="highlight">applicazioni successive</span></strong> sono più rapide e possono
@@ -93,17 +103,17 @@
 					</div>
 				</v-col>
 			</v-row>
+			<!-- Mobile -->
 			<v-row no-gutters v-if="isMobile">
 				<v-col cols="12" class="pa-0">
 					<div class="media-container">
-						<v-img src="@/assets/taopatch2.jpg" alt="Agopuntura"
-							style="width: 100%; height: 65vh; object-fit: cover;" />
+						<v-img src="@/assets/taopatch2.jpg" alt="Agopuntura" style="width: 100%; height: 65vh;" cover/>
 					</div>
 				</v-col>
 				<v-col cols="12" class="text-container">
-					<div class="body-1 py-8 px-4">
-						<strong><span class="highlight-title-large">Sulle applicazioni</span></strong>
-						<p class="mt-4">
+					<div class="body-1">
+						<h1 class="text-h3 font-weight-bold highlight-title px-4" style="font-size: 30px !important;">Sulle applicazioni</h1>
+						<p class="mt-4 px-4" style="font-size: 16px !important">
 							Il <strong><span class="highlight">primo utilizzo</span></strong> può durare alcune ore o giorni, a
 							seconda della zona trattata e del problema da affrontare.<br>
 							Le <strong><span class="highlight">applicazioni successive</span></strong> sono più rapide e possono
@@ -188,8 +198,6 @@ const isMobile = mobile.setupMobileUtils();
 }
 
 .highlight-title {
-	font-size: 24px;
-	font-weight: 600;
 	color: #7d2b3b;
 	font-family: Montserrat, Lato, "Open Sans", Calibri, sans-serif;
 }

@@ -23,11 +23,11 @@
       </div>
 
       <div class="info-box" v-if="!isMobile" style="width: 280px;">
-        <strong>Indirizzo:</strong> Via Curzio, 13 70123 Bari <br />
+        <strong>Indirizzo:</strong> Via Corfu, 13 70123 Bari <br />
         <strong>Orario studio:</strong> dal lunedì al sabato<br />solo su appuntamento
       </div>
       <div class="info-box" v-else>
-        <strong>Indirizzo:</strong> Via Curzio, 13<br />70123 Bari<br>
+        <strong>Indirizzo:</strong> Via Corfu, 13<br />70123 Bari<br>
         <strong>Orario studio:</strong><br />dal lunedì al sabato<br />solo su appuntamento
       </div>
 
