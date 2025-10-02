@@ -15,16 +15,15 @@
 </template>
 
 <script setup>
+import BlogItem from '@/components/BlogItem';
+import Loading from '@/components/Loading';
+
 import { ref, computed } from 'vue';
 import http from '@/utils/http';
-import mobile from '@/utils/mobile';
-import BlogItem from '@/components/BlogItem';
 import { useHead } from '@vueuse/head';
-import Loading from '@/components/Loading.vue';
 
 const posts = ref([]);
 const loading = ref(true);
-const isMobile = mobile.setupMobileUtils();
 const maxItems = 4;
 const itemsToShow = ref(maxItems);
 
