@@ -47,9 +47,9 @@ http.getRequest(`post/${route.params.id}`, {
       disabled: false,
       href: '/'
     }, {
-      title: 'Agenda',
+      title: 'Blog',
       disabled: false,
-      href: '/agenda'
+      href: '/blog'
     }, {
       title: data.post.title,
       disabled: true

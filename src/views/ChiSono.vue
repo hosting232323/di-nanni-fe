@@ -78,14 +78,14 @@ const elements = [
   {
     title: "La Mia Storia",
     description: "Fin da bambina ho avuto una grande passione per la medicina e il benessere delle persone. Dopo anni di studi e specializzazioni, ho deciso di integrare le conoscenze tradizionali con metodologie naturali e complementari per un approccio più completo e umano alla salute. Oggi esercito a Bari, dedicandomi alla cura dei pazienti con un metodo che valorizza sia la medicina scientifica sia le terapie alternative, cercando sempre il miglior equilibrio tra corpo e mente. Il mio percorso di formazione e le esperienze professionali mi hanno portato a sviluppare una visione olistica della medicina, che metto in pratica ogni giorno per aiutare i miei pazienti.",
-    src: img3,
+    src: img4,
     icon: "mdi-book-open-page-variant",
     dotColor: "amber-darken-2"
   },
   {
     title: "Integrazione e Olismo",
     description: "Sono convinta che il benessere sia il risultato di un equilibrio tra corpo e mente. L'integrazione di tecniche tradizionali e moderne è fondamentale per un approccio olistico e completo alla salute. Le mie terapie non sono solo per curare le malattie, ma anche per prevenire e mantenere il benessere. Utilizzo l'agopuntura, la fitoterapia e altre metodologie naturali come validi strumenti di cura, complementando le terapie convenzionali per un percorso terapeutico più completo. Se desideri un percorso personalizzato che prenda in considerazione le tue esigenze, contattami per scoprire insieme come posso aiutarti.",
-    src: img4,
+    src: img3,
     icon: "mdi-book-open-page-variant",
     dotColor: "green-darken-1"
   }

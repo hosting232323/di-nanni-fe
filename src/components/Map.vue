@@ -6,7 +6,7 @@
         <v-icon icon="mdi-window-close" class="popup-close-btn" @click="closePopup"/>
         <div ref="popupContent" class="d-flex flex-column align-start">
           <v-img :src="logo" width="110" height="auto" object-fit style="margin-bottom: 10px;"/>
-          <p style="font-size: 13px;" class="mb-1">Via Corfu 13, 70123 Bari</p>
+          <p style="font-size: 13px;" class="mb-1">Via Corfù 13, 70121 Bari</p>
           <a href="https://www.google.com/maps/search/?api=1&query=41.1184,16.8847" target="_blank" rel="noopener noreferrer" class="nav" style="color: #7d2636;">
             <v-icon icon="mdi-directions" style="font-size: 16px;" class="mr-1"/>
             Navigazione

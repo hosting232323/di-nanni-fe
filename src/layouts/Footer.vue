@@ -26,7 +26,7 @@
       <v-col cols="12" lg="4" md="3" class="d-flex flex-column justify-space-around">
         <router-link class="other-title" to="/contatti">Contattami</router-link>
         <router-link class="other-title" to="/chi-sono">Scopri chi sono</router-link>
-        <router-link class="other-title" to="/agenda">Agenda</router-link>
+        <router-link class="other-title" to="/blog">Blog</router-link>
       </v-col>
     </v-row>
     <p>Powered By <a href="https://fastsite.it" target="_blank" class="powered">FastSite</a></p>

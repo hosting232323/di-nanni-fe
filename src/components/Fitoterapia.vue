@@ -11,7 +11,8 @@
         Non sono sostanze innocue ma bisogna tenere in considerazione eventuali interazioni con farmaci che si assumono
         con regolarità ed eventuali effetti indesiderati.<br>
         I fitoterapici possono essere assunti comunemente sotto forma di <strong><span style="color: #7d2b3b;">compresse
-            o capsule, oppure gocce</span></strong>.
+        o capsule, oppure gocce</span></strong>.<br>
+        Il trattamento prevede un percorso personalizzabile con durate variabili.
       </p>
     </div>
   </div>

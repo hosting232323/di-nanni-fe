@@ -5,7 +5,7 @@
       <v-col cols="12" sm="4" md="4" :class="['d-flex', 'justify-center', 'flex-column', { 'align-center': isMobile }]">
           <p class="d-flex align-center" style="margin-bottom: 20px; width: 250px;">
             <span class="mdi mdi-map-marker-outline icon"></span>
-            Via Corfu 13, 70123 Bari
+            Via Corfù 13, 70121 Bari
           </p>
           <p class="d-flex align-center" style="margin-bottom: 20px; width: 250px;">
             <span class="mdi mdi-calendar-blank-outline icon"></span>

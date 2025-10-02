@@ -1,6 +1,6 @@
 <template>
   <v-container class="d-flex mt-4 mb-4" v-if="!isMobile">
-    <router-link :to="`/agenda/${post.id}`">
+    <router-link :to="`/blog/${post.id}`">
       <v-img :src="post.cover" width="170px" class="featured-image"/>
     </router-link>
 
@@ -8,7 +8,7 @@
       <p class="topic-date">{{ formatTopics(post.topics) }} {{ formatDate(post.updated_at) }}</p>
       <p class="reading-time">{{ calculateReadingTime(post.content) }}</p>
 
-      <router-link :to="`/agenda/${post.id}`" style="text-decoration: none;">
+      <router-link :to="`/blog/${post.id}`" style="text-decoration: none;">
         <h2 class="truncate-title">{{ post.title }}</h2>
       </router-link>
 
@@ -17,14 +17,14 @@
   </v-container>
 
   <v-container class="mt-4 mb-4 d-flex flex-column" v-else>
-    <router-link :to="`/agenda/${post.id}`">
+    <router-link :to="`/blog/${post.id}`">
       <img :src="post.cover" class="featured-image">
     </router-link>
 
     <div>
       <p class="topic-date">{{ formatTopics(post.topics) }} {{ formatDate(post.updated_at) }} - {{ calculateReadingTime(post.content) }}</p>
 
-      <router-link :to="`/agenda/${post.id}`" style="text-decoration: none;">
+      <router-link :to="`/blog/${post.id}`" style="text-decoration: none;">
         <h2 class="truncate-title">{{ post.title }}</h2>
       </router-link>
 

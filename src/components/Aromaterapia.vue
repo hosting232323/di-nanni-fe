@@ -11,7 +11,8 @@
         Possono essere assunti
         <strong><span style="color: #7d2b3b;">per via inalatoria, orale o cutanea</span></strong>.<br>
         La sua funzione è estremamente eterogenea ma molto efficace e combinabile con altre forme di terapia e
-        prevenzione.
+        prevenzione.<br>
+        Il trattamento prevede un percorso personalizzabile con durate variabili.
       </p>
     </div>
   </div>

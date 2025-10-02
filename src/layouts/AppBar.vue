@@ -115,10 +115,12 @@ const menuItems = [
     text: 'Contattami',
     route: '/contatti'
   },
+  /*
   {
-    text: 'Agenda',
-    route: '/agenda'
+    text: 'Blog',
+    route: '/blog'
   }
+  */
 ]
 </script>
 

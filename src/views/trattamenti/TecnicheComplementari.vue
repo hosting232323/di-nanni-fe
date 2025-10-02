@@ -2,7 +2,7 @@
 	<v-container :class="isMobile ? 'px-md-16 px-4 mt-5' : 'px-md-16 px-4 mt-10'">
 		<br v-if="!isMobile" />
 		<h1 class="font-weight-bold mb-3 text-center" style="color: #7d2b3b; font-family: Montserrat, Lato, 'Open Sans', Calibri, sans-serif;">Tecniche Complementari</h1>
-		<p class="body-1">Sono tecniche che possono essere eseguite da sole e/o assieme all’agopuntura e all’utilizzo di oli essenziali diluiti in olio vegetale. Si tratta di manualità diverse che aiutano la circolazione di energia e sangue che possono essere supportate con il guasha e/o coppette.</p>
+		<p class="body-1">Sono tecniche che possono essere eseguite da sole e/o assieme ad altri trattamenti, come per esempio l'agopuntura.</p>
 		<br>
 		<v-container>
       <div class="pagination-indicator d-flex justify-center align-items-center mt-3">

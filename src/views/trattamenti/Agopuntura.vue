@@ -80,8 +80,8 @@
 						<h1 class="text-h3 font-weight-bold highlight-title px-4">Sulle sedute</h1>
 						<p class="mt-4 px-4" style="font-size: 18px !important">
 							Il <strong><span class="highlight">primo incontro</span></strong> potrebbe durare quasi un'ora, le <strong><span class="highlight">sedute di mantenimento</span></strong> dai 30 ai 40 minuti. Il tempo che intercorre con gli aghi inseriti è variabile dai 20 ai 30 minuti.<br><br>
-							Gli <strong><span class="highlight">aghi utilizzati</span></strong> sono usa e getta, sono molto sottili e flessibili. Il loro inserimento potrebbe provocare un leggero "effetto pizzicotto", un formicolio, un minimo senso di calore ma non sono dolorosi (non devono esserlo per l'intera durata della seduta) e soprattutto sono effetti del tutto personali.<br><br>
-							<strong><span class="highlight">È importante riposarsi dopo la seduta evitando pesanti esercizi fisici e grandi abbuffate con alcolici.</span></strong>
+							Gli <strong><span class="highlight">aghi utilizzati</span></strong> sono usa e getta, sono molto sottili e flessibili. Il loro inserimento potrebbe provocare un leggero "effetto pizzicotto", un formicolio, un minimo senso di calore ma non sono dolorosi (non devono esserlo per l'intera durata della seduta).<br><br>
+							<strong><span class="highlight">Dopo la seduta è consigliabile evitare pesanti esercizi fisici e grandi abbuffate con alcolici.</span></strong>
 						</p>
 					</div>
 				</v-col>
@@ -98,8 +98,8 @@
 						<h1 class="text-h3 font-weight-bold highlight-title px-4" style="font-size: 30px !important;">Sulle sedute</h1>
 						<p class="mt-4 px-4" style="font-size: 16px !important">
 							Il <strong><span class="highlight">primo incontro</span></strong> potrebbe durare quasi un'ora, le <strong><span class="highlight">sedute di mantenimento</span></strong> dai 30 ai 40 minuti. Il tempo che intercorre con gli aghi inseriti è variabile dai 20 ai 30 minuti.<br><br>
-							Gli <strong><span class="highlight">aghi utilizzati</span></strong> sono usa e getta, sono molto sottili e flessibili. Il loro inserimento potrebbe provocare un leggero "effetto pizzicotto", un formicolio, un minimo senso di calore ma non sono dolorosi (non devono esserlo per l'intera durata della seduta) e soprattutto sono effetti del tutto personali.<br><br>
-							<strong><span class="highlight">È importante riposarsi dopo la seduta evitando pesanti esercizi fisici e grandi abbuffate con alcolici.</span></strong>
+							Gli <strong><span class="highlight">aghi utilizzati</span></strong> sono usa e getta, sono molto sottili e flessibili. Il loro inserimento potrebbe provocare un leggero "effetto pizzicotto", un formicolio, un minimo senso di calore ma non sono dolorosi (non devono esserlo per l'intera durata della seduta).<br><br>
+							<strong><span class="highlight">Dopo la seduta è consigliabile evitare pesanti esercizi fisici e grandi abbuffate con alcolici.</span></strong>
 						</p>
 					</div>
 				</v-col>

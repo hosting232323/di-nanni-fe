@@ -13,9 +13,9 @@
 					<div class="body-1">
 						<h1 class="text-h3 font-weight-bold highlight-title px-4">Cos'è il Taopatch?</h1>
 						<p class="mt-4 px-4" style="font-size: 18px !important">
-							Il <strong><span class="highlight">Taopatch</span></strong> è un dispositivo innovativo della medicina
-							integrata che utilizza microdosi di luce per stimolare i punti riflessi del corpo e favorire il
-							riequilibrio energetico e il benessere generale.<br>
+							Il <strong><span class="highlight">Taopatch</span></strong> è un dispositivo innovativo nanotecnologico della medicina
+							integrata che utilizza microdosi di luce per stimolare i punti energetici del corpo e favorire il riequilibrio
+							e il benessere generale.<br>
 							Ha il <strong><span class="highlight">vantaggio</span></strong> di essere non invasivo, indolore e privo
 							di effetti collaterali, ed è particolarmente utile per chi cerca un supporto naturale senza farmaci.
 						</p>
@@ -34,9 +34,9 @@
 					<div class="body-1 py-8">
 						<h1 class="text-h3 font-weight-bold highlight-title px-4" style="font-size: 30px !important;">Cos'è il Taopatch?</h1>
 						<p class="mt-4 px-4" style="font-size: 16px !important">
-							Il <strong><span class="highlight">Taopatch</span></strong> è un dispositivo innovativo della medicina
-							integrata che utilizza microdosi di luce per stimolare i punti riflessi del corpo e favorire il
-							riequilibrio energetico e il benessere generale.<br>
+							Il <strong><span class="highlight">Taopatch</span></strong> è un dispositivo innovativo nanotecnologico della medicina
+							integrata che utilizza microdosi di luce per stimolare i punti energetici del corpo e favorire il riequilibrio
+							e il benessere generale.<br>
 							Ha il <strong><span class="highlight">vantaggio</span></strong> di essere non invasivo, indolore e privo
 							di effetti collaterali, ed è particolarmente utile per chi cerca un supporto naturale senza farmaci.
 						</p>

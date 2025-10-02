@@ -51,14 +51,14 @@ const routes = [
         component: () => import('@/views/ScopriDiPiu.vue')
       },
       {
-        path: '/agenda',
-        name: 'Agenda',
-        component: () => import('@/views/Agenda.vue')
+        path: '/blog',
+        name: 'Blog',
+        component: () => import('@/views/Blog.vue')
       },
       {
-        path: '/agenda/:id',
-        name: 'Dettaglio Agenda',
-        component: () => import('@/views/DettaglioAgenda.vue')
+        path: '/blog/:id',
+        name: 'Dettaglio Blog',
+        component: () => import('@/views/DettaglioBlog.vue')
       }
     ]
   }

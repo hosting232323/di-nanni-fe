@@ -10,7 +10,7 @@
         <p>{{ truncate(post.content) }}</p>
       </div>
     </div>
-    <p v-if="!loading"><a href="/agenda" class="more-posts">Scopri di più...</a></p>
+    <p v-if="!loading"><a href="/blog" class="more-posts">Scopri di più...</a></p>
   </v-container>
 </template>
 

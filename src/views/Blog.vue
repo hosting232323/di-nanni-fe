@@ -3,7 +3,7 @@
   <v-container v-else>
     <h1 class="text-h3 font-weight-bold" style="color: #7d2636; margin: 10px 0;">Ultimi post</h1>
     <div v-for="(post, index) in displayedPosts" :key="post.id">
-      <AgendaItem :post="post" :isFeatured="index === 0"/>
+      <BlogItem :post="post" :isFeatured="index === 0"/>
     </div>
     <div v-if="displayedPosts.length < posts.length" class="mt-4">
       <a @click="loadMorePosts" class="more-posts">Mostra più articoli</a>
@@ -18,7 +18,7 @@
 import { ref, computed } from 'vue';
 import http from '@/utils/http';
 import mobile from '@/utils/mobile';
-import AgendaItem from '@/components/AgendaItem';
+import BlogItem from '@/components/BlogItem';
 import { useHead } from '@vueuse/head';
 import Loading from '@/components/Loading.vue';
 
@@ -48,7 +48,7 @@ const removeMorePosts = () => {
 };
 
 useHead({
-  title: "Agenda - Doriana Di Nanni - Blog su Agopuntura, Fitoterapia e Tecniche Olistiche a Bari",
+  title: "Blog - Doriana Di Nanni - Blog su Agopuntura, Fitoterapia e Tecniche Olistiche a Bari",
   meta: [
     {
       name: "description",
@@ -58,26 +58,26 @@ useHead({
     {
       name: "keywords",
       content:
-        "blog, agenda, agopuntura, fitoterapia, aromaterapia, tecniche olistiche, medicina tradizionale cinese, trattamenti olistici, benessere, salute, Bari, Puglia"
+        "blog, blog, agopuntura, fitoterapia, aromaterapia, tecniche olistiche, medicina tradizionale cinese, trattamenti olistici, benessere, salute, Bari, Puglia"
     },
     { name: "author", content: "Doriana Di Nanni" },
     { name: "robots", content: "index, follow" },
     { name: "viewport", content: "width=device-width, initial-scale=1.0" },
-    { property: "og:title", content: "Agenda - Doriana Di Nanni - Blog su Agopuntura, Fitoterapia e Tecniche Olistiche a Bari" },
+    { property: "og:title", content: "Blog - Doriana Di Nanni - Blog su Agopuntura, Fitoterapia e Tecniche Olistiche a Bari" },
     {
       property: "og:description",
       content:
-        "Visita l'Agenda di Doriana Di Nanni, un blog dedicato a temi di agopuntura, fitoterapia e altre tecniche olistiche. Approfondisci articoli sul benessere e la salute."
+        "Visita l'Blog di Doriana Di Nanni, un blog dedicato a temi di agopuntura, fitoterapia e altre tecniche olistiche. Approfondisci articoli sul benessere e la salute."
     },
     { property: "og:type", content: "website" },
-    { property: "og:url", content: "https://dorianadinanni.it/agenda" },
+    { property: "og:url", content: "https://dorianadinanni.it/blog" },
     { property: "og:image", content: "https://dorianadinanni.it/assets/logo.png" },
     { property: "og:locale", content: "it_IT" },
     { property: "og:site_name", content: "Doriana Di Nanni" },
     { name: "twitter:card", content: "summary_large_image" },
     {
       name: "twitter:title",
-      content: "Agenda - Doriana Di Nanni - Blog su Agopuntura, Fitoterapia e Tecniche Olistiche a Bari"
+      content: "Blog - Doriana Di Nanni - Blog su Agopuntura, Fitoterapia e Tecniche Olistiche a Bari"
     },
     {
       name: "twitter:description",
