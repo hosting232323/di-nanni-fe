@@ -13,11 +13,8 @@
 					<div class="body-1">
 						<h1 class="text-h3 font-weight-bold highlight-title px-4">Cos'è il Taopatch?</h1>
 						<p class="mt-4 px-4" style="font-size: 18px !important">
-							Il <strong><span class="highlight">Taopatch</span></strong> è un dispositivo innovativo nanotecnologico della medicina
-							integrata che utilizza microdosi di luce per stimolare i punti energetici del corpo e favorire il riequilibrio
-							e il benessere generale.<br>
-							Ha il <strong><span class="highlight">vantaggio</span></strong> di essere non invasivo, indolore e privo
-							di effetti collaterali, ed è particolarmente utile per chi cerca un supporto naturale senza farmaci.
+							Il <strong><span class="highlight">Taopatch</span></strong> è un dispositivo innovativo medico e nanotecnologico, di classe 1 CE, che emette luce terapeutica, stimolando punti energetici del corpo e favorendo il riequilibrio e il benessere generale.<br>
+							Ha il <strong><span class="highlight">vantaggio</span></strong> di essere non invasivo (non rilascia sostanze chimiche), indolore e privo di effetti collaterali, ed è particolarmente utile per chi cerca un supporto naturale senza farmaci.
 						</p>
 					</div>
 				</v-col>
@@ -34,11 +31,8 @@
 					<div class="body-1 py-8">
 						<h1 class="text-h3 font-weight-bold highlight-title px-4" style="font-size: 30px !important;">Cos'è il Taopatch?</h1>
 						<p class="mt-4 px-4" style="font-size: 16px !important">
-							Il <strong><span class="highlight">Taopatch</span></strong> è un dispositivo innovativo nanotecnologico della medicina
-							integrata che utilizza microdosi di luce per stimolare i punti energetici del corpo e favorire il riequilibrio
-							e il benessere generale.<br>
-							Ha il <strong><span class="highlight">vantaggio</span></strong> di essere non invasivo, indolore e privo
-							di effetti collaterali, ed è particolarmente utile per chi cerca un supporto naturale senza farmaci.
+							Il <strong><span class="highlight">Taopatch</span></strong> è un dispositivo innovativo medico e nanotecnologico, di classe 1 CE, che emette luce terapeutica, stimolando punti energetici del corpo e favorendo il riequilibrio e il benessere generale.<br>
+							Ha il <strong><span class="highlight">vantaggio</span></strong> di essere non invasivo (non rilascia sostanze chimiche), indolore e privo di effetti collaterali, ed è particolarmente utile per chi cerca un supporto naturale senza farmaci.
 						</p>
 					</div>
 				</v-col>
@@ -49,10 +43,8 @@
 			<v-row class="desktop-row" no-gutters v-if="!isMobile">
 				<v-col cols="12" md="6" class="text-container">
 					<div class="body-1 px-4" style="font-size: 18px !important">
-						È un <strong><span class="highlight">trattamento sicuro</span></strong> e semplice da utilizzare: si applica
-						sulla pelle in specifici punti con un cerotto adesivo.<br>
-						<strong><span class="highlight">Non è doloroso</span></strong> e può contribuire a migliorare disturbi
-						muscolari, posturali, neurologici e altri squilibri legati allo stress e alla fatica.
+						È un <strong><span class="highlight">trattamento sicuro</span></strong> e semplice da utilizzare: si applica sulla pelle in specifici punti con un nastrocerotto adesivo, resiste agli urti e all'acqua.<br>
+						Sono dispositivi indossabili 24 h su 24 e durano circa 3 anni.
 					</div>
 				</v-col>
 				<v-col cols="12" md="6" class="pa-0 full-height">
@@ -71,10 +63,8 @@
 				</v-col>
 				<v-col cols="12" class="text-container">
 					<div class="body-1 py-4 px-4" style="font-size: 16px !important">
-						È un <strong><span class="highlight">trattamento sicuro</span></strong> e semplice da utilizzare: si applica
-						sulla pelle in specifici punti con un cerotto adesivo.<br>
-						<strong><span class="highlight">Non è doloroso</span></strong> e può contribuire a migliorare disturbi
-						muscolari, posturali, neurologici e altri squilibri legati allo stress e alla fatica.
+						È un <strong><span class="highlight">trattamento sicuro</span></strong> e semplice da utilizzare: si applica sulla pelle in specifici punti con un nastrocerotto adesivo, resiste agli urti e all'acqua.<br>
+						Sono dispositivi indossabili 24 h su 24 e durano circa 3 anni.
 					</div>
 				</v-col>
 			</v-row>
@@ -91,14 +81,10 @@
 					<div class="body-1">
 						<h1 class="text-h3 font-weight-bold highlight-title px-4">Sulle applicazioni</h1>
 						<p class="mt-4 px-4" style="font-size: 18px !important">
-							Il <strong><span class="highlight">primo utilizzo</span></strong> può durare alcune ore o giorni, a
-							seconda della zona trattata e del problema da affrontare.<br>
-							Le <strong><span class="highlight">applicazioni successive</span></strong> sono più rapide e possono
-							essere mantenute anche per periodi prolungati.<br>
-							Il dispositivo emette microdosi di luce che possono provocare una lieve sensazione di calore o
-							stimolazione, ma il trattamento è del tutto indolore e sicuro.<br>
-							<strong><span class="highlight">È importante</span></strong> utilizzare il Taopatch seguendo le
-							indicazioni del professionista e rimuoverlo solo al termine del ciclo di trattamento consigliato.
+							Il <strong><span class="highlight">Taopatch migliora</span></strong> disturbi muscolari, posturali, neurologici e altri squilibri legati allo stress e alla fatica.<br>
+							Migliora il movimento e la postura del corpo, riducendo dolori di ogni genere. Ottimizza le prestazioni fisiche e biologiche del corpo, portando a un benessere globale del paziente.<br>
+							E' possibile integrarlo con altre terapie e trattamenti.<br>
+							È <strong><span class="highlight">importante</span></strong> rivolgersi a professionisti applicatori Taopatch per creare un percorso ottimale e personalizzato per ottenere il massimo dei risultati.
 						</p>
 					</div>
 				</v-col>
@@ -114,14 +100,10 @@
 					<div class="body-1">
 						<h1 class="text-h3 font-weight-bold highlight-title px-4" style="font-size: 30px !important;">Sulle applicazioni</h1>
 						<p class="mt-4 px-4" style="font-size: 16px !important">
-							Il <strong><span class="highlight">primo utilizzo</span></strong> può durare alcune ore o giorni, a
-							seconda della zona trattata e del problema da affrontare.<br>
-							Le <strong><span class="highlight">applicazioni successive</span></strong> sono più rapide e possono
-							essere mantenute anche per periodi prolungati.<br>
-							Il dispositivo emette microdosi di luce che possono provocare una lieve sensazione di calore o
-							stimolazione, ma il trattamento è del tutto indolore e sicuro.<br>
-							<strong><span class="highlight">È importante</span></strong> utilizzare il Taopatch seguendo le
-							indicazioni del professionista e rimuoverlo solo al termine del ciclo di trattamento consigliato.
+							Il <strong><span class="highlight">Taopatch migliora</span></strong> disturbi muscolari, posturali, neurologici e altri squilibri legati allo stress e alla fatica.<br>
+							Migliora il movimento e la postura del corpo, riducendo dolori di ogni genere. Ottimizza le prestazioni fisiche e biologiche del corpo, portando a un benessere globale del paziente.<br>
+							E' possibile integrarlo con altre terapie e trattamenti.<br>
+							È <strong><span class="highlight">importante</span></strong> rivolgersi a professionisti applicatori Taopatch per creare un percorso ottimale e personalizzato per ottenere il massimo dei risultati.
 						</p>
 					</div>
 				</v-col>
