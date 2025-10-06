@@ -4,7 +4,7 @@
   <HomeChiSono />
   <Treatments />
   <Cit text="Il corpo umano è il tempio dell’anima, e come tale va curato e rispettato" />
-  <HomeBlog />
+  <!--<HomeBlog />-->
   <Recensioni />
   <HomeContacts />
 </template>
