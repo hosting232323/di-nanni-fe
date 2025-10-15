@@ -36,7 +36,7 @@ const isMobile = mobile.setupMobileUtils();
 
 const renderedContent = ref('');
 
-http.getRequest(`post/${route.params.id}`, {
+http.getRequest(`blog/post/${route.params.id}`, {
   project: 'dorianadinanni.it'
 }, function (data) {
   post.value = data.post;
