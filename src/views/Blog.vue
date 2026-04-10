@@ -20,7 +20,7 @@ import Loading from '@/components/Loading';
 
 import { ref, computed } from 'vue';
 import http from '@/utils/http';
-import { useHead } from '@vueuse/head';
+import { useHead } from '@unhead/vue';
 
 const posts = ref([]);
 const loading = ref(true);
