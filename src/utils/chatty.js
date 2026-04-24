@@ -7,7 +7,7 @@ const colorPalette = {
 };
 
 export const botLanding = {
-  vectorStoreId: 'vs_69d8ff08c87c8191bdd023226e21d586',
+  botId: '1',
   message: 'Ciao, come posso aiutarti.',
   name: 'dott. ssa Doriana Di Nanni',
   image: '/logo.png',
