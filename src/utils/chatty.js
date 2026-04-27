@@ -1,11 +1,3 @@
-const colorPalette = {
-  theme_color: '#7d2636',
-  theme_color_hover: '#a6344c',
-  fab_hover: '#912c3f',
-  fab_shadow: '#b35a6b',
-  fab_border: '#a6344c'
-};
-
 export const botLanding = {
   botId: '1',
   message: 'Ciao, come posso aiutarti.',
@@ -25,6 +17,12 @@ export const botLanding = {
       'value': 'L\'uso delle piante medicinali può avere effetti indesiderati?'
     }
   ],
-  stream: true,
-  color: colorPalette,
+  color: {
+    theme_color: '#7d2636',
+    theme_color_hover: '#a6344c',
+    fab_hover: '#912c3f',
+    fab_shadow: '#b35a6b',
+    fab_border: '#a6344c'
+  },
+  stream: true
 };

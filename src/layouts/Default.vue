@@ -7,19 +7,18 @@
     <Footer />
   </v-app>
   <ChattyBot 
-    :hostname="viteHostname"
+    :hostname="http.hostname"
     :bot-data="botLanding"
   />
 </template>
 
 <script setup>
+import http from '@/utils/http';
 import AppBar from './AppBar.vue';
 import Footer from './Footer.vue';
 
 import { ChattyBot } from 'generic-module';
 import { botLanding } from '@/utils/chatty';
-
-const viteHostname = import.meta.env.VITE_HOSTNAME;
 </script>
 
 <style>
