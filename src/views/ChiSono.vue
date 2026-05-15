@@ -51,7 +51,7 @@
 
 <script setup>
 import mobile from '@/utils/mobile';
-import { useHead } from '@vueuse/head';
+import { useHead } from '@unhead/vue';
 
 import img1 from '@/assets/lamiastoria.jpg';
 import img2 from '@/assets/comeprocedo.jpeg';

@@ -95,7 +95,7 @@
 </template>
 
 <script setup>
-import { useHead } from '@vueuse/head';
+import { useHead } from '@unhead/vue';
 import { ref, reactive } from 'vue';
 import http from '@/utils/http.js';
 import validation from '@/utils/validation.js';
