@@ -18,7 +18,7 @@ import HomeContacts from '../components/HomeContacts.vue';
 import HomeChiSono from '../components/HomeChiSono.vue';
 import Cit from '../components/Cit.vue';
 
-import { useHead } from '@vueuse/head';
+import { useHead } from '@unhead/vue';
 
 useHead({
   title: "Doriana Di Nanni - Agopuntura, Fitoterapia e Tecniche Olistiche a Bari",

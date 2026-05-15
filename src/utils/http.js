@@ -77,6 +77,7 @@ const sessionHandler = (data, func, router) => {
 
 
 export default {
+  hostname,
   postRequest,
   getRequest,
   postRequestFile
