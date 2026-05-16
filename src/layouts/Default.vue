@@ -7,7 +7,7 @@
     <Footer />
   </v-app>
   <ChattyBot 
-    :hostname="http.hostname"
+    :hostname="import.meta.env.VITE_HOSTNAME"
     :bot-data="botLanding"
   />
 </template>
