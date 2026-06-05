@@ -1,6 +1,6 @@
 <template>
   <v-container>
-    <img v-if="post.cover" :src="post.cover" class="post-image">
+    <img v-if="post.files?.find(p => p.type == 'cover')" :src="post.files?.find(p => p.type == 'cover')?.preview" class="post-image">
     <div class="container-header" :class="{ 'mobile-layout': isMobile }">
       <div>
         <p class="topic-date" v-if="post.topics && post.updated_at">{{ formatTopics(post.topics) }} {{ formatDate(post.updated_at) }}</p>
@@ -19,6 +19,12 @@
     <hr v-if="!isMobile" style="border: none; height: 1px; background-color: #767677;">
     <h1 class="post-title">{{ post.title }}</h1>
     <div v-html="renderedContent" class="markdown-content"></div>
+    <div v-if="post.files?.find(p => p.type == 'dinanni')" class="post-video">
+      <video controls style="width: 100%; max-height: 500px;">
+        <source :src="post.files?.find(p => p.type == 'dinanni').preview" type="video/mp4" />
+        Il tuo browser non supporta il video.
+      </video>
+    </div>
   </v-container>
 </template>
 
