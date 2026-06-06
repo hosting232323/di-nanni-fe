@@ -24,7 +24,6 @@
       class="video-wrapper"
     >
       <div class="video-card" @click="playVideo">
-
         <video
           ref="videoRef"
           class="video-element"
@@ -36,12 +35,10 @@
             type="video/mp4"
           />
         </video>
-
         <div v-if="!isPlaying" class="video-overlay">
           <div class="play-button">▶</div>
           <p>Guarda il video</p>
         </div>
-
       </div>
     </div>
   </v-container>
