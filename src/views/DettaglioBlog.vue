@@ -19,26 +19,16 @@
     <hr v-if="!isMobile" style="border: none; height: 1px; background-color: #767677;">
     <h1 class="post-title">{{ post.title }}</h1>
     <div v-html="renderedContent" class="markdown-content"></div>
-    <div
-      v-if="post.files?.find(p => p.type == 'dinanni')"
-      class="video-wrapper"
-    >
-      <div class="video-card" @click="playVideo">
-        <video
-          ref="videoRef"
-          class="video-element"
-          controls
-          preload="metadata"
-        >
-          <source
-            :src="post.files?.find(p => p.type == 'dinanni').preview"
-            type="video/mp4"
-          />
+    <div v-if="post.files?.find(p => p.type == 'dinanni')" class="post-video-wrapper">
+      <div class="post-video-label">
+        <span class="mdi mdi-play-circle-outline"></span>
+        Video
+      </div>
+      <div class="post-video-card">
+        <video controls preload="metadata" class="post-video">
+          <source :src="post.files?.find(p => p.type == 'dinanni').preview" type="video/mp4" />
+          Il tuo browser non supporta il video.
         </video>
-        <div v-if="!isPlaying" class="video-overlay">
-          <div class="play-button">▶</div>
-          <p>Guarda il video</p>
-        </div>
       </div>
     </div>
   </v-container>
@@ -51,12 +41,9 @@ import http from '@/utils/http';
 import mobile from '@/utils/mobile';
 import { useRoute } from 'vue-router';
 
-
 const post = ref({});
 const route = useRoute();
-const videoRef = ref(null);
 const breadcrumbs = ref([]);
-const isPlaying = ref(false);
 const isMobile = mobile.setupMobileUtils();
 
 const renderedContent = ref('');
@@ -81,13 +68,6 @@ http.getRequest(`blog/post/${route.params.id}`, {
     }
   ];
 });
-
-const playVideo = () => {
-  if (!videoRef.value) return;
-
-  videoRef.value.play();
-  isPlaying.value = true;
-};
 
 const formatDate = (dateString) => {
   const months = [
@@ -177,77 +157,47 @@ const shareUrl = (platform) => {
   margin: 15px 0;
 }
 
-.video-wrapper {
-  margin-top: 40px;
-  display: flex;
-  justify-content: center;
+/* ── Video section ── */
+.post-video-wrapper {
+  margin: 36px 0 12px;
 }
 
-.video-card {
-  position: relative;
-  width: 100%;
-  max-width: 950px;
-  border-radius: 20px;
+.post-video-label {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  font-family: 'Montserrat', sans-serif;
+  font-size: 13px;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+  color: #7d2636;
+  margin-bottom: 12px;
+}
+
+.post-video-label .mdi {
+  font-size: 18px;
+}
+
+.post-video-card {
+  border-radius: 10px;
   overflow: hidden;
-  background: #000;
-  box-shadow: 0 25px 60px rgba(0,0,0,0.35);
-  cursor: pointer;
-  transition: transform 0.3s ease;
+  box-shadow: 0 4px 20px rgba(125, 38, 54, 0.12);
+  background: #0d0d0d;
+  line-height: 0;
 }
 
-.video-card:hover {
-  transform: scale(1.01);
-}
-
-.video-element {
-  width: 100%;
+.post-video {
   display: block;
+  width: 100%;
   max-height: 520px;
-  background: black;
+  object-fit: contain;
+  border-radius: 10px;
 }
 
-.video-overlay {
-  position: absolute;
-  inset: 0;
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
-  color: white;
-  font-weight: 600;
-  gap: 12px;
-
-  background: linear-gradient(
-    to top,
-    rgba(0,0,0,0.55),
-    rgba(0,0,0,0.15)
-  );
-
-  backdrop-filter: blur(2px);
-  transition: opacity 0.3s ease;
-}
-
-.play-button {
-  width: 85px;
-  height: 85px;
-  border-radius: 50%;
-  background: rgba(255,255,255,0.18);
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  font-size: 32px;
-  border: 1px solid rgba(255,255,255,0.25);
-  transition: transform 0.2s ease, background 0.2s ease;
-}
-
-.video-card:hover .play-button {
-  transform: scale(1.1);
-  background: rgba(255,255,255,0.25);
-}
-
-.video-overlay p {
-  font-size: 14px;
-  letter-spacing: 1px;
-  opacity: 0.9;
+@media (max-width: 960px) {
+  .post-video {
+    max-height: 260px;
+  }
 }
 </style>
