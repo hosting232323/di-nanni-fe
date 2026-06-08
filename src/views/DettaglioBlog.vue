@@ -26,7 +26,6 @@
     <hr v-if="!isMobile" style="border: none; height: 1px; background-color: #767677;">
     <h1 class="post-title">{{ post.title }}</h1>
     <div v-html="renderedContent" class="markdown-content"></div>
-    <!-- ── Video section ── -->
     <div v-if="post.files?.find(p => p.type == 'dinanni')" class="post-video-wrapper">
       <div class="post-video-label">
         <span class="mdi mdi-play-circle-outline"></span>
@@ -39,32 +38,25 @@
           Il tuo browser non supporta il video.
         </video>
 
-        <!-- Big play overlay -->
         <div class="vp-overlay" v-show="!isPlaying" @click="togglePlay">
           <div class="vp-big-play">
             <span class="mdi mdi-play" style="font-size: 34px; color: #fff; margin-left: 3px;"></span>
           </div>
         </div>
 
-        <!-- Controls bar -->
         <div class="vp-controls" :class="{ visible: !isPlaying || showControls }">
-          <!-- Progress bar -->
           <div class="vp-progress-bar" @click="seek">
             <div class="vp-progress-fill" :style="{ width: progress + '%' }"></div>
           </div>
           <div class="vp-bottom">
-            <!-- Play/Pause -->
             <button class="vp-btn" @click="togglePlay">
               <span :class="isPlaying ? 'mdi mdi-pause' : 'mdi mdi-play'"></span>
             </button>
-            <!-- Volume -->
             <button class="vp-btn" @click="toggleMute">
               <span :class="isMuted ? 'mdi mdi-volume-off' : 'mdi mdi-volume-high'"></span>
             </button>
             <input type="range" class="vp-vol-slider" min="0" max="1" step="0.05" v-model="volume" @input="setVolume" />
-            <!-- Time -->
             <span class="vp-time">{{ currentTimeFormatted }} / {{ durationFormatted }}</span>
-            <!-- Fullscreen -->
             <button class="vp-btn" @click="toggleFullscreen">
               <span class="mdi mdi-fullscreen"></span>
             </button>
@@ -238,7 +230,6 @@ const shareUrl = (platform) => {
   margin: 15px 0;
 }
 
-/* ── Video section ── */
 .post-video-wrapper {
   margin: 36px 0 12px;
 }
@@ -277,7 +268,6 @@ const shareUrl = (platform) => {
   cursor: pointer;
 }
 
-/* Big play overlay */
 .vp-overlay {
   position: absolute;
   inset: 0;
