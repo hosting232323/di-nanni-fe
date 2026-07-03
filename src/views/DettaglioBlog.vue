@@ -67,7 +67,7 @@ http.getRequest(`blog/post/${route.params.id}`, {
       disabled: true
     }
   ];
-});
+}, 'GET', false);
 
 const formatDate = (dateString) => {
   const months = [

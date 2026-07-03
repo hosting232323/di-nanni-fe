@@ -29,7 +29,7 @@ http.getRequest('blog/post', {
     posts.value = data.posts.reverse();
     loading.value = false;
   }
-});
+}, 'GET', false);
 
 const displayedPosts = computed(() => posts.value.slice(0, 3));
 

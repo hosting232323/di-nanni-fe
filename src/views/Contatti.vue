@@ -130,7 +130,7 @@ const handleSubmit = () => {
 
     http.postRequest('send-mail', mailData, () => {
       alert("Mail inviata con successo! Ti ringraziamo per averci contattato.");
-    }, 'POST');
+    }, 'POST', false);
   } else {
     alert("Per favore, compila correttamente tutti i campi.");
   }
