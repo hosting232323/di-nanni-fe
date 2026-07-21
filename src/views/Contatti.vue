@@ -128,9 +128,9 @@ const handleSubmit = () => {
         `Messaggio: ${formData.message}`
     };
 
-    http.postRequest('send-mail', mailData, () => {
+    http.makeRequest('send-mail', 'POST', { body: { mailData } }, () => {
       alert("Mail inviata con successo! Ti ringraziamo per averci contattato.");
-    }, 'POST');
+    });
   } else {
     alert("Per favore, compila correttamente tutti i campi.");
   }
