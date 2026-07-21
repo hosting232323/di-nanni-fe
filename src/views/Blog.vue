@@ -27,14 +27,16 @@ const loading = ref(true);
 const maxItems = 4;
 const itemsToShow = ref(maxItems);
 
-http.getRequest('blog/post', {
-  project: 'dorianadinanni.it'
+http.makeRequest('blog/post', 'GET', {
+  params: {
+    project: 'dorianadinanni.it'
+  }
 }, function (data) {
   if(data.status == 'ok') {
     posts.value = data.posts.reverse();
     loading.value = false;
   }
-}, 'GET', false);
+});
 
 const displayedPosts = computed(() => posts.value.slice(0, itemsToShow.value));
 
