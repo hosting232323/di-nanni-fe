@@ -48,8 +48,10 @@ const isMobile = mobile.setupMobileUtils();
 
 const renderedContent = ref('');
 
-http.getRequest(`blog/post/${route.params.id}`, {
-  project: 'dorianadinanni.it'
+http.makeRequest(`blog/post/${route.params.id}`, 'GET', {
+  params: {
+    project: 'dorianadinanni.it'
+  }
 }, function (data) {
   post.value = data.post;
   renderedContent.value = marked(post.value.content);

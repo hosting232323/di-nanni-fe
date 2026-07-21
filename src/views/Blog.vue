@@ -27,8 +27,10 @@ const loading = ref(true);
 const maxItems = 4;
 const itemsToShow = ref(maxItems);
 
-http.getRequest('blog/post', {
-  project: 'dorianadinanni.it'
+http.makeRequest('blog/post', 'GET', {
+  params: {
+    project: 'dorianadinanni.it'
+  }
 }, function (data) {
   if(data.status == 'ok') {
     posts.value = data.posts.reverse();
