@@ -48,12 +48,12 @@ const isMobile = mobile.setupMobileUtils();
 
 const renderedContent = ref('');
 
-http.makeRequest(`blog/post/${route.params.id}`, 'GET', {
+http.makeRequest(`article/${route.params.id}`, 'GET', {
   params: {
     project: 'dorianadinanni.it'
   }
 }, function (data) {
-  post.value = data.post;
+  post.value = data.data;
   renderedContent.value = marked(post.value.content);
   breadcrumbs.value = [
     {
@@ -65,7 +65,7 @@ http.makeRequest(`blog/post/${route.params.id}`, 'GET', {
       disabled: false,
       href: '/blog'
     }, {
-      title: data.post.title,
+      title: data.data.title,
       disabled: true
     }
   ];
