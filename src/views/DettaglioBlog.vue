@@ -53,8 +53,11 @@ http.makeRequest(`article/${route.params.id}`, 'GET', {
     project: 'dorianadinanni.it'
   }
 }, function (data) {
-  post.value = data.data;
-  renderedContent.value = marked(post.value.content);
+  // Il topic e' diventato una categoria singola: la riporto nella forma ad array
+  // che il template usa, come fanno home e lista. Il contenuto ora e' facoltativo,
+  // quindi marked va protetto dal valore mancante.
+  post.value = { ...data.data, topics: data.data.category ? [data.data.category] : [] };
+  renderedContent.value = marked(post.value.content || '');
   breadcrumbs.value = [
     {
       title: 'Home',
