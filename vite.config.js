@@ -1,3 +1,4 @@
+import staticSeo from './build/static-seo';
 import vue from '@vitejs/plugin-vue';
 import ViteFonts from 'unplugin-fonts/vite';
 import vuetify, { transformAssetUrls } from 'vite-plugin-vuetify';
@@ -21,6 +22,7 @@ export default defineConfig({
         configFile: 'src/styles/settings.scss'
       }
     }),
+    staticSeo(),
     ViteFonts({
       google: {
         families: [
