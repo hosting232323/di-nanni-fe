@@ -53,6 +53,10 @@ http.makeRequest(`article/${route.params.id}`, 'GET', {
     project: 'dorianadinanni.it'
   }
 }, function (data) {
+  // Con il passaggio ad `article` gli id sono cambiati: un vecchio link risponde
+  // "non trovato", e senza guardia si andava in errore su data.data.category.
+  if (!data || !data.data) return;
+
   // Il topic e' diventato una categoria singola: la riporto nella forma ad array
   // che il template usa, come fanno home e lista. Il contenuto ora e' facoltativo,
   // quindi marked va protetto dal valore mancante.
