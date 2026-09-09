@@ -15,12 +15,13 @@ import {
 // prima del render - vede quindi una pagina senza testo ne' metadati.
 //
 // Questo plugin, a build finita, scrive un index.html per ogni rotta pubblica
-// con i tag della rotta gia' dentro. server.js li serve da dist/ senza doverli
-// generare a runtime.
+// con i meta tag della rotta gia' nel <head>. server.js li serve da dist/ senza
+// doverli generare a runtime.
 //
-// Il markup iniettato nel body e' solo un fallback per i crawler: al mount Vue
-// azzera il contenuto di #app (runtime-dom fa container.innerHTML = ''), quindi
-// per l'utente non cambia nulla.
+// Il testo di fallback nel body sta dentro un <noscript>: lo leggono i crawler
+// che non eseguono JavaScript, ma il browser non lo renderizza mai quando lo
+// script parte, quindi l'utente non vede alcun lampo di contenuto non
+// stilizzato prima del mount di Vue.
 
 const escapeHtml = (value) =>
   String(value)
@@ -94,7 +95,8 @@ const metaTags = (route) => {
 };
 
 // Testo leggibile senza JavaScript, con i link interni per far scoprire le
-// altre pagine a chi non manda in esecuzione il router.
+// altre pagine a chi non manda in esecuzione il router. Va in <noscript>:
+// serve solo ai crawler senza JS, l'utente con lo script attivo non lo vede.
 const fallbackBody = (route) => {
   const links = seoRoutes
     .filter((item) => item.path !== route.path && !item.noindex)
@@ -102,12 +104,13 @@ const fallbackBody = (route) => {
     .join('');
 
   return [
-    '<div id="app">',
-    `<h1>${escapeHtml(route.heading)}</h1>`,
-    `<p>${escapeHtml(route.intro)}</p>`,
-    `<nav aria-label="Pagine del sito"><ul>${links}</ul></nav>`,
-    '</div>'
-  ].join('');
+    '<div id="app"></div>',
+    '    <noscript>',
+    `      <h1>${escapeHtml(route.heading)}</h1>`,
+    `      <p>${escapeHtml(route.intro)}</p>`,
+    `      <nav aria-label="Pagine del sito"><ul>${links}</ul></nav>`,
+    '    </noscript>'
+  ].join('\n');
 };
 
 const renderRoute = (template, route) =>
