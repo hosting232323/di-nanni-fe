@@ -48,13 +48,20 @@ const isMobile = mobile.setupMobileUtils();
 
 const renderedContent = ref('');
 
-http.makeRequest(`blog/post/${route.params.id}`, 'GET', {
+http.makeRequest(`article/${route.params.id}`, 'GET', {
   params: {
     project: 'dorianadinanni.it'
   }
 }, function (data) {
-  post.value = data.post;
-  renderedContent.value = marked(post.value.content);
+  // Con il passaggio ad `article` gli id sono cambiati: un vecchio link risponde
+  // "non trovato", e senza guardia si andava in errore su data.data.category.
+  if (!data || !data.data) return;
+
+  // Il topic e' diventato una categoria singola: la riporto nella forma ad array
+  // che il template usa, come fanno home e lista. Il contenuto ora e' facoltativo,
+  // quindi marked va protetto dal valore mancante.
+  post.value = { ...data.data, topics: data.data.category ? [data.data.category] : [] };
+  renderedContent.value = marked(post.value.content || '');
   breadcrumbs.value = [
     {
       title: 'Home',
@@ -65,7 +72,7 @@ http.makeRequest(`blog/post/${route.params.id}`, 'GET', {
       disabled: false,
       href: '/blog'
     }, {
-      title: data.post.title,
+      title: data.data.title,
       disabled: true
     }
   ];
