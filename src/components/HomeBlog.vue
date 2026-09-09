@@ -22,13 +22,13 @@ import Loading from './Loading.vue';
 const loading = ref(true);
 const posts = ref([]);
 
-http.makeRequest('blog/post', 'GET', {
+http.makeRequest('article', 'GET', {
   params: {
     project: 'dorianadinanni.it'
   }
 }, function (data) {
   if(data.status == 'ok') {
-    posts.value = data.posts.reverse();
+    posts.value = data.data.map(a => ({ ...a, topics: a.category ? [a.category] : [] })).reverse();
     loading.value = false;
   }
 });
