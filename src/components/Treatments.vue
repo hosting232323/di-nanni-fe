@@ -1,6 +1,6 @@
 <template>
   <v-container id="treatments">
-    <h1 class="text-h3 font-weight-bold" style="color: #7d2636;">Trattamenti</h1>
+    <h1 class="text-h3 font-weight-bold section-title" style="color: #7d2636;">Trattamenti</h1>
     <p class="font-weight-medium text-muted mt-4 mb-4">
       Ogni persona è unica, così come il percorso verso il benessere.<br />
       Ecco perché offro una varietà di trattamenti pensati per rispondere a esigenze diverse, sia fisiche che
@@ -80,6 +80,10 @@ const treatments = [
 </script>
 
 <style scoped>
+#treatments {
+  scroll-margin-top: 90px;
+}
+
 .treatments-container {
   display: flex;
   justify-content: center;
@@ -94,6 +98,12 @@ const treatments = [
   perspective: 1000px;
   text-decoration: none;
   color: inherit;
+  border-radius: 2rem;
+  transition: transform 0.35s ease;
+}
+
+.treatment-card:hover {
+  transform: translateY(-8px);
 }
 
 .card-inner {
@@ -117,7 +127,7 @@ const treatments = [
   backface-visibility: hidden;
   border-radius: 2rem;
   overflow: hidden;
-  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  box-shadow: 0 10px 28px rgba(125, 38, 54, 0.18);
 }
 
 .card-back {
@@ -129,6 +139,11 @@ const treatments = [
   width: 100%;
   height: 100%;
   object-fit: cover;
+  transition: transform 0.6s ease;
+}
+
+.treatment-card:hover .card-front img {
+  transform: scale(1.08);
 }
 
 .card-front h3,
@@ -137,10 +152,21 @@ const treatments = [
   bottom: 0;
   left: 0;
   right: 0;
-  background: rgba(255, 255, 255, 0.9);
   margin: 0;
   padding: 1rem;
   text-align: center;
+}
+
+.card-front h3 {
+  background: rgba(255, 255, 255, 0.82);
+  backdrop-filter: blur(6px);
+  -webkit-backdrop-filter: blur(6px);
   color: #7D2636;
+}
+
+.card-back h3 {
+  background: linear-gradient(to top, rgba(90, 27, 41, 0.92), rgba(125, 38, 54, 0.55) 70%, transparent);
+  color: #fff;
+  padding-top: 2.5rem;
 }
 </style>

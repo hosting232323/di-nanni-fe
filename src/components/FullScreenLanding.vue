@@ -15,6 +15,15 @@
           width: isMobile ? '40%' : '80%',
           height: isMobile ? '40%' : '80%',
         }" />
+        <v-btn
+          to="/contatti"
+          class="cta-btn"
+          :size="isMobile ? 'small' : 'large'"
+          elevation="4"
+        >
+          Prenota una visita
+          <v-icon end>mdi-arrow-right</v-icon>
+        </v-btn>
       </div>
 
 
@@ -78,10 +87,38 @@ const isMobile = mobile.setupMobileUtils();
   position: absolute;
   top: 30px;
   left: 40px;
+  animation: fade-slide-in 0.9s ease both;
 }
 
 .logo-image {
   width: 250px;
+}
+
+.cta-btn {
+  display: inline-flex;
+  margin-top: 28px;
+  background: linear-gradient(120deg, #7d2636, #a33a4d);
+  color: #fff;
+  font-style: italic;
+  letter-spacing: 0.5px;
+  box-shadow: 0 8px 24px rgba(125, 38, 54, 0.35) !important;
+  transition: transform 0.25s ease, box-shadow 0.25s ease;
+}
+
+.cta-btn:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 12px 30px rgba(125, 38, 54, 0.45) !important;
+}
+
+@keyframes fade-slide-in {
+  from {
+    opacity: 0;
+    transform: translateY(14px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
 }
 
 .specializzazione {
@@ -135,10 +172,28 @@ const isMobile = mobile.setupMobileUtils();
   bottom: 40px;
   left: 40px;
   font-size: 16px;
+  line-height: 1.55;
   color: #4a2c38;
-  background-color: rgba(255, 255, 255, 0.7);
-  padding: 10px 15px;
-  border-radius: 8px;
-  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+  background-color: rgba(255, 255, 255, 0.62);
+  backdrop-filter: blur(10px);
+  -webkit-backdrop-filter: blur(10px);
+  border: 1px solid rgba(255, 255, 255, 0.65);
+  padding: 14px 20px;
+  border-radius: 16px;
+  box-shadow: 0 10px 28px rgba(125, 38, 54, 0.14);
+}
+
+@media (max-width: 600px) {
+  .logo-section {
+    left: 20px;
+  }
+
+  .info-box {
+    left: 20px;
+    right: 90px;
+    bottom: 20px;
+    font-size: 14px;
+    padding: 12px 16px;
+  }
 }
 </style>

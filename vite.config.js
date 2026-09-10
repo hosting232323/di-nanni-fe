@@ -29,6 +29,10 @@ export default defineConfig({
           {
             name: 'Roboto',
             styles: 'wght@100;300;400;500;700;900'
+          },
+          {
+            name: 'Playfair Display',
+            styles: 'wght@400;500;600;700;800'
           }
         ]
       }

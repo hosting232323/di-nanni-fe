@@ -5,7 +5,7 @@
         <v-img src="../assets/lamiastoria.jpg" alt="Dott.ssa Doriana Di Nanni" class="dinanni-img"/>
       </v-col>
       <v-col cols="12" md="8" class="d-flex flex-column justify-center align-start">
-        <h1 class="text-h3 font-weight-bold" style="color: #7d2636;">Chi Sono</h1>
+        <h1 class="text-h3 font-weight-bold section-title" style="color: #7d2636;">Chi Sono</h1>
         <p class="font-weight-medium text-muted mt-4 mb-4">
           Sono la Dott.ssa Doriana Di Nanni e credo che ogni persona meriti un percorso di cura su misura, che unisca medicina
           tradizionale e tecniche complementari.<br>La mia missione è aiutarti a migliorare la qualità della tua vita con un approccio
@@ -20,7 +20,8 @@
 <style scoped>
 .dinanni-img {
   max-width: 500px;
-  border-radius: 12px;
+  border-radius: 16px;
+  box-shadow: 0 14px 34px rgba(125, 38, 54, 0.2);
 }
 
 .more {

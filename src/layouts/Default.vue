@@ -6,15 +6,17 @@
     </v-main>
     <Footer />
   </v-app>
-  <ChattyBot 
+  <ChattyBot
     :hostname="http.hostname"
     :bot-data="botLanding"
   />
+  <MiodottoreFab />
 </template>
 
 <script setup>
 import AppBar from './AppBar.vue';
 import Footer from './Footer.vue';
+import MiodottoreFab from '@/components/MiodottoreFab.vue';
 import { ChattyBot } from 'generic-module';
 
 import http from '@/utils/http';
@@ -51,6 +53,6 @@ const botLanding = {
 
 <style>
 .app-background {
-	background: #f8d4d9 !important;
+	background: var(--bg-soft, #faeef1) !important;
 }
 </style>

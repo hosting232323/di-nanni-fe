@@ -1,6 +1,6 @@
 <template>
   <v-container class="padding-fix">
-    <h1 class="text-h3 font-weight-bold mb-4" style="color: #7d2636;">Contattami</h1>
+    <h1 class="text-h3 font-weight-bold mb-4 section-title" style="color: #7d2636;">Contattami</h1>
     <v-row class="d-flex justify-center">
       <v-col cols="12" sm="4" md="4" :class="['d-flex', 'justify-center', 'flex-column', { 'align-center': isMobile }]">
           <p class="d-flex align-center" style="margin-bottom: 20px; width: 250px;">
@@ -34,7 +34,7 @@
           </div>
       </v-col>
       <v-col cols="12" sm="6"  md="8">
-        <v-card>
+        <v-card rounded="xl" elevation="6">
           <Map />
         </v-card>
       </v-col>
@@ -52,14 +52,36 @@ const isMobile = mobile.setupMobileUtils();
 
 <style scoped>
 .icon {
-  font-size: 24px; 
-  margin-right: 10px;
+  font-size: 22px;
+  margin-right: 12px;
+  color: #7d2636;
+  background: rgba(125, 38, 54, 0.09);
+  border-radius: 50%;
+  width: 40px;
+  height: 40px;
+  min-width: 40px;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  transition: background-color 0.25s ease, color 0.25s ease;
 }
+
+p:hover > .icon,
+li:hover > .icon {
+  background: #7d2636;
+  color: #fff;
+}
+
 .social{
   font-size: 50px;
   margin: 0 20px;
   color: #9a3548;
-  transition: color 0.3s ease;
+  display: inline-block;
+  transition: color 0.3s ease, transform 0.3s ease;
+}
+
+.social:hover {
+  transform: translateY(-3px) scale(1.06);
 }
 .social:hover {
   color: #ff3366;
