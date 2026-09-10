@@ -23,7 +23,7 @@
   align-items: center;
   height: 64px;
   background: #ffffff;
-  color: var(--brand, #7d2636);
+  color: #7d2636;
   border: 1px solid rgba(125, 38, 54, 0.28);
   border-radius: 999px;
   overflow: hidden;
@@ -35,7 +35,7 @@
 
 .booking-fab:hover,
 .booking-fab:focus-visible {
-  background: var(--brand, #7d2636);
+  background: #7d2636;
   color: #fff;
   box-shadow: 0 8px 26px rgba(125, 38, 54, 0.45);
   animation: none;

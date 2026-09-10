@@ -1,6 +1,6 @@
 <template>
   <v-container class="padding-fix">
-    <h1 class="text-h3 font-weight-bold mb-4 section-title" style="color: #7d2636;">Cosa dicono di me</h1>
+    <h1 class="text-h3 font-weight-bold mb-4" style="color: #7d2636;">Cosa dicono di me</h1>
     <div class="review-wrapper position-relative">
       <div class="outer-container">
         <v-btn class="arrow-button prev-arrow" icon @click="prevSlide" :disabled="windowIndex === 0">
@@ -128,9 +128,8 @@ const reviews = ref([
 
 <style scoped>
 .review-wrapper {
-  padding: 28px 0;
-  background: linear-gradient(135deg, #fbe3e8, #f6ccd6);
-  border-radius: 24px;
+  padding: 20px 0;
+  background-color: #f8d4da;
 }
 
 .review-card {
@@ -138,15 +137,8 @@ const reviews = ref([
   flex-direction: column;
   margin: 0 8px;
   padding: 24px;
-  box-shadow: 0 8px 24px rgba(125, 38, 54, 0.14) !important;
-  border-radius: 16px !important;
-  border: 1px solid rgba(255, 255, 255, 0.8);
-  transition: transform 0.3s ease, box-shadow 0.3s ease;
-}
-
-.review-card:hover {
-  transform: translateY(-5px);
-  box-shadow: 0 14px 32px rgba(125, 38, 54, 0.22) !important;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.15) !important;
+  border-radius: 12px !important;
 }
 
 .review-header {

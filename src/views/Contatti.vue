@@ -2,7 +2,7 @@
   <v-container class="padding-fix">
     <v-row>
       <v-col cols="12" md="5" class="text-content">
-        <h1 class="text-h3 font-weight-bold section-title" style="color: #7D2636;">Contattami</h1>
+        <h1 class="text-h3 font-weight-bold" style="color: #7D2636;">Contattaci</h1>
         <p class="section-subtitle">
           Compila il modulo per richiedere un appuntamento o farci una domanda. Ti risponderemo il prima possibile!
         </p>

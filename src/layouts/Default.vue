@@ -53,6 +53,18 @@ const botLanding = {
 
 <style>
 .app-background {
-	background: var(--bg-soft, #faeef1) !important;
+	background: #f8d4d9 !important;
+}
+
+/* Solleva il FAB del chatbot (componente ChattyBot di generic-module)
+   per fare spazio, sotto, al FAB di prenotazione Miodottore */
+.fab {
+	margin-bottom: 110px !important;
+}
+
+@media screen and (max-width: 768px) {
+	.fab {
+		margin-bottom: 85px !important;
+	}
 }
 </style>
