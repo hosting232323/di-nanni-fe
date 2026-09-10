@@ -109,8 +109,8 @@ onMounted(() => {
 
 onBeforeUnmount(() => window.removeEventListener('scroll', onScroll));
 
-// In home, prima dello scroll, l'app bar si fonde con l'hero:
-// sfondo rosa chiaro e senza logo (il logo grande e' gia' nell'hero).
+// In home, prima dello scroll, il logo nella app bar e' nascosto
+// (il logo grande e' gia' nell'hero); riappare solo quando si scrolla.
 const fused = computed(() => route.path === '/' && !scrolled.value);
 const menuItems = [
   {
@@ -304,33 +304,11 @@ const menuItems = [
   }
 }
 
-/* Stato "fuso" con l'hero (solo home, prima dello scroll):
-   sfondo rosa chiaro continuo, logo nascosto, testo bordeaux */
-.appbar--fused.appbar--fused {
-  background: #f9dce5 !important;
-  box-shadow: none;
-}
-
+/* Solo home, prima dello scroll: logo nascosto (il logo grande
+   e' gia' nell'hero). Sfondo e testi della app bar restano sempre scuri. */
 .appbar--fused .logo-link {
   opacity: 0;
   transform: scale(0.92);
   pointer-events: none;
-}
-
-.appbar--fused .nav-item {
-  color: #7d2636 !important;
-}
-
-.appbar--fused .nav-item:hover,
-.appbar--fused .nav-item.v-btn--active {
-  color: #5a1b29 !important;
-}
-
-.appbar--fused .nav-item i::after {
-  background: rgba(125, 38, 54, 0.45);
-}
-
-.appbar--fused .menu-btn {
-  color: #7d2636 !important;
 }
 </style>
