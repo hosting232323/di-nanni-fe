@@ -6,15 +6,17 @@
     </v-main>
     <Footer />
   </v-app>
-  <ChattyBot 
+  <ChattyBot
     :hostname="http.hostname"
     :bot-data="botLanding"
   />
+  <MiodottoreFab />
 </template>
 
 <script setup>
 import AppBar from './AppBar.vue';
 import Footer from './Footer.vue';
+import MiodottoreFab from '@/components/MiodottoreFab.vue';
 import { ChattyBot } from 'generic-module';
 
 import http from '@/utils/http';
@@ -52,5 +54,17 @@ const botLanding = {
 <style>
 .app-background {
 	background: #f8d4d9 !important;
+}
+
+/* Solleva il FAB del chatbot (componente ChattyBot di generic-module)
+   per fare spazio, sotto, al FAB di prenotazione Miodottore */
+.fab {
+	margin-bottom: 110px !important;
+}
+
+@media screen and (max-width: 768px) {
+	.fab {
+		margin-bottom: 85px !important;
+	}
 }
 </style>
