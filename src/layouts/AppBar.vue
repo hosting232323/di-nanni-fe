@@ -278,7 +278,7 @@ const menuItems = [
 
 @media screen and (max-width: 599px) {
   .custom-appbar {
-    background: linear-gradient(300deg, #f8d4d9 0%, #f8d4d9 80%, #7d2636 86%, #7d2636 100%) !important;
+    background: linear-gradient(300deg, #f8d4d9 0%, #f8d4d9 70%, #7d2636 76%, #7d2636 100%) !important;
   }
 }
 </style>
