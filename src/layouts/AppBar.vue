@@ -130,7 +130,7 @@ const menuItems = [
   align-items: center;
   justify-content: center;
   height: 70px !important;
-  background: linear-gradient(to right, #f8d4d9 0%, #f8d4d9 12%, #7d2636 45%, #7d2636 100%) !important;
+  background: linear-gradient(105deg, #f8d4d9 0%, #f8d4d9 12%, #7d2636 45%, #7d2636 100%) !important;
   box-shadow: 0 2px 18px rgba(90, 27, 41, 0.22);
 }
 
@@ -278,7 +278,7 @@ const menuItems = [
 
 @media screen and (max-width: 599px) {
   .custom-appbar {
-    background: linear-gradient(to left, #f8d4d9 0%, #f8d4d9 12%, #7d2636 45%, #7d2636 100%) !important;
+    background: linear-gradient(255deg, #f8d4d9 0%, #f8d4d9 12%, #7d2636 45%, #7d2636 100%) !important;
   }
 }
 </style>
