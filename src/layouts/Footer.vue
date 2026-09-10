@@ -43,22 +43,31 @@ const isMobile = mobile.setupMobileUtils();
 
 <style scoped>
 .footer {
-  background: linear-gradient(to top, #7D2636, #a33a4d);
+  background: linear-gradient(to top, #5a1b29, #7d2636 55%, #a33a4d);
   color: white;
-  padding: 40px 20px;
+  padding: 48px 20px 28px;
   text-align: center;
+  border-top: 3px solid rgba(248, 212, 217, 0.55);
 }
 
 .social {
   font-size: 35px;
   margin: 0 10px;
   color: white;
+  display: inline-block;
+  transition: transform 0.25s ease, color 0.25s ease;
+}
+
+.social:hover {
+  transform: scale(1.18) translateY(-2px);
+  color: #f8d4d9;
 }
 
 .footer-title {
   font-size: 1.5rem;
   margin-bottom: 1rem;
   font-weight: bold;
+  letter-spacing: 0.5px;
 }
 
 .footer-list {
@@ -69,6 +78,7 @@ const isMobile = mobile.setupMobileUtils();
 
 .other-title {
  font-size: 18px;
+ transition: color 0.25s ease;
 }
 .footer-title a, .other-title, .powered {
   text-decoration: none;
@@ -77,6 +87,7 @@ const isMobile = mobile.setupMobileUtils();
 
 .footer-title a:hover , .other-title:hover, .powered:hover {
   text-decoration: underline;
+  color: #f8d4d9;
 }
 
 .double-footer {
@@ -93,10 +104,12 @@ const isMobile = mobile.setupMobileUtils();
   color: white;
   text-decoration: none;
   font-size: 1rem;
+  transition: color 0.25s ease;
 }
 
 .footer-list li a:hover {
   text-decoration: underline;
+  color: #f8d4d9;
 }
 
 .social-row {
@@ -110,5 +123,10 @@ const isMobile = mobile.setupMobileUtils();
 
 .social-btn:hover {
   transform: scale(1.1);
+}
+
+.powered {
+  opacity: 0.8;
+  font-size: 0.9rem;
 }
 </style>
