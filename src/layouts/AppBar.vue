@@ -1,7 +1,7 @@
 <template>
-  <v-app-bar v-if="isMobile" elevation="0" class="custom-appbar">
+  <v-app-bar v-if="isMobile" elevation="0" :class="['custom-appbar', { 'appbar--fused': fused }]">
     <v-container class="d-flex align-center justify-space-between">
-      <v-btn icon @click="drawer = !drawer" style="color: #fff !important;">
+      <v-btn icon class="menu-btn" @click="drawer = !drawer">
         <v-icon>mdi-menu</v-icon>
       </v-btn>
       <router-link to="/" class="logo-link">
@@ -9,7 +9,7 @@
       </router-link>
     </v-container>
   </v-app-bar>
-  <v-app-bar v-else elevation="0" class="custom-appbar">
+  <v-app-bar v-else elevation="0" :class="['custom-appbar', { 'appbar--fused': fused }]">
     <div class="left-section d-flex align-center">
       <router-link to="/" class="logo-link">
         <img src="@/assets/logo.png" alt="" height="55"/>
@@ -91,11 +91,27 @@
 </template>
 
 <script setup>
-import { ref } from 'vue';
+import { ref, computed, onMounted, onBeforeUnmount } from 'vue';
+import { useRoute } from 'vue-router';
 import mobile from '@/utils/mobile';
 
 const drawer = ref(false);
 const isMobile = mobile.setupMobileUtils();
+const route = useRoute();
+
+const scrolled = ref(false);
+const onScroll = () => { scrolled.value = window.scrollY > 40; };
+
+onMounted(() => {
+  onScroll();
+  window.addEventListener('scroll', onScroll, { passive: true });
+});
+
+onBeforeUnmount(() => window.removeEventListener('scroll', onScroll));
+
+// In home, prima dello scroll, l'app bar si fonde con l'hero:
+// sfondo rosa chiaro e senza logo (il logo grande e' gia' nell'hero).
+const fused = computed(() => route.path === '/' && !scrolled.value);
 const menuItems = [
   {
     text: 'Trattamenti',
@@ -161,6 +177,11 @@ const menuItems = [
   transition: color 0.25s ease;
 }
 
+.menu-btn {
+  color: #fff !important;
+  transition: color 0.25s ease;
+}
+
 .nav-item i {
   position: relative;
   font-style: italic;
@@ -193,6 +214,7 @@ const menuItems = [
   text-decoration: none;
   position: relative;
   padding: 10px;
+  transition: opacity 0.3s ease, transform 0.3s ease;
 }
 
 .logo-link img {
@@ -280,5 +302,35 @@ const menuItems = [
   .custom-appbar {
     background: linear-gradient(300deg, #f8d4d9 0%, #f8d4d9 70%, #7d2636 76%, #7d2636 100%) !important;
   }
+}
+
+/* Stato "fuso" con l'hero (solo home, prima dello scroll):
+   sfondo rosa chiaro continuo, logo nascosto, testo bordeaux */
+.appbar--fused.appbar--fused {
+  background: #f9dce5 !important;
+  box-shadow: none;
+}
+
+.appbar--fused .logo-link {
+  opacity: 0;
+  transform: scale(0.92);
+  pointer-events: none;
+}
+
+.appbar--fused .nav-item {
+  color: #7d2636 !important;
+}
+
+.appbar--fused .nav-item:hover,
+.appbar--fused .nav-item.v-btn--active {
+  color: #5a1b29 !important;
+}
+
+.appbar--fused .nav-item i::after {
+  background: rgba(125, 38, 54, 0.45);
+}
+
+.appbar--fused .menu-btn {
+  color: #7d2636 !important;
 }
 </style>
