@@ -1,7 +1,7 @@
 <template>
   <v-app-bar v-if="isMobile" elevation="0" :class="['custom-appbar', { 'appbar--fused': fused }]">
     <v-container class="d-flex align-center justify-space-between">
-      <v-btn icon class="menu-btn" @click="drawer = !drawer">
+      <v-btn icon class="menu-btn" @click="drawerOpen = !drawerOpen">
         <v-icon>mdi-menu</v-icon>
       </v-btn>
       <router-link to="/" class="logo-link">
@@ -50,7 +50,7 @@
   </v-app-bar>
   <v-navigation-drawer
     v-if="isMobile"
-    v-model="drawer"
+    v-model="drawerOpen"
     app
     left
     temporary
@@ -94,8 +94,8 @@
 import { ref, computed, onMounted, onBeforeUnmount } from 'vue';
 import { useRoute } from 'vue-router';
 import mobile from '@/utils/mobile';
+import { drawerOpen } from '@/utils/uiState';
 
-const drawer = ref(false);
 const isMobile = mobile.setupMobileUtils();
 const route = useRoute();
 
