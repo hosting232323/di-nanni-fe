@@ -1,13 +1,18 @@
 <template>
   <footer class="footer">
     <v-row>
-      <v-col cols="12" lg="4" md="3" class="d-flex flex-column justify-center align-center">
+      <v-col cols="12" lg="5" md="4" class="d-flex flex-column justify-center align-center">
         <div class="d-flex justify-center">
           <a href="https://www.instagram.com/dott.ssa_dorianadinanni" target="_blank"><span class="mdi mdi-instagram social"></span></a>
           <a href="https://www.facebook.com/inphytoveritas" target="_blank"><span class="mdi mdi-facebook social"></span></a>
         </div>
+        <div class="footer-links">
+          <router-link class="other-title" to="/contatti">Contattami</router-link>
+          <router-link class="other-title" to="/chi-sono">Scopri chi sono</router-link>
+          <router-link class="other-title" to="/blog">Blog</router-link>
+        </div>
       </v-col>
-      <v-col cols="12" lg="4" md="6">
+      <v-col cols="12" lg="7" md="8">
         <h3 class="footer-title">Trattamenti</h3>
           <div class="d-flex justify-space-around">
             <ul class="footer-list">
@@ -23,15 +28,10 @@
             </ul>
           </div>
       </v-col>
-      <v-col cols="12" lg="4" md="3" class="d-flex flex-column justify-space-around">
-        <router-link class="other-title" to="/contatti">Contattami</router-link>
-        <router-link class="other-title" to="/chi-sono">Scopri chi sono</router-link>
-        <router-link class="other-title" to="/blog">Blog</router-link>
-      </v-col>
     </v-row>
     <p>Powered By <a href="https://fastsite.it" target="_blank" class="powered">FastSite</a></p>
 
-    
+
   </footer>
 </template>
 
@@ -43,22 +43,39 @@ const isMobile = mobile.setupMobileUtils();
 
 <style scoped>
 .footer {
-  background: linear-gradient(to top, #7D2636, #a33a4d);
+  background: linear-gradient(to top, #5a1b29, #7d2636 55%, #a33a4d);
   color: white;
-  padding: 40px 20px;
+  padding: 48px 20px 28px;
   text-align: center;
+  border-top: 3px solid rgba(248, 212, 217, 0.55);
 }
 
 .social {
   font-size: 35px;
   margin: 0 10px;
   color: white;
+  display: inline-block;
+  transition: transform 0.25s ease, color 0.25s ease;
+}
+
+.social:hover {
+  transform: scale(1.18) translateY(-2px);
+  color: #f8d4d9;
+}
+
+.footer-links {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 10px;
+  margin-top: 18px;
 }
 
 .footer-title {
   font-size: 1.5rem;
   margin-bottom: 1rem;
   font-weight: bold;
+  letter-spacing: 0.5px;
 }
 
 .footer-list {
@@ -69,6 +86,7 @@ const isMobile = mobile.setupMobileUtils();
 
 .other-title {
  font-size: 18px;
+ transition: color 0.25s ease;
 }
 .footer-title a, .other-title, .powered {
   text-decoration: none;
@@ -77,6 +95,7 @@ const isMobile = mobile.setupMobileUtils();
 
 .footer-title a:hover , .other-title:hover, .powered:hover {
   text-decoration: underline;
+  color: #f8d4d9;
 }
 
 .double-footer {
@@ -93,10 +112,12 @@ const isMobile = mobile.setupMobileUtils();
   color: white;
   text-decoration: none;
   font-size: 1rem;
+  transition: color 0.25s ease;
 }
 
 .footer-list li a:hover {
   text-decoration: underline;
+  color: #f8d4d9;
 }
 
 .social-row {
@@ -110,5 +131,10 @@ const isMobile = mobile.setupMobileUtils();
 
 .social-btn:hover {
   transform: scale(1.1);
+}
+
+.powered {
+  opacity: 0.8;
+  font-size: 0.9rem;
 }
 </style>
