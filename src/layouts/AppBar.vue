@@ -1,7 +1,7 @@
 <template>
   <v-app-bar v-if="isMobile" elevation="0" :class="['custom-appbar', { 'appbar--fused': fused }]">
     <v-container class="d-flex align-center justify-space-between">
-      <v-btn icon class="menu-btn" @click="drawerOpen = !drawerOpen">
+      <v-btn icon class="menu-btn" @click="drawer = !drawer">
         <v-icon>mdi-menu</v-icon>
       </v-btn>
       <router-link to="/" class="logo-link">
@@ -50,7 +50,7 @@
   </v-app-bar>
   <v-navigation-drawer
     v-if="isMobile"
-    v-model="drawerOpen"
+    v-model="drawer"
     app
     left
     temporary
@@ -97,6 +97,13 @@ import mobile from '@/utils/mobile';
 import { drawerOpen } from '@/utils/uiState';
 
 const isMobile = mobile.setupMobileUtils();
+
+// Il ref condiviso non e' assegnabile dal template (binding importata):
+// lo espongo tramite una computed scrivibile.
+const drawer = computed({
+  get: () => drawerOpen.value,
+  set: value => { drawerOpen.value = value; }
+});
 const route = useRoute();
 
 const scrolled = ref(false);

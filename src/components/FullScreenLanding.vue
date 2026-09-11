@@ -117,7 +117,7 @@ const logoHidden = computed(() => scrolled.value || drawerOpen.value);
   }
 
   .logo-image {
-    width: 250px;
+    width: 180px;
   }
 }
 
