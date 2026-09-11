@@ -6,6 +6,7 @@ import {
   SITE_JSON_LD,
   SITE_NAME,
   SITE_URL,
+  SPLASH_BG,
   breadcrumbsOf,
   seoRoutes
 } from '../src/utils/seo.routes.js';
@@ -113,11 +114,31 @@ const fallbackBody = (route) => {
   ].join('\n');
 };
 
+// unplugin-fonts preinserisce un <link rel="preload" as="font"> per OGNI formato
+// di OGNI @font-face (eot, woff2, woff, ttf, otf): al primo caricamento il
+// browser scarica gli stessi glifi in 3-4 codifiche, MB di banda sottratti a
+// JS e CSS critici. Teniamo solo il woff2 (l'unico che serve ai browser
+// moderni); gli altri formati restano come fallback dentro il CSS, non piu'
+// come preload ad alta priorita'.
+const trimFontPreloads = (html) =>
+  html.replace(
+    /^\s*<link rel="preload" as="font"[^>]*>\n?/gim,
+    (tag) => (/\.woff2/.test(tag) ? tag : '')
+  );
+
+// Sfondo del brand dipinto sul primo frame: finche' il bundle non e' scaricato
+// ed eseguito la SPA e' vuota, e senza questo si vedrebbe il bianco della
+// pagina. Va per primo nel <head> cosi' il browser lo applica subito.
+const splashStyle = SPLASH_BG
+  ? `<style>html{background:${SPLASH_BG}}</style>\n    `
+  : '';
+
 const renderRoute = (template, route) =>
-  template
+  trimFontPreloads(template)
     // Il lang dell'HTML deve seguire la rotta, non il template: le pagine
     // tradotte altrimenti si dichiarerebbero in italiano.
     .replace(/<html lang="[^"]*"/, `<html lang="${(route.locale ?? 'it_IT').split('_')[0]}"`)
+    .replace(/<head>\s*/, `<head>\n    ${splashStyle}`)
     .replace(/<title>[\s\S]*?<\/title>/, `<title>${escapeHtml(route.title)}</title>`)
     .replace('</head>', `${metaTags(route)}\n  </head>`)
     .replace('<div id="app"></div>', fallbackBody(route));
