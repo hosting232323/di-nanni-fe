@@ -25,10 +25,7 @@
          anche l'area della app bar (stesso lato del logo piccolo); allo scroll,
          o con il menu mobile aperto, scompare e resta quello piccolo. -->
     <div :class="['logo-section', { 'logo-section--hidden': logoHidden }]">
-      <img src="@/assets/logo.png" alt="Logo Di Nanni" class="logo-image" :style="{
-        width: isMobile ? '40%' : '80%',
-        height: isMobile ? '40%' : '80%',
-      }" />
+      <img src="@/assets/logo.png" alt="Logo Di Nanni" class="logo-image" />
     </div>
   </div>
 </template>
@@ -107,16 +104,21 @@ const logoHidden = computed(() => scrolled.value || drawerOpen.value);
   pointer-events: none;
 }
 
+.logo-image {
+  width: 500px;
+  height: auto;
+}
+
 @media screen and (max-width: 599px) {
   .logo-section {
     top: -35px;
     left: auto;
     right: 14px;
   }
-}
 
-.logo-image {
-  width: 250px;
+  .logo-image {
+    width: 250px;
+  }
 }
 
 .specializzazione {
