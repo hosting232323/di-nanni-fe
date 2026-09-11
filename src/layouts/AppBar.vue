@@ -153,7 +153,7 @@ const menuItems = [
   align-items: center;
   justify-content: center;
   height: 70px !important;
-  background: linear-gradient(62deg, #f8d4d9 0%, #f8d4d9 42%, #7d2636 46%, #7d2636 100%) !important;
+  background: linear-gradient(62deg, #f9dce5 0%, #f9dce5 42%, #7d2636 46%, #7d2636 100%) !important;
   box-shadow: 0 2px 18px rgba(90, 27, 41, 0.22);
 }
 
@@ -273,7 +273,7 @@ const menuItems = [
 :deep(.v-list) {
   background-color: #7D2636 !important;
   color: white !important;
-  padding: 10px 8px;
+  padding: 32px 8px 10px;
 }
 
 :deep(.v-list-item) {
@@ -307,7 +307,7 @@ const menuItems = [
 
 @media screen and (max-width: 599px) {
   .custom-appbar {
-    background: linear-gradient(300deg, #f8d4d9 0%, #f8d4d9 70%, #7d2636 76%, #7d2636 100%) !important;
+    background: linear-gradient(300deg, #f9dce5 0%, #f9dce5 70%, #7d2636 76%, #7d2636 100%) !important;
   }
 }
 

@@ -67,7 +67,7 @@ const logoHidden = computed(() => scrolled.value || drawerOpen.value);
   position: absolute;
   width: 100%;
   height: 100%;
-  background: linear-gradient(to bottom right, #f9dce5, #f5c4d2);
+  background: linear-gradient(to bottom, #f9dce5, #f5c4d2);
   z-index: 0;
 }
 
@@ -117,7 +117,7 @@ const logoHidden = computed(() => scrolled.value || drawerOpen.value);
   }
 
   .logo-image {
-    width: 180px;
+    width: 200px;
   }
 }
 
