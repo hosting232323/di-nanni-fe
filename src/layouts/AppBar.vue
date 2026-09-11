@@ -118,7 +118,7 @@ onBeforeUnmount(() => window.removeEventListener('scroll', onScroll));
 
 // In home, prima dello scroll, il logo nella app bar e' nascosto
 // (il logo grande e' gia' nell'hero); riappare solo quando si scrolla.
-const fused = computed(() => route.path === '/' && !scrolled.value);
+const fused = computed(() => route.path === '/' && !scrolled.value && !drawerOpen.value);
 const menuItems = [
   {
     text: 'Trattamenti',
