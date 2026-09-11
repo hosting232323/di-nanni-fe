@@ -15,6 +15,10 @@ export const SITE_NAME = 'Doriana Di Nanni';
 
 export const DEFAULT_IMAGE = `${SITE_URL}/assets/logo.png`;
 
+// Sfondo del brand dipinto sul primo frame, prima che Vue monti (vedi
+// build/static-seo.js). Verificato dal vivo su dorianadinanni.it.
+export const SPLASH_BG = '#F8D4D9';
+
 // Dati strutturati dell'attivita' emessi sulla home. Qui non ce ne sono:
 // il plugin di build si aspetta comunque l'export.
 export const SITE_JSON_LD = null;
