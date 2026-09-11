@@ -1,7 +1,7 @@
 <template>
-  <v-app-bar v-if="isMobile" elevation="0" class="custom-appbar">
+  <v-app-bar v-if="isMobile" elevation="0" :class="['custom-appbar', { 'appbar--fused': fused }]">
     <v-container class="d-flex align-center justify-space-between">
-      <v-btn icon @click="drawer = !drawer" style="color: #fff !important;">
+      <v-btn icon class="menu-btn" @click="drawer = !drawer">
         <v-icon>mdi-menu</v-icon>
       </v-btn>
       <router-link to="/" class="logo-link">
@@ -9,7 +9,7 @@
       </router-link>
     </v-container>
   </v-app-bar>
-  <v-app-bar v-else elevation="0" class="custom-appbar">
+  <v-app-bar v-else elevation="0" :class="['custom-appbar', { 'appbar--fused': fused }]">
     <div class="left-section d-flex align-center">
       <router-link to="/" class="logo-link">
         <img src="@/assets/logo.png" alt="" height="55"/>
@@ -91,11 +91,34 @@
 </template>
 
 <script setup>
-import { ref } from 'vue';
+import { ref, computed, onMounted, onBeforeUnmount } from 'vue';
+import { useRoute } from 'vue-router';
 import mobile from '@/utils/mobile';
+import { drawerOpen } from '@/utils/uiState';
 
-const drawer = ref(false);
 const isMobile = mobile.setupMobileUtils();
+
+// Il ref condiviso non e' assegnabile dal template (binding importata):
+// lo espongo tramite una computed scrivibile.
+const drawer = computed({
+  get: () => drawerOpen.value,
+  set: value => { drawerOpen.value = value; }
+});
+const route = useRoute();
+
+const scrolled = ref(false);
+const onScroll = () => { scrolled.value = window.scrollY > 40; };
+
+onMounted(() => {
+  onScroll();
+  window.addEventListener('scroll', onScroll, { passive: true });
+});
+
+onBeforeUnmount(() => window.removeEventListener('scroll', onScroll));
+
+// In home, prima dello scroll, il logo nella app bar e' nascosto
+// (il logo grande e' gia' nell'hero); riappare solo quando si scrolla.
+const fused = computed(() => route.path === '/' && !scrolled.value && !drawerOpen.value);
 const menuItems = [
   {
     text: 'Trattamenti',
@@ -130,7 +153,8 @@ const menuItems = [
   align-items: center;
   justify-content: center;
   height: 70px !important;
-  background: linear-gradient(to right, #f8d4d9 0%, #f8d4d9 20%, #7d2636 50%, #7d2636 100%) !important;
+  background: linear-gradient(62deg, #f9dce5 0%, #f9dce5 42%, #7d2636 46%, #7d2636 100%) !important;
+  box-shadow: 0 2px 18px rgba(90, 27, 41, 0.22);
 }
 
 .custom-appbar .left-section {
@@ -157,17 +181,58 @@ const menuItems = [
   font-style: italic;
   text-transform: none;
   letter-spacing: 0.5px;
+  transition: color 0.25s ease;
 }
 
-.nav-item:hover {
-  text-decoration: underline;
+.menu-btn {
+  color: #fff !important;
+  transition: color 0.25s ease;
+}
+
+.nav-item i {
+  position: relative;
+  font-style: italic;
+}
+
+.nav-item i::after {
+  content: '';
+  position: absolute;
+  left: 50%;
+  right: 50%;
+  bottom: -5px;
+  height: 2px;
+  border-radius: 2px;
+  background: #f8d4d9;
+  transition: left 0.3s ease, right 0.3s ease;
+}
+
+.nav-item:hover i::after,
+.nav-item.v-btn--active i::after {
+  left: 0;
+  right: 0;
+}
+
+.nav-item:hover,
+.nav-item.v-btn--active {
+  color: #f8d4d9 !important;
 }
 
 .logo-link {
   text-decoration: none;
   position: relative;
   padding: 10px;
+  transition: opacity 0.3s ease, transform 0.3s ease;
 }
+
+.logo-link img {
+  filter: drop-shadow(0 3px 8px rgba(0, 0, 0, 0.18));
+  transition: transform 0.3s ease;
+}
+
+.logo-link:hover img {
+  transform: scale(1.04);
+}
+
 .mobile-drawer {
   background-color: #7D2636 !important;
 }
@@ -178,16 +243,23 @@ const menuItems = [
 
 .submenu-list {
   background-color: #7D2636 !important;
+  border-radius: 14px !important;
+  overflow: hidden;
+  box-shadow: 0 12px 32px rgba(0, 0, 0, 0.22) !important;
+  padding: 6px 0;
 }
 
 .submenu-item {
   font-size: 14px;
   font-style: italic;
   color: white !important;
+  min-height: 42px;
+  transition: background-color 0.2s ease, padding-left 0.2s ease;
 }
 
 .submenu-item:hover {
   background-color: rgba(255, 255, 255, 0.2) !important;
+  padding-left: 20px;
 }
 
 :deep(.v-list-item-title) {
@@ -201,10 +273,14 @@ const menuItems = [
 :deep(.v-list) {
   background-color: #7D2636 !important;
   color: white !important;
+  padding: 32px 8px 10px;
 }
 
 :deep(.v-list-item) {
   color: white !important;
+  border-radius: 12px;
+  margin-bottom: 4px;
+  transition: background-color 0.2s ease;
 }
 
 :deep(.v-list-item:hover) {
@@ -213,6 +289,8 @@ const menuItems = [
 
 :deep(.v-list-group__items) {
   background-color: rgba(255, 255, 255, 0.1) !important;
+  border-radius: 12px;
+  margin-bottom: 4px;
 }
 
 :deep(.v-list-group__header) {
@@ -229,7 +307,15 @@ const menuItems = [
 
 @media screen and (max-width: 599px) {
   .custom-appbar {
-    background: linear-gradient(to left, #f8d4d9 0%, #f8d4d9 20%, #7d2636 50%, #7d2636 100%) !important;
+    background: linear-gradient(300deg, #f9dce5 0%, #f9dce5 70%, #7d2636 76%, #7d2636 100%) !important;
   }
+}
+
+/* Solo home, prima dello scroll: logo nascosto (il logo grande
+   e' gia' nell'hero). Sfondo e testi della app bar restano sempre scuri. */
+.appbar--fused .logo-link {
+  opacity: 0;
+  transform: scale(0.92);
+  pointer-events: none;
 }
 </style>
