@@ -19,13 +19,47 @@ export const DEFAULT_IMAGE = `${SITE_URL}/assets/logo.png`;
 // build/static-seo.js). Verificato dal vivo su dorianadinanni.it.
 export const SPLASH_BG = '#F8D4D9';
 
-// Dati strutturati dell'attivita' emessi sulla home. Qui non ce ne sono:
-// il plugin di build si aspetta comunque l'export.
-export const SITE_JSON_LD = null;
+// Dati strutturati dell'attivita' emessi sulla home. WebPage e BreadcrumbList
+// sono dati della singola pagina e li genera il plugin per ogni rotta, quindi
+// qui restano fuori. Indirizzo, telefono e orari sono quelli mostrati dal sito.
+export const SITE_JSON_LD = {
+  '@context': 'https://schema.org',
+  '@graph': [
+    {
+      '@type': ['Physician', 'LocalBusiness'],
+      '@id': `${SITE_URL}/#organization`,
+      name: SITE_NAME,
+      url: SITE_URL,
+      image: DEFAULT_IMAGE,
+      logo: DEFAULT_IMAGE,
+      telephone: '+39 379 218 5146',
+      address: {
+        '@type': 'PostalAddress',
+        streetAddress: 'Via Corfù, 13',
+        postalCode: '70121',
+        addressLocality: 'Bari',
+        addressRegion: 'BA',
+        addressCountry: 'IT'
+      },
+      openingHours: 'Mo-Sa',
+      description: 'Medico chirurgo a Bari: agopuntura, fitoterapia, aromaterapia, Taopatch e tecniche complementari. Solo su appuntamento.'
+    },
+    {
+      '@type': 'WebSite',
+      '@id': `${SITE_URL}/#website`,
+      url: SITE_URL,
+      name: SITE_NAME,
+      inLanguage: 'it-IT',
+      publisher: { '@id': `${SITE_URL}/#organization` }
+    }
+  ]
+};
 
 // `path` e' la rotta reale definita in src/plugins/router.js: da qui derivano
 // sia il canonical sia la sitemap, quindi non puo' divergere dal router.
-// /blog/:id resta fuori: dipende dai post caricati via API.
+// /blog/:id resta fuori: dipende dai post caricati via API. /scopri-di-piu
+// resta fuori perche' la sua view e' vuota: indicizzarla significherebbe
+// pubblicare una pagina senza contenuto.
 export const seoRoutes = [
   {
     path: '/',
@@ -96,16 +130,6 @@ export const seoRoutes = [
     heading: 'Tecniche complementari',
     intro:
       'Coppettazione, guasha, tui na e Emotional Freedom Technique, proposte come tecniche complementari.'
-  },
-  {
-    path: '/scopri-di-piu',
-    priority: 0.7,
-    title: 'Scopri di piu\' - Doriana Di Nanni',
-    description:
-      'Approfondimenti sull\'approccio terapeutico della Dott.ssa Doriana Di Nanni e su come si svolge il percorso di cura.',
-    heading: 'Scopri di piu\'',
-    intro:
-      'Approfondimenti sull\'approccio terapeutico e su come si svolge il percorso di cura.'
   },
   {
     path: '/blog',
