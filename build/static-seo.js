@@ -10,6 +10,7 @@ import {
   breadcrumbsOf,
   seoRoutes
 } from '../src/utils/seo.routes.js';
+import { seoContent, seoFooter } from '../src/utils/seo.content.js';
 
 // L'app e' una SPA: il server manda un index.html vuoto e Vue lo riempie dopo.
 // Chi non esegue JavaScript - anteprime social, assistenti AI, e Googlebot
@@ -95,6 +96,19 @@ const metaTags = (route) => {
   return blocks.join('\n');
 };
 
+// Blocchi di testo -> HTML. Ogni blocco ha un sottotitolo opzionale e uno o
+// piu' tra paragrafi, elenco puntato e numerato (vedi seo.content.js). Gli
+// elementi escono nell'ordine in cui sono scritti nel blocco.
+const renderList = (tag, items) =>
+  `<${tag}>${items.map((text) => `<li>${escapeHtml(text)}</li>`).join('')}</${tag}>`;
+
+const renderBlock = (block) =>
+  Object.entries(block).flatMap(([kind, value]) => {
+    if (kind === 'h') return [`<h2>${escapeHtml(value)}</h2>`];
+    if (kind === 'p') return value.map((text) => `<p>${escapeHtml(text)}</p>`);
+    return [renderList(kind, value)];
+  });
+
 // Testo leggibile senza JavaScript, con i link interni per far scoprire le
 // altre pagine a chi non manda in esecuzione il router. Va in <noscript>:
 // serve solo ai crawler senza JS, l'utente con lo script attivo non lo vede.
@@ -109,7 +123,13 @@ const fallbackBody = (route) => {
     '    <noscript>',
     `      <h1>${escapeHtml(route.heading)}</h1>`,
     `      <p>${escapeHtml(route.intro)}</p>`,
-    `      <nav aria-label="Pagine del sito"><ul>${links}</ul></nav>`,
+    ...(seoContent[route.path] ?? []).flatMap(renderBlock).map((line) => `      ${line}`),
+    ...(links ? [`      <nav aria-label="Pagine del sito"><ul>${links}</ul></nav>`] : []),
+    // Contatti e dati dell'attivita': stanno nel footer Vue, che senza
+    // JavaScript non si vede.
+    ...(seoFooter.length
+      ? [`      <footer>${seoFooter.map((line) => `<p>${escapeHtml(line)}</p>`).join('')}</footer>`]
+      : []),
     '    </noscript>'
   ].join('\n');
 };
