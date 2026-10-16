@@ -9,7 +9,6 @@
         <div class="footer-links">
           <router-link class="other-title" to="/contatti">Contattami</router-link>
           <router-link class="other-title" to="/chi-sono">Scopri chi sono</router-link>
-          <router-link class="other-title" to="/blog">Blog</router-link>
         </div>
       </v-col>
       <v-col cols="12" lg="7" md="8">
