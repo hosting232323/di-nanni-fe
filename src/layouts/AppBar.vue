@@ -1,17 +1,17 @@
 <template>
   <v-app-bar v-if="isMobile" elevation="0" :class="['custom-appbar', { 'appbar--fused': fused }]">
     <v-container class="d-flex align-center justify-space-between">
-      <v-btn icon class="menu-btn" @click="drawer = !drawer">
+      <v-btn icon class="menu-btn" aria-label="Apri il menu" @click="drawer = !drawer">
         <v-icon>mdi-menu</v-icon>
       </v-btn>
-      <router-link to="/" class="logo-link">
+      <router-link to="/" class="logo-link" aria-label="Home">
         <img src="@/assets/logo.png" alt="" height="45" />
       </router-link>
     </v-container>
   </v-app-bar>
   <v-app-bar v-else elevation="0" :class="['custom-appbar', { 'appbar--fused': fused }]">
     <div class="left-section d-flex align-center">
-      <router-link to="/" class="logo-link">
+      <router-link to="/" class="logo-link" aria-label="Home">
         <img src="@/assets/logo.png" alt="" height="55"/>
       </router-link>
     </div>
