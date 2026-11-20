@@ -1,0 +1,630 @@
+/* MaterialDesignIcons.com */
+@font-face {
+  font-family: "Material Design Icons";
+  src: url("../../node_modules/@mdi/font/fonts/materialdesignicons-webfont.eot?v=7.4.47");
+  src: url("../../node_modules/@mdi/font/fonts/materialdesignicons-webfont.eot?#iefix&v=7.4.47") format("embedded-opentype"), url("../../node_modules/@mdi/font/fonts/materialdesignicons-webfont.woff2?v=7.4.47") format("woff2"), url("../../node_modules/@mdi/font/fonts/materialdesignicons-webfont.woff?v=7.4.47") format("woff"), url("../../node_modules/@mdi/font/fonts/materialdesignicons-webfont.ttf?v=7.4.47") format("truetype");
+  font-weight: normal;
+  font-style: normal;
+}
+
+.mdi:before,
+.mdi-set {
+  display: inline-block;
+  font: normal normal normal 24px/1 "Material Design Icons";
+  font-size: inherit;
+  text-rendering: auto;
+  line-height: inherit;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+.mdi-account-heart::before {
+  content: "\F0899";
+}
+
+.mdi-alert-circle::before {
+  content: "\F0028";
+}
+
+.mdi-apple-keyboard-command::before {
+  content: "\F0633";
+}
+
+.mdi-apple-keyboard-control::before {
+  content: "\F0634";
+}
+
+.mdi-apple-keyboard-option::before {
+  content: "\F0635";
+}
+
+.mdi-apple-keyboard-shift::before {
+  content: "\F0636";
+}
+
+.mdi-arrow-down::before {
+  content: "\F0045";
+}
+
+.mdi-arrow-left::before {
+  content: "\F004D";
+}
+
+.mdi-arrow-right::before {
+  content: "\F0054";
+}
+
+.mdi-arrow-up::before {
+  content: "\F005D";
+}
+
+.mdi-backspace::before {
+  content: "\F006E";
+}
+
+.mdi-book-open-page-variant::before {
+  content: "\F05DA";
+}
+
+.mdi-cached::before {
+  content: "\F00E8";
+}
+
+.mdi-calendar::before {
+  content: "\F00ED";
+}
+
+.mdi-calendar-blank-outline::before {
+  content: "\F0B66";
+}
+
+.mdi-calendar-check::before {
+  content: "\F00EF";
+}
+
+.mdi-cart-outline::before {
+  content: "\F0111";
+}
+
+.mdi-check::before {
+  content: "\F012C";
+}
+
+.mdi-check-circle::before {
+  content: "\F05E0";
+}
+
+.mdi-checkbox-blank-outline::before {
+  content: "\F0131";
+}
+
+.mdi-checkbox-marked::before {
+  content: "\F0132";
+}
+
+.mdi-chevron-down::before {
+  content: "\F0140";
+}
+
+.mdi-chevron-left::before {
+  content: "\F0141";
+}
+
+.mdi-chevron-right::before {
+  content: "\F0142";
+}
+
+.mdi-chevron-up::before {
+  content: "\F0143";
+}
+
+.mdi-circle::before {
+  content: "\F0765";
+}
+
+.mdi-close::before {
+  content: "\F0156";
+}
+
+.mdi-close-circle::before {
+  content: "\F0159";
+}
+
+.mdi-cloud-upload::before {
+  content: "\F0167";
+}
+
+.mdi-content-save::before {
+  content: "\F0193";
+}
+
+.mdi-credit-card-outline::before {
+  content: "\F019B";
+}
+
+.mdi-directions::before {
+  content: "\F01D0";
+}
+
+.mdi-email::before {
+  content: "\F01EE";
+}
+
+.mdi-eye::before {
+  content: "\F0208";
+}
+
+.mdi-eye-off::before {
+  content: "\F0209";
+}
+
+.mdi-eyedropper::before {
+  content: "\F020A";
+}
+
+.mdi-facebook::before {
+  content: "\F020C";
+}
+
+.mdi-filter-variant::before {
+  content: "\F0236";
+}
+
+.mdi-format-quote-close::before {
+  content: "\F027E";
+}
+
+.mdi-format-quote-open::before {
+  content: "\F0757";
+}
+
+.mdi-fullscreen::before {
+  content: "\F0293";
+}
+
+.mdi-fullscreen-exit::before {
+  content: "\F0294";
+}
+
+.mdi-information::before {
+  content: "\F02FC";
+}
+
+.mdi-information-outline::before {
+  content: "\F02FD";
+}
+
+.mdi-instagram::before {
+  content: "\F02FE";
+}
+
+.mdi-keyboard-return::before {
+  content: "\F0311";
+}
+
+.mdi-keyboard-space::before {
+  content: "\F1050";
+}
+
+.mdi-linkedin::before {
+  content: "\F033B";
+}
+
+.mdi-lock::before {
+  content: "\F033E";
+}
+
+.mdi-magnify::before {
+  content: "\F0349";
+}
+
+.mdi-map-marker-outline::before {
+  content: "\F07D9";
+}
+
+.mdi-menu::before {
+  content: "\F035C";
+}
+
+.mdi-menu-down::before {
+  content: "\F035D";
+}
+
+.mdi-menu-right::before {
+  content: "\F035F";
+}
+
+.mdi-minus::before {
+  content: "\F0374";
+}
+
+.mdi-minus-box::before {
+  content: "\F0375";
+}
+
+.mdi-notebook-heart-outline::before {
+  content: "\F1A0C";
+}
+
+.mdi-page-first::before {
+  content: "\F0600";
+}
+
+.mdi-page-last::before {
+  content: "\F0601";
+}
+
+.mdi-palette::before {
+  content: "\F03D8";
+}
+
+.mdi-paperclip::before {
+  content: "\F03E2";
+}
+
+.mdi-pause::before {
+  content: "\F03E4";
+}
+
+.mdi-pencil::before {
+  content: "\F03EB";
+}
+
+.mdi-pencil-outline::before {
+  content: "\F0CB6";
+}
+
+.mdi-phone::before {
+  content: "\F03F2";
+}
+
+.mdi-phone-outline::before {
+  content: "\F0DF0";
+}
+
+.mdi-play::before {
+  content: "\F040A";
+}
+
+.mdi-play-circle-outline::before {
+  content: "\F040D";
+}
+
+.mdi-plus::before {
+  content: "\F0415";
+}
+
+.mdi-radiobox-blank::before {
+  content: "\F043D";
+}
+
+.mdi-radiobox-marked::before {
+  content: "\F043E";
+}
+
+.mdi-restore::before {
+  content: "\F099B";
+}
+
+.mdi-send-circle::before {
+  content: "\F0DF8";
+}
+
+.mdi-square::before {
+  content: "\F0764";
+}
+
+.mdi-star::before {
+  content: "\F04CE";
+}
+
+.mdi-star-half-full::before {
+  content: "\F04D0";
+}
+
+.mdi-star-outline::before {
+  content: "\F04D2";
+}
+
+.mdi-stethoscope::before {
+  content: "\F04D9";
+}
+
+.mdi-stop-circle::before {
+  content: "\F0666";
+}
+
+.mdi-twitter::before {
+  content: "\F0544";
+}
+
+.mdi-unfold-more-horizontal::before {
+  content: "\F054F";
+}
+
+.mdi-volume-high::before {
+  content: "\F057E";
+}
+
+.mdi-volume-low::before {
+  content: "\F057F";
+}
+
+.mdi-volume-medium::before {
+  content: "\F0580";
+}
+
+.mdi-volume-off::before {
+  content: "\F0581";
+}
+
+.mdi-volume-variant-off::before {
+  content: "\F0E08";
+}
+
+.mdi-web::before {
+  content: "\F059F";
+}
+
+.mdi-whatsapp::before {
+  content: "\F05A3";
+}
+
+.mdi-window-close::before {
+  content: "\F05AD";
+}
+
+.mdi-blank::before {
+  content: "\F68C";
+  visibility: hidden;
+}
+
+.mdi-18px.mdi-set, .mdi-18px.mdi:before {
+  font-size: 18px;
+}
+
+.mdi-24px.mdi-set, .mdi-24px.mdi:before {
+  font-size: 24px;
+}
+
+.mdi-36px.mdi-set, .mdi-36px.mdi:before {
+  font-size: 36px;
+}
+
+.mdi-48px.mdi-set, .mdi-48px.mdi:before {
+  font-size: 48px;
+}
+
+.mdi-dark:before {
+  color: rgba(0, 0, 0, 0.54);
+}
+
+.mdi-dark.mdi-inactive:before {
+  color: rgba(0, 0, 0, 0.26);
+}
+
+.mdi-light:before {
+  color: white;
+}
+
+.mdi-light.mdi-inactive:before {
+  color: rgba(255, 255, 255, 0.3);
+}
+
+.mdi-rotate-45 {
+  /*
+        // Not included in production
+        &.mdi-flip-h:before {
+            -webkit-transform: scaleX(-1) rotate(45deg);
+            transform: scaleX(-1) rotate(45deg);
+            filter: FlipH;
+            -ms-filter: "FlipH";
+        }
+        &.mdi-flip-v:before {
+            -webkit-transform: scaleY(-1) rotate(45deg);
+            -ms-transform: rotate(45deg);
+            transform: scaleY(-1) rotate(45deg);
+            filter: FlipV;
+            -ms-filter: "FlipV";
+        }
+        */
+}
+
+.mdi-rotate-45:before {
+  -webkit-transform: rotate(45deg);
+  -ms-transform: rotate(45deg);
+  transform: rotate(45deg);
+}
+
+.mdi-rotate-90 {
+  /*
+        // Not included in production
+        &.mdi-flip-h:before {
+            -webkit-transform: scaleX(-1) rotate(90deg);
+            transform: scaleX(-1) rotate(90deg);
+            filter: FlipH;
+            -ms-filter: "FlipH";
+        }
+        &.mdi-flip-v:before {
+            -webkit-transform: scaleY(-1) rotate(90deg);
+            -ms-transform: rotate(90deg);
+            transform: scaleY(-1) rotate(90deg);
+            filter: FlipV;
+            -ms-filter: "FlipV";
+        }
+        */
+}
+
+.mdi-rotate-90:before {
+  -webkit-transform: rotate(90deg);
+  -ms-transform: rotate(90deg);
+  transform: rotate(90deg);
+}
+
+.mdi-rotate-135 {
+  /*
+        // Not included in production
+        &.mdi-flip-h:before {
+            -webkit-transform: scaleX(-1) rotate(135deg);
+            transform: scaleX(-1) rotate(135deg);
+            filter: FlipH;
+            -ms-filter: "FlipH";
+        }
+        &.mdi-flip-v:before {
+            -webkit-transform: scaleY(-1) rotate(135deg);
+            -ms-transform: rotate(135deg);
+            transform: scaleY(-1) rotate(135deg);
+            filter: FlipV;
+            -ms-filter: "FlipV";
+        }
+        */
+}
+
+.mdi-rotate-135:before {
+  -webkit-transform: rotate(135deg);
+  -ms-transform: rotate(135deg);
+  transform: rotate(135deg);
+}
+
+.mdi-rotate-180 {
+  /*
+        // Not included in production
+        &.mdi-flip-h:before {
+            -webkit-transform: scaleX(-1) rotate(180deg);
+            transform: scaleX(-1) rotate(180deg);
+            filter: FlipH;
+            -ms-filter: "FlipH";
+        }
+        &.mdi-flip-v:before {
+            -webkit-transform: scaleY(-1) rotate(180deg);
+            -ms-transform: rotate(180deg);
+            transform: scaleY(-1) rotate(180deg);
+            filter: FlipV;
+            -ms-filter: "FlipV";
+        }
+        */
+}
+
+.mdi-rotate-180:before {
+  -webkit-transform: rotate(180deg);
+  -ms-transform: rotate(180deg);
+  transform: rotate(180deg);
+}
+
+.mdi-rotate-225 {
+  /*
+        // Not included in production
+        &.mdi-flip-h:before {
+            -webkit-transform: scaleX(-1) rotate(225deg);
+            transform: scaleX(-1) rotate(225deg);
+            filter: FlipH;
+            -ms-filter: "FlipH";
+        }
+        &.mdi-flip-v:before {
+            -webkit-transform: scaleY(-1) rotate(225deg);
+            -ms-transform: rotate(225deg);
+            transform: scaleY(-1) rotate(225deg);
+            filter: FlipV;
+            -ms-filter: "FlipV";
+        }
+        */
+}
+
+.mdi-rotate-225:before {
+  -webkit-transform: rotate(225deg);
+  -ms-transform: rotate(225deg);
+  transform: rotate(225deg);
+}
+
+.mdi-rotate-270 {
+  /*
+        // Not included in production
+        &.mdi-flip-h:before {
+            -webkit-transform: scaleX(-1) rotate(270deg);
+            transform: scaleX(-1) rotate(270deg);
+            filter: FlipH;
+            -ms-filter: "FlipH";
+        }
+        &.mdi-flip-v:before {
+            -webkit-transform: scaleY(-1) rotate(270deg);
+            -ms-transform: rotate(270deg);
+            transform: scaleY(-1) rotate(270deg);
+            filter: FlipV;
+            -ms-filter: "FlipV";
+        }
+        */
+}
+
+.mdi-rotate-270:before {
+  -webkit-transform: rotate(270deg);
+  -ms-transform: rotate(270deg);
+  transform: rotate(270deg);
+}
+
+.mdi-rotate-315 {
+  /*
+        // Not included in production
+        &.mdi-flip-h:before {
+            -webkit-transform: scaleX(-1) rotate(315deg);
+            transform: scaleX(-1) rotate(315deg);
+            filter: FlipH;
+            -ms-filter: "FlipH";
+        }
+        &.mdi-flip-v:before {
+            -webkit-transform: scaleY(-1) rotate(315deg);
+            -ms-transform: rotate(315deg);
+            transform: scaleY(-1) rotate(315deg);
+            filter: FlipV;
+            -ms-filter: "FlipV";
+        }
+        */
+}
+
+.mdi-rotate-315:before {
+  -webkit-transform: rotate(315deg);
+  -ms-transform: rotate(315deg);
+  transform: rotate(315deg);
+}
+
+.mdi-flip-h:before {
+  -webkit-transform: scaleX(-1);
+  transform: scaleX(-1);
+  filter: FlipH;
+  -ms-filter: "FlipH";
+}
+
+.mdi-flip-v:before {
+  -webkit-transform: scaleY(-1);
+  transform: scaleY(-1);
+  filter: FlipV;
+  -ms-filter: "FlipV";
+}
+
+.mdi-spin:before {
+  -webkit-animation: mdi-spin 2s infinite linear;
+  animation: mdi-spin 2s infinite linear;
+}
+
+@-webkit-keyframes mdi-spin {
+  0% {
+    -webkit-transform: rotate(0deg);
+    transform: rotate(0deg);
+  }
+  100% {
+    -webkit-transform: rotate(359deg);
+    transform: rotate(359deg);
+  }
+}
+
+@keyframes mdi-spin {
+  0% {
+    -webkit-transform: rotate(0deg);
+    transform: rotate(0deg);
+  }
+  100% {
+    -webkit-transform: rotate(359deg);
+    transform: rotate(359deg);
+  }
+}
+
+/*# sourceMappingURL=materialdesignicons.css.map */
