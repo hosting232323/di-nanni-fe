@@ -14,19 +14,19 @@
     <title>Doriana Di Nanni</title>
   </head>
   <body>
-    <!-- Hero statica (solo mobile, solo home): dipinta subito, prima che Vue monti e la sostituisca. -->
+    <!-- Hero statica (solo mobile, solo home): resta visibile finche' la hero di Vue non e' montata
+         (FullScreenLanding la rimuove), cosi' il primo paint non aspetta i chunk delle route. -->
     <style>
       #hero-placeholder { display: none; }
       @media (max-width: 599px) {
-        #hero-placeholder { display: block; position: relative; margin-top: 70px; height: calc(100vh - 64px); overflow: hidden; background: linear-gradient(to bottom, #f9dce5, #f5c4d2); }
+        #hero-placeholder { display: block; position: absolute; top: 70px; left: 0; width: 100%; height: calc(100vh - 64px); overflow: hidden; z-index: 1; background: linear-gradient(to bottom, #f9dce5, #f5c4d2); }
         #hero-placeholder div { position: absolute; bottom: 0; right: 0; width: 100%; height: 78vh; display: flex; justify-content: center; align-items: flex-end; overflow: hidden; }
         #hero-placeholder img { height: 100%; width: auto; object-fit: contain; object-position: bottom center; margin-bottom: -2px; }
       }
     </style>
-    <div id="app">
-      <div id="hero-placeholder"><div><img src="/doriana.webp" alt="Dott.ssa Di Nanni" width="1400" height="1051" fetchpriority="high" decoding="async" /></div></div>
-      <script>if (location.pathname !== '/') document.getElementById('hero-placeholder').remove();</script>
-    </div>
+    <div id="hero-placeholder"><div><img src="/doriana.webp" alt="Dott.ssa Di Nanni" width="1400" height="1051" fetchpriority="high" decoding="async" /></div></div>
+    <script>if (location.pathname !== '/') document.getElementById('hero-placeholder').remove();</script>
+    <div id="app"></div>
     <script type="module" src="/src/main.js"></script>
   </body>
 </html>
