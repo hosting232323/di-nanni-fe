@@ -7,7 +7,7 @@
 
       <div class="foreground-content">
         <div :class="['doctor-image', { 'doctor-image-mobile': isMobile }]">
-          <img src="@/assets/doriana.png" alt="Dott.ssa Di Nanni" :class="{ 'doctor-image-mobile-img': isMobile }" />
+          <img src="/doriana.webp" alt="Dott.ssa Di Nanni" width="1400" height="1051" fetchpriority="high" decoding="async" :class="{ 'doctor-image-mobile-img': isMobile }" />
         </div>
 
         <div class="info-box" v-if="!isMobile" style="width: 280px;">

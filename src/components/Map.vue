@@ -19,27 +19,44 @@
 </template>
 
 <script setup>
-import 'ol/ol.css';
-import Map from 'ol/Map';
-import View from 'ol/View';
-import OSM from 'ol/source/OSM';
-import Feature from 'ol/Feature';
-import Point from 'ol/geom/Point';
-import { fromLonLat } from 'ol/proj';
-import { onMounted, ref } from 'vue';
-import TileLayer from 'ol/layer/Tile';
-import { Icon, Style } from 'ol/style';
-import VectorLayer from 'ol/layer/Vector';
-import VectorSource from 'ol/source/Vector';
-import Overlay from 'ol/Overlay';
+import { onMounted, onBeforeUnmount, ref } from 'vue';
 import logo from '@/assets/logo.png';
 
 const mapContainer = ref(null);
 let popupContainer = ref(null);
 let overlay;
 let map;
+let observer;
 
-onMounted(() => {
+// OpenLayers e' pesante: viene caricato solo quando la mappa sta per entrare nel viewport.
+async function initMap() {
+  const [
+    { default: Map },
+    { default: View },
+    { default: OSM },
+    { default: Feature },
+    { default: Point },
+    { fromLonLat },
+    { default: TileLayer },
+    { Icon, Style },
+    { default: VectorLayer },
+    { default: VectorSource },
+    { default: Overlay }
+  ] = await Promise.all([
+    import('ol/Map'),
+    import('ol/View'),
+    import('ol/source/OSM'),
+    import('ol/Feature'),
+    import('ol/geom/Point'),
+    import('ol/proj'),
+    import('ol/layer/Tile'),
+    import('ol/style'),
+    import('ol/layer/Vector'),
+    import('ol/source/Vector'),
+    import('ol/Overlay'),
+    import('ol/ol.css')
+  ]);
+
   const iconFeature = new Feature({
     geometry: new Point(fromLonLat([16.8847, 41.1184]))
   });
@@ -84,10 +101,25 @@ onMounted(() => {
       overlay.setPosition(undefined);
     }
   });
+}
+
+onMounted(() => {
+  observer = new IntersectionObserver((entries) => {
+    if (entries.some(entry => entry.isIntersecting)) {
+      observer.disconnect();
+      initMap();
+    }
+  }, { rootMargin: '300px' });
+  observer.observe(mapContainer.value);
+});
+
+onBeforeUnmount(() => {
+  observer?.disconnect();
+  map?.setTarget(undefined);
 });
 
 function closePopup() {
-  overlay.setPosition(undefined);
+  overlay?.setPosition(undefined);
 }
 </script>
 
