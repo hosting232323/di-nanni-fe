@@ -20,13 +20,13 @@
         <div class="card-inner">
           <div class="card-front">
             <img :src="treatment.image" :alt="treatment.title" />
-            <h3 :style="{ fontSize: isMobile ? '14px' : '18px', padding: isMobile ? '12px' : '16px' }">{{ treatment.title }}
-            </h3>
+            <h2 :style="{ fontSize: isMobile ? '14px' : '18px', padding: isMobile ? '12px' : '16px' }">{{ treatment.title }}
+            </h2>
           </div>
           <div class="card-back">
             <img :src="treatment.image" :alt="treatment.title" />
-            <h3 :style="{ fontSize: isMobile ? '14px' : '18px', padding: isMobile ? '12px' : '16px' }">{{ treatment.title }}
-            </h3>
+            <h2 :style="{ fontSize: isMobile ? '14px' : '18px', padding: isMobile ? '12px' : '16px' }">{{ treatment.title }}
+            </h2>
           </div>
         </div>
       </RouterLink>
@@ -131,8 +131,8 @@ const treatments = [
   object-fit: cover;
 }
 
-.card-front h3,
-.card-back h3 {
+.card-front h2,
+.card-back h2 {
   position: absolute;
   bottom: 0;
   left: 0;

@@ -7,7 +7,7 @@
     <Footer />
   </v-app>
   <ChattyBot
-    :hostname="http.hostname"
+    :hostname="hostname"
     :bot-data="botLanding"
   />
   <MiodottoreFab />
@@ -17,9 +17,16 @@
 import AppBar from './AppBar.vue';
 import Footer from './Footer.vue';
 import MiodottoreFab from '@/components/MiodottoreFab.vue';
-import { ChattyBot } from 'generic-module';
+import { defineAsyncComponent } from 'vue';
 
-import http from '@/utils/http';
+// Il chatbot (bundle molto pesante) non serve al primo render: parte qualche secondo dopo il load.
+const ChattyBot = defineAsyncComponent(() => new Promise((resolve) => {
+  const load = () => setTimeout(() => resolve(import('generic-module').then(module => module.ChattyBot)), 5000);
+  if (document.readyState === 'complete') load();
+  else window.addEventListener('load', load, { once: true });
+}));
+
+const hostname = import.meta.env.VITE_HOSTNAME;
 
 const botLanding = {
   botId: 6,

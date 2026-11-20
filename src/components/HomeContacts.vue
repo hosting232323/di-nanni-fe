@@ -29,8 +29,8 @@
             </ul>
           </div>
           <div class="d-flex justify-center">
-            <a href="https://www.instagram.com/dott.ssa_dorianadinanni" target="_blank"><span class="mdi mdi-instagram social"></span></a>
-            <a href="https://www.facebook.com/inphytoveritas" target="_blank"><span class="mdi mdi-facebook social"></span></a>
+            <a href="https://www.instagram.com/dott.ssa_dorianadinanni" target="_blank" rel="noopener noreferrer" aria-label="Instagram"><span class="mdi mdi-instagram social"></span></a>
+            <a href="https://www.facebook.com/inphytoveritas" target="_blank" rel="noopener noreferrer" aria-label="Facebook"><span class="mdi mdi-facebook social"></span></a>
           </div>
       </v-col>
       <v-col cols="12" sm="6"  md="8">

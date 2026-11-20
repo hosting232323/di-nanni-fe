@@ -3,8 +3,8 @@
     <v-row>
       <v-col cols="12" lg="5" md="4" class="d-flex flex-column justify-center align-center">
         <div class="d-flex justify-center">
-          <a href="https://www.instagram.com/dott.ssa_dorianadinanni" target="_blank"><span class="mdi mdi-instagram social"></span></a>
-          <a href="https://www.facebook.com/inphytoveritas" target="_blank"><span class="mdi mdi-facebook social"></span></a>
+          <a href="https://www.instagram.com/dott.ssa_dorianadinanni" target="_blank" rel="noopener noreferrer" aria-label="Instagram"><span class="mdi mdi-instagram social"></span></a>
+          <a href="https://www.facebook.com/inphytoveritas" target="_blank" rel="noopener noreferrer" aria-label="Facebook"><span class="mdi mdi-facebook social"></span></a>
         </div>
         <div class="footer-links">
           <router-link class="other-title" to="/contatti">Contattami</router-link>
@@ -12,7 +12,7 @@
         </div>
       </v-col>
       <v-col cols="12" lg="7" md="8">
-        <h3 class="footer-title">Trattamenti</h3>
+        <h2 class="footer-title">Trattamenti</h2>
           <div class="d-flex justify-space-around">
             <ul class="footer-list">
               <li><router-link to="/trattamenti/agopuntura">Agopuntura</router-link></li>
