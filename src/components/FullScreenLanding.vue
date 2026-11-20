@@ -41,6 +41,8 @@ const scrolled = ref(false);
 const onScroll = () => { scrolled.value = window.scrollY > 40; };
 
 onMounted(() => {
+  // Rimuove la hero statica di index.html solo dopo che quella di Vue e' stata dipinta.
+  requestAnimationFrame(() => requestAnimationFrame(() => document.getElementById('hero-placeholder')?.remove()));
   onScroll();
   window.addEventListener('scroll', onScroll, { passive: true });
 });
