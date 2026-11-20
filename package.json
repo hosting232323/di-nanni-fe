@@ -3,8 +3,8 @@
   "type": "module",
   "version": "0.0.0",
   "scripts": {
-    "dev": "vite",
-    "build": "vite build",
+    "dev": "node build/mdi-subset.js && vite",
+    "build": "node build/mdi-subset.js && vite build",
     "serve": "node server.js"
   },
   "dependencies": {
