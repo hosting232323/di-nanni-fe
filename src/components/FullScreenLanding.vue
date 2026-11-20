@@ -3,7 +3,7 @@
     <div class="fullscreen-container">
       <div class="background-gradient"></div>
 
-      <img src="@/assets/scheletro.png" alt="Sfondo anatomico" class="background-blurred" v-if="!isMobile" />
+      <img src="@/assets/scheletro.webp" alt="Sfondo anatomico" class="background-blurred" v-if="!isMobile" />
 
       <div class="foreground-content">
         <div :class="['doctor-image', { 'doctor-image-mobile': isMobile }]">

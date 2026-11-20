@@ -19,11 +19,19 @@ import Footer from './Footer.vue';
 import MiodottoreFab from '@/components/MiodottoreFab.vue';
 import { defineAsyncComponent } from 'vue';
 
-// Il chatbot (bundle molto pesante) non serve al primo render: parte qualche secondo dopo il load.
+// Il chatbot (bundle molto pesante) non serve al primo render: parte alla prima interazione
+// dell'utente o, in mancanza, dopo qualche secondo.
 const ChattyBot = defineAsyncComponent(() => new Promise((resolve) => {
-  const load = () => setTimeout(() => resolve(import('generic-module').then(module => module.ChattyBot)), 5000);
-  if (document.readyState === 'complete') load();
-  else window.addEventListener('load', load, { once: true });
+  const events = ['scroll', 'pointerdown', 'keydown', 'touchstart'];
+  let started = false;
+  const load = () => {
+    if (started) return;
+    started = true;
+    events.forEach(event => window.removeEventListener(event, load));
+    resolve(import('generic-module').then(module => module.ChattyBot));
+  };
+  events.forEach(event => window.addEventListener(event, load, { passive: true }));
+  setTimeout(load, 12000);
 }));
 
 const hostname = import.meta.env.VITE_HOSTNAME;

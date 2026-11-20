@@ -3,7 +3,7 @@
     <v-container style="padding: 6px;">
       <div ref="mapContainer" style="width: 100%; height: 400px;" />
       <div ref="popupContainer" class="ol-popup">
-        <v-icon icon="mdi-window-close" class="popup-close-btn" @click="closePopup"/>
+        <v-icon icon="mdi-window-close" class="popup-close-btn" aria-label="Chiudi" @click="closePopup"/>
         <div ref="popupContent" class="d-flex flex-column align-start">
           <v-img :src="logo" width="110" height="auto" object-fit style="margin-bottom: 10px;"/>
           <p style="font-size: 13px;" class="mb-1">Via Corfù 13, 70121 Bari</p>
